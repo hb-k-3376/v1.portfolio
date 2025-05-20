@@ -1,0 +1,146 @@
+@import 'tailwindcss';
+
+/* Box sizing 규칙 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 마진 제거 */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* 기본 body 설정 */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 이미지 기본 스타일 설정 */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* form 요소의 기본 스타일 제거 */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 텍스트 오버플로우 방지 */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 목록 스타일 제거 */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 링크 스타일 초기화 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 테이블 초기화 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* fieldset 초기화 */
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/* 버튼 스타일 초기화 */
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* 텍스트 리사이징 허용 */
+textarea {
+  resize: vertical;
+}
+
+/* iOS에서 클릭 영역 투명하게 */
+a,
+button,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 웹킷 자동 확대 방지 */
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='url'],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* 포커스 아웃라인 스타일 초기화 (접근성 고려하여 사용시 주의) */
+:focus {
+  outline: 0;
+}
+
+/* 부드러운 스크롤링 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 셀렉션 스타일 */
+::selection {
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none;
+}
