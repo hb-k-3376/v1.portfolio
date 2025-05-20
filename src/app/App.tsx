@@ -1,8 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
-import { Header } from '../widgets/header/ui/Header';
-import { Section } from '../shared/components/Section';
-import { ScrollToHashElement } from './layout/ScrollToHashElement';
-import { Lighter } from './layout';
+import { Lighter, ScrollToHashElement } from '@/app/layout';
+import { Section } from '@/shared/components';
+import { Header } from '@/widgets/header';
 
 function App() {
   return (
