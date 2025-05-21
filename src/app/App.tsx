@@ -2,6 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Lighter, ScrollToHashElement } from '@/app/layout';
 import { Section } from '@/shared/components';
 import { Header } from '@/widgets/header';
+import { Footer } from '@/widgets/footer/ui/Footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
               <Section id="home"> home</Section>
               <Section id="story">story</Section>
               <Section id="about">about</Section>
+              <Footer />
             </main>
             <ScrollToHashElement />
           </BrowserRouter>
