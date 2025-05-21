@@ -1,6 +1,8 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 
-export function useScrollSpy(sectionIds: string[], options?: IntersectionObserverInit) {
+export const useScrollSpy = (sectionIds: string[], options?: IntersectionObserverInit) => {
   const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
@@ -35,4 +37,4 @@ export function useScrollSpy(sectionIds: string[], options?: IntersectionObserve
   }, [sectionIds, options]);
 
   return activeId;
-}
+};
