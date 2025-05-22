@@ -6,7 +6,6 @@ import type { NextRequest } from 'next/server';
 export async function GET(request: NextRequest) {
   try {
     const databaseId = process.env.NOTION_DATABASE_ID;
-    console.log(databaseId);
     // api 요청
     const response = await notion.databases.query({
       database_id: databaseId!,
