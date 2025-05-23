@@ -1,17 +1,21 @@
 'use client';
+import { ItemCard } from '@/entities/project';
 import { Section } from '@/shared/ui';
 import { Header } from '@/widgets/header';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useEffect } from 'react';
 
 export default function Home() {
-  const fetchData = async () => {
-    const res = await axios.get('/api/vlog');
-    console.log(res);
+  const [pages, setPages] = useState([]);
+
+  const fetchNotionData = async () => {
+    const res = await axios.get('/api/notion/pages');
+    console.log(res.data.body);
+    setPages(res.data.body);
   };
 
   useEffect(() => {
-    fetchData();
+    fetchNotionData();
   }, []);
 
   return (
@@ -19,9 +23,43 @@ export default function Home() {
       <div className="lg:flex lg:justify-between lg:gap-4">
         <Header />
         <main className="pt-24 lg:w-[52%] lg:py-24">
-          <Section id="home"> home</Section>
-          <Section id="story">story</Section>
-          <Section id="about">about</Section>
+          <Section id="home">
+            <ul className="group/list">
+              {pages.map((_, idx) => {
+                return (
+                  <li className="mb-12" key={idx}>
+                    <ItemCard />
+                  </li>
+                );
+              })}
+            </ul>
+          </Section>
+          <Section id="story">
+            <ul className="group/list">
+              {Array(5)
+                .fill(0)
+                .map((_, idx) => {
+                  return (
+                    <li className="mb-12" key={idx}>
+                      <ItemCard />
+                    </li>
+                  );
+                })}
+            </ul>
+          </Section>
+          <Section id="about">
+            <ul className="group/list">
+              {Array(5)
+                .fill(0)
+                .map((_, idx) => {
+                  return (
+                    <li className="mb-12" key={idx}>
+                      <ItemCard />
+                    </li>
+                  );
+                })}
+            </ul>
+          </Section>
         </main>
       </div>
     </div>
