@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
 
 export const Title = ({ title }: { title: string }) => {
   return (
@@ -7,7 +8,7 @@ export const Title = ({ title }: { title: string }) => {
       aria-label="Senior Frontend Engineer, Accessibility at Klaviyo (opens in a new tab)"
     >
       <div>
-        <a
+        <Link
           className="group/link inline-flex items-baseline leading-tight text-slate-200 hover:text-teal-300"
           target="_blank"
           href="#"
@@ -19,7 +20,7 @@ export const Title = ({ title }: { title: string }) => {
               <ArrowUpRight className="h-4 w-4 ml-1 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 translate-y-px" />
             </span>
           </span>
-        </a>
+        </Link>
       </div>
     </h3>
   );

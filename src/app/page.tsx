@@ -1,11 +1,11 @@
 'use client';
-import { ItemCard } from '@/entities/project';
 import { Section } from '@/shared/ui';
 import { Header } from '@/widgets/header';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { PageObjectResponse } from '@notionhq/client';
 import { formatPageData } from '@/entities/project/model/helper';
+import { PageCard } from '@/entities/project';
 
 export default function Home() {
   const [pages, setPages] = useState<PageObjectResponse[]>([]);
@@ -20,7 +20,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-16 lg:py-0">
+    <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:py-0">
       <div className="lg:flex lg:justify-between lg:gap-4">
         <Header />
         <main className="pt-24 lg:w-[52%] lg:py-24">
@@ -33,7 +33,7 @@ export default function Home() {
                 const formatted = formatPageData(page.properties);
                 return (
                   <li className="mb-12" key={idx}>
-                    <ItemCard {...formatted} />
+                    <PageCard {...formatted} />
                   </li>
                 );
               })}
@@ -46,7 +46,7 @@ export default function Home() {
                 .map((_, idx) => {
                   return (
                     <li className="mb-12" key={idx}>
-                      <ItemCard />
+                      <PageCard createdBy="a" description="a" tags={[]} title="" />
                     </li>
                   );
                 })}
@@ -59,7 +59,7 @@ export default function Home() {
                 .map((_, idx) => {
                   return (
                     <li className="mb-12" key={idx}>
-                      <ItemCard />
+                      <PageCard createdBy="a" description="a" tags={[]} title="" />
                     </li>
                   );
                 })}
