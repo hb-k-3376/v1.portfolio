@@ -1,5 +1,5 @@
 import notion from '@/shared/lib/notion';
-import { isPageObjectResponse } from '@/shared/utils/guard';
+import { isPageObjectResponse } from '@/shared/utils';
 import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';

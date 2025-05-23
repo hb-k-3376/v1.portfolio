@@ -4,13 +4,14 @@ import { Section } from '@/shared/ui';
 import { Header } from '@/widgets/header';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { PageObjectResponse } from '@notionhq/client';
+import { formatPageData } from '@/entities/project/model/helper';
 
 export default function Home() {
-  const [pages, setPages] = useState([]);
+  const [pages, setPages] = useState<PageObjectResponse[]>([]);
 
   const fetchNotionData = async () => {
     const res = await axios.get('/api/notion/pages');
-    console.log(res.data.body);
     setPages(res.data.body);
   };
 
@@ -25,10 +26,11 @@ export default function Home() {
         <main className="pt-24 lg:w-[52%] lg:py-24">
           <Section id="home">
             <ul className="group/list">
-              {pages.map((_, idx) => {
+              {pages.map((page, idx) => {
+                const formatted = formatPageData(page.properties);
                 return (
                   <li className="mb-12" key={idx}>
-                    <ItemCard />
+                    <ItemCard {...formatted} />
                   </li>
                 );
               })}
