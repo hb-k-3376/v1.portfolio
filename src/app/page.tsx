@@ -25,6 +25,9 @@ export default function Home() {
         <Header />
         <main className="pt-24 lg:w-[52%] lg:py-24">
           <Section id="home">
+            <div className="sticky z-20 top-0 md-4 md:-mx-12 md:px-12 w-screen py-5 bg-slate-900/75 backdrop-blur lg:opacity-0 lg:relative lg:top-auto lg:w-full">
+              <h2 className="text-slate-200 uppercase tracking-widest font-bold lg:sr-only">Notion</h2>
+            </div>
             <ul className="group/list">
               {pages.map((page, idx) => {
                 const formatted = formatPageData(page.properties);
