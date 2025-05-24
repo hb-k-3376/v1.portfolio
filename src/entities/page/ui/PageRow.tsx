@@ -3,14 +3,16 @@ import { IPage } from '../model/types';
 import { Tag } from '@/shared/ui/Tag';
 import { useRef } from 'react';
 
-export const PageRow = ({ createdBy, description, tags, title }: IPage) => {
+/**
+ *  Page 데이터를 row 형태로 보여주느 entity
+ */
+export const PageRow = ({ createdBy, description, tags, title, id }: IPage) => {
   const linkRef = useRef<HTMLAnchorElement | null>(null);
 
   const handleClick = (e: React.MouseEvent) => {
     if (e.currentTarget.closest('a') || e.currentTarget.closest('button')) {
       return;
     }
-
     e.preventDefault();
     linkRef.current?.click();
   };
@@ -22,7 +24,7 @@ export const PageRow = ({ createdBy, description, tags, title }: IPage) => {
       </td>
       <td className="py-4 pr-4 align-top font-semibold leading-snug">
         <Link
-          href={'/'}
+          href={`/archive/${id}`}
           ref={linkRef}
           className="group-hover:text-teal-300 group-hover:font-bold focus-visible:text-teal-300 items-baseline leading-tight"
         >

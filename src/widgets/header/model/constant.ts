@@ -2,15 +2,15 @@ import type { IMenuItem } from './type';
 
 export const MENU_LIST: IMenuItem[] = [
   {
-    name: 'home',
-    path: '/#home',
+    name: 'intro',
+    path: '/#intro',
   },
   {
-    name: 'story',
-    path: '/#story',
+    name: 'project',
+    path: '/#project',
   },
   {
-    name: 'about',
-    path: '/#about',
+    name: 'archive',
+    path: '/#archive',
   },
 ];
