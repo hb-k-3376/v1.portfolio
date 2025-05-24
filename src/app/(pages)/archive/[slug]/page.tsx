@@ -1,4 +1,4 @@
-import { getArchiveById } from '@/features/archive';
+import { ArchiveContent, getArchiveById } from '@/features/archive';
 import { ArchiveMetaData } from './_components/ArchiveMetaData';
 import { BackButton } from '@/shared/ui';
 
@@ -18,6 +18,7 @@ export default async function page({ params }: ISlugProps) {
         <ArchiveMetaData createdBy={createdBy} description={description} modifiedBy={modifiedBy} tags={tags} />
       </section>
       <hr />
+      <ArchiveContent slug={slug} />
     </div>
   );
 }

@@ -18,7 +18,7 @@ export const ArchiveList = () => {
    *  axios를 사용해서 데이터를 불러옴
    */
   const fetchNotionData = async () => {
-    const res = await axios.get('/api/notion/pages');
+    const res = await axios.get('/api/notion/');
     setPages(res.data.body);
   };
 
