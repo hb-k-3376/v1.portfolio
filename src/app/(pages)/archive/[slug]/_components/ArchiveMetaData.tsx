@@ -4,7 +4,7 @@ interface ArchiveMetadataProps {
   createdBy: string;
   description: string;
   modifiedBy: string;
-  tags: Array<{ id: string; name: string }>;
+  tags: Array<{ id: string; name: string; color: string }>;
 }
 export const ArchiveMetaData = ({ createdBy, description, modifiedBy, tags }: ArchiveMetadataProps) => {
   return (

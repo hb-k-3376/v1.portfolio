@@ -1,12 +1,12 @@
-import { ITag } from '@/shared/types';
+import { MultiSelectProperty, TextProperty, TimeProperty } from '@/shared/types/notion';
 import { PageObjectResponse } from '@notionhq/client';
 
 export type NotionProperties = PageObjectResponse['properties'];
 
 export interface IArchivePage {
-  createdBy: string;
-  description: string;
-  title: string;
-  tags: ITag[];
-  modifiedBy: string;
+  createdBy: TimeProperty;
+  description: TextProperty;
+  title: TextProperty;
+  tags: MultiSelectProperty;
+  modifiedBy: TimeProperty;
 }
