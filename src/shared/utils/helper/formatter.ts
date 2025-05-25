@@ -1,5 +1,5 @@
 import { ITag } from '@/shared/types';
-import { MultiSelectProperty, TextProperty, TimeProperty } from '@/shared/types/notion';
+import { MultiSelectProperty, ParagraphProperty, TextProperty, TimeProperty } from '@/shared/types/notion';
 
 /**
  * @param title  rawData에 title
@@ -45,4 +45,8 @@ export const getModifiedDate = (modifiedDate: TimeProperty): string => {
   if (!modifiedDate.last_edited_time) return '';
   const dateString = modifiedDate.last_edited_time;
   return new Date(dateString).toLocaleDateString('en-CA');
+};
+
+export const getContents = (contents: ParagraphProperty) => {
+  contents.rich_text[0].annotations.bold;
 };

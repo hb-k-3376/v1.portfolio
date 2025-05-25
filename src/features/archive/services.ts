@@ -1,6 +1,6 @@
 import { APIResponse } from '@/shared/types/api';
 import axios from 'axios';
-import { IArchivePage } from './model/type';
+import { IPageContent, IPageMetadata } from './model/type';
 import { getCreatedDate, getDescription, getModifiedDate, getTags, getTitle } from '@/shared/utils';
 import { PageObjectResponse } from '@notionhq/client';
 
@@ -9,7 +9,7 @@ import { PageObjectResponse } from '@notionhq/client';
  * notion 데이터베이스 에서 id로 page metadata 가져오는 서비스 함수
  */
 export const getPageMetadataById = async (slug: string) => {
-  const { data } = await axios.get<APIResponse<IArchivePage>>(`http://localhost:3000/api/notion/metadata/${slug}`);
+  const { data } = await axios.get<APIResponse<IPageMetadata>>(`http://localhost:3000/api/notion/metadata/${slug}`);
 
   const title = getTitle(data.body.title);
   const createdBy = getCreatedDate(data.body.createdBy);
@@ -24,6 +24,16 @@ export const getPageMetadataById = async (slug: string) => {
     modifiedBy,
     description,
   };
+};
+
+/**
+ * get page content by id (service)
+ * notion 데이터베이스 에서 id로 page content 가져오는 서비스 함수
+ */
+export const getPageContentById = async (slug: string) => {
+  const res = await axios.get<APIResponse<IPageContent>>(`http://localhost:3000/api/notion/content/${slug}`);
+
+  return res.data.body.results;
 };
 
 /**

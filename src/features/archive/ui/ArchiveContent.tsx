@@ -1,17 +1,26 @@
-'use client';
+import { ContentsText } from '@/shared/ui';
+import { getPageContentById } from '../services';
 
-import axios from 'axios';
-import { useEffect } from 'react';
+/**
+ * page 상세 페이지
+ */
+export const ArchiveContent = async ({ slug }: { slug: string }) => {
+  const contents = await getPageContentById(slug);
 
-export const ArchiveContent = ({ slug }: { slug: string }) => {
-  const fetchData = async () => {
-    const res = await axios.get(`/api/notion/content/${slug}`);
-    console.log(res.data);
-  };
+  return (
+    <section className="py-10 px-4">
+      {contents.map((content, idx) => {
+        if (content.type === 'paragraph') {
+          if (!content.paragraph) return <div></div>;
+          return <ContentsText paragraph={content.paragraph} key={idx} />;
+        }
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  return <></>;
+        return (
+          <div className="flex justify-center py-5" key={idx}>
+            <img src={content.image?.file.url} />
+          </div>
+        );
+      })}
+    </section>
+  );
 };

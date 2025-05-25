@@ -4,4 +4,4 @@ export { ArchiveContent } from './ui/ArchiveContent';
 /**
  * public service
  */
-export { getPageMetadataById } from './services';
+export { getPageMetadataById, getPageContentById, getPages } from './services';
