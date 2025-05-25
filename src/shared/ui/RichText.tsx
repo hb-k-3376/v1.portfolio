@@ -1,8 +1,12 @@
 import { RichTextProperty } from '../types';
 import { getStyleClasses } from '../utils';
 
+/**
+ * Rich text 별 스타일 적용
+ */
 export const RichText = ({ item }: { item: RichTextProperty }) => {
   const styleClasses = getStyleClasses(item.annotations);
+  console.log(item);
   const content = item.plain_text;
 
   // 링크가 있는 경우
@@ -21,5 +25,5 @@ export const RichText = ({ item }: { item: RichTextProperty }) => {
   }
 
   // 일반 텍스트
-  return <span className={styleClasses}>{content}</span>;
+  return <span className={`${styleClasses} whitespace-pre-line`}>{content}</span>;
 };

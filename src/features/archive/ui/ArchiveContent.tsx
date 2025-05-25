@@ -11,7 +11,7 @@ export const ArchiveContent = async ({ slug }: { slug: string }) => {
     <section className="py-10 px-4">
       {contents.map((content, idx) => {
         if (content.type === 'paragraph') {
-          if (!content.paragraph) return <div></div>;
+          if (!content.paragraph) return '';
           return <ContentsText paragraph={content.paragraph} key={idx} />;
         }
 

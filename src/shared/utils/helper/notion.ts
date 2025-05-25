@@ -1,7 +1,9 @@
 import { Annotations } from '@/shared/types';
 
-// 색상 매핑 함수
-export const getColorClass = (color: string): string => {
+/**
+ * 색을 테일윈드 색으로 매칭 해주는 헬퍼 함수
+ */
+const getColorClass = (color: string): string => {
   const colorMap: Record<string, string> = {
     default: 'text-slate-200',
     gray: 'text-gray-500',
@@ -28,7 +30,9 @@ export const getColorClass = (color: string): string => {
   return colorMap[color] || colorMap.default;
 };
 
-// 스타일 클래스 생성 함수
+/**
+ * 어노테이션으로 text 스타일 적용 후 tailwind className으로 설정
+ */
 export const getStyleClasses = (annotations: Annotations): string => {
   const classes: string[] = [];
 
