@@ -1,4 +1,4 @@
-import { ArchiveContent, getArchiveById } from '@/features/archive';
+import { ArchiveContent, getPageMetadataById } from '@/features/archive';
 import { ArchiveMetaData } from './_components/ArchiveMetaData';
 import { BackButton } from '@/shared/ui';
 
@@ -8,7 +8,7 @@ export interface ISlugProps {
 
 export default async function page({ params }: ISlugProps) {
   const { slug } = await params;
-  const { createdBy, description, modifiedBy, tags, title } = await getArchiveById(slug);
+  const { createdBy, description, modifiedBy, tags, title } = await getPageMetadataById(slug);
 
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-16 lg:px-60 lg:py-0">

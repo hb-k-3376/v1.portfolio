@@ -1,11 +1,8 @@
-'use client';
 import { Section } from '@/shared/ui';
 import { Header } from '@/widgets/header';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { PageObjectResponse } from '@notionhq/client';
 import { formatPageData } from '@/entities/page/model/helper';
 import { PageCard } from '@/entities/page';
+import { getPages } from '@/features/archive/services';
 
 /**
  *  루트 페이지
@@ -13,17 +10,8 @@ import { PageCard } from '@/entities/page';
  *  /project   - project 영역
  *  /archive    - archive 영역
  */
-export default function page() {
-  const [pages, setPages] = useState<PageObjectResponse[]>([]);
-
-  const fetchNotionData = async () => {
-    const res = await axios.get('/api/notion/pages');
-    setPages(res.data.body);
-  };
-
-  useEffect(() => {
-    fetchNotionData();
-  }, []);
+export default async function page() {
+  const pages = await getPages();
 
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:py-0">

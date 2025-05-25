@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { IPage } from '../model/types';
 import { Tag } from '@/shared/ui/Tag';
