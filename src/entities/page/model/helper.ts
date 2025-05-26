@@ -9,13 +9,13 @@ export const formatPageData = (rawData: any): IPage => {
   const title = getTitle(rawData.title);
   const description = getDescription(rawData.description);
   const tags = getTags(rawData.tags);
-  const createdBy = getCreatedDate(rawData.createdBy);
+  const created_time = getCreatedDate(rawData.created_time);
 
   return {
     id: rawData.id,
     title,
     description,
     tags,
-    createdBy,
+    created_time,
   };
 };

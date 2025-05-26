@@ -2,7 +2,7 @@ import { ITag } from '@/shared/types';
 
 export interface IPage {
   id: string;
-  createdBy: string;
+  created_time: string;
   tags: ITag[];
   title: string;
   description: string;

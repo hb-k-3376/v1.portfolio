@@ -8,7 +8,7 @@ import { useRef } from 'react';
 /**
  *  Page 데이터를 row 형태로 보여주느 entity
  */
-export const PageRow = ({ createdBy, description, tags, title, id }: IPage) => {
+export const PageRow = ({ created_time, description, tags, title, id }: IPage) => {
   const linkRef = useRef<HTMLAnchorElement | null>(null);
 
   const handleClick = (e: React.MouseEvent) => {
@@ -22,7 +22,7 @@ export const PageRow = ({ createdBy, description, tags, title, id }: IPage) => {
   return (
     <tr className="group border-b border-slate-300/10 last:border-none cursor-pointer" onClick={handleClick}>
       <td className="py-4 pr-4 align-top text-sm">
-        <div className="translate-y-px">{createdBy}</div>
+        <div className="translate-y-px">{created_time}</div>
       </td>
       <td className="py-4 pr-4 align-top font-semibold leading-snug">
         <Link

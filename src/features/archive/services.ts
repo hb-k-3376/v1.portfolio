@@ -12,9 +12,9 @@ export const getPageMetadataById = async (slug: string) => {
   const { data } = await axios.get<APIResponse<IPageMetadata>>(`http://localhost:3000/api/notion/metadata/${slug}`);
 
   const title = getTitle(data.body.title);
-  const createdBy = getCreatedDate(data.body.createdBy);
+  const createdBy = getCreatedDate(data.body.created_time);
   const tags = getTags(data.body.tags);
-  const modifiedBy = getModifiedDate(data.body.modifiedBy);
+  const modifiedBy = getModifiedDate(data.body.modified_time);
   const description = getDescription(data.body.description);
 
   return {

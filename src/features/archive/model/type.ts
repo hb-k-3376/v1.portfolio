@@ -1,11 +1,11 @@
 import { ContentProperty, MultiSelectProperty, TextProperty, TimeProperty } from '@/shared/types/notion';
 
 export interface IPageMetadata {
-  createdBy: TimeProperty;
+  created_time: TimeProperty;
   description: TextProperty;
   title: TextProperty;
   tags: MultiSelectProperty;
-  modifiedBy: TimeProperty;
+  modified_time: TimeProperty;
 }
 
 export interface IPageContent {

@@ -18,8 +18,8 @@ export async function GET(_: NextRequest) {
       },
       sorts: [
         {
-          property: 'createdBy', // 최신글 순서대로
-          direction: 'ascending',
+          property: 'created_time', // 최신글 순서대로
+          direction: 'descending',
         },
       ],
     });
