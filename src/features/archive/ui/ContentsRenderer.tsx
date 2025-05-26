@@ -70,5 +70,5 @@ export const ContentRenderer = ({ content }: IContentRendererProps) => {
       </div>
     );
   }
-  if (content.callout) return <></>;
+  return null;
 };
