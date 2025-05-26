@@ -3,7 +3,7 @@ import { Annotations } from '@/shared/types';
 /**
  * 색을 테일윈드 색으로 매칭 해주는 헬퍼 함수
  */
-const getColorClass = (color: string): string => {
+export const getColorClass = (color: string): string => {
   const colorMap: Record<string, string> = {
     default: 'text-slate-200',
     gray: 'text-gray-500',
@@ -16,7 +16,7 @@ const getColorClass = (color: string): string => {
     pink: 'text-pink-500',
     red: 'text-red-500',
     // 백그라운드 색상들
-    gray_background: 'bg-gray-100 text-gray-900',
+    gray_background: 'bg-gray-600/90 text-gray-900',
     brown_background: 'bg-amber-100 text-amber-900',
     orange_background: 'bg-orange-100 text-orange-900',
     yellow_background: 'bg-yellow-100 text-yellow-900',
@@ -41,7 +41,7 @@ export const getStyleClasses = (annotations: Annotations): string => {
   if (annotations.strikethrough) classes.push('line-through');
   if (annotations.underline) classes.push('underline');
   if (annotations.code) {
-    classes.push('bg-gray-100 text-red-600 px-1 py-0.5 rounded text-sm font-mono');
+    classes.push('bg-gray-100 text-red-600! px-1 py-0.5 rounded text-sm font-mono');
   }
 
   // 색상 적용

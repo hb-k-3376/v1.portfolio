@@ -33,14 +33,14 @@ export const PageRow = ({ created_time, description, tags, title, id }: IPage) =
           {title}
         </Link>
       </td>
-      <td>
+      <td className="hidden md:table-cell">
         <ul className="flex -translate-y-1.5 flex-wrap">
           {tags.map((tag, idx) => (
             <Tag name={tag.name} key={idx} />
           ))}
         </ul>
       </td>
-      <td>
+      <td className="hidden lg:table-cell">
         <div className="translate-y-px whitespace-nowrap truncate max-w-xs">{description}</div>
       </td>
     </tr>

@@ -42,8 +42,45 @@ export type MultiSelectProperty = {
 export type ContentProperty = {
   paragraph?: ParagraphProperty;
   image?: ImageProperty;
+  heading_3?: Heading3Property;
+  bulleted_list_item?: BulletedPointProperty;
+  callout?: CallOutProperty;
+  code?: CodeFieldProperty;
   id: string;
   type: string;
+};
+
+/**
+ * 코드 필드 프로퍼티
+ */
+export type CodeFieldProperty = {
+  caption: string[];
+  rich_text: RichTextProperty[];
+  language: string;
+};
+/**
+ * 콜아웃 프로퍼티
+ */
+export type CallOutProperty = {
+  icon: { type: string; emoji: string };
+  color: string;
+  rich_text: RichTextProperty[];
+};
+/**
+ * 블릿 포인트 프로퍼티
+ */
+export type BulletedPointProperty = {
+  color: string;
+  rich_text: RichTextProperty[];
+};
+
+/**
+ * 헤더 3 프로퍼티
+ */
+export type Heading3Property = {
+  is_toggleable: boolean;
+  color: string;
+  rich_text: RichTextProperty[];
 };
 
 /**
@@ -54,7 +91,7 @@ export type ParagraphProperty = {
   rich_text: RichTextProperty[];
 };
 /**
- * 리티 텍스트 프로퍼티
+ * 리치 텍스트 프로퍼티
  */
 export type RichTextProperty = {
   annotations: Annotations;
