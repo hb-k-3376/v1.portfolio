@@ -32,7 +32,6 @@ export const getPageMetadataById = async (slug: string) => {
  */
 export const getPageContentById = async (slug: string) => {
   const res = await axios.get<APIResponse<IPageContent>>(`http://localhost:3000/api/notion/content/${slug}`);
-
   return res.data.body.results;
 };
 

@@ -65,6 +65,8 @@ export const ContentRenderer = ({ content }: IContentRendererProps) => {
       <div className={`bg-gray-600 rounded-lg p-5 my-5`}>
         <div className="uppercase pb-2">{content.code.language}</div>
         {content.code.rich_text.map((text, idx) => {
+          console.log(text);
+
           return <RichText item={text} key={idx} />;
         })}
       </div>

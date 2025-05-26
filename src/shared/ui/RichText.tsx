@@ -24,5 +24,5 @@ export const RichText = ({ item }: { item: RichTextProperty }) => {
   }
 
   // 일반 텍스트
-  return <span className={`${styleClasses} whitespace-pre-line`}>{content}</span>;
+  return <span className={`${styleClasses} whitespace-pre-wrap`}>{content}</span>;
 };
