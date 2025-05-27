@@ -1,4 +1,4 @@
-import notion from '@/shared/lib/notion';
+import { notion } from '@/shared/lib';
 import { PageObjectResponse } from '@notionhq/client';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';

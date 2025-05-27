@@ -1,4 +1,3 @@
-import { ITag } from '@/shared/types';
 import { MultiSelectProperty, ParagraphProperty, TextProperty, TimeProperty } from '@/shared/types/notion';
 
 /**

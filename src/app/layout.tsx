@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import { Providers } from './_providers';
 import { Lighter } from '@/shared/ui';
+import { Providers } from '@/shared/lib';
 import '@/shared/styles/globals.css';
 
 export const metadata: Metadata = {

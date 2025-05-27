@@ -1,7 +1,7 @@
 'use client';
 
+import { useScrollSpy } from '@/hooks';
 import { MENU_LIST } from '../model/constant';
-import { useScrollSpy } from '@/shared/hooks';
 import { Nav } from './Nav';
 
 export const Header = () => {
