@@ -9,6 +9,7 @@ interface IUsePagesQueryProps {
   };
   pageSize?: string;
   cursor?: string | undefined;
+  query: string | null;
 }
 /**
  * @description  페이지 목록을 서버에서 가져오고, 로딩 상태와 함께 반환하는 커스텀 훅
@@ -17,10 +18,10 @@ interface IUsePagesQueryProps {
  * @param {cursor} 초기값은 undefined, 다음 페이지의 시작 위치 저장 데이터
  * @returns
  */
-export const usePagesQuery = ({ initialData, pageSize = '10', cursor = undefined }: IUsePagesQueryProps) => {
+export const usePagesQuery = ({ initialData, pageSize = '10', cursor = undefined, query }: IUsePagesQueryProps) => {
   const getPagesQuery = useQuery({
-    queryKey: ['pages', { pageSize, cursor }], // pageSize와 cursor로 캐시 키
-    queryFn: () => getPages({ pageSize, cursor }),
+    queryKey: ['pages', { pageSize, cursor, query }], // pageSize와 cursor로 캐시 키
+    queryFn: () => getPages({ pageSize, cursor, query }),
     initialData,
   });
 

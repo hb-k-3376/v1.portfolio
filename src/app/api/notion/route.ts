@@ -9,6 +9,9 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const pageSize = parseInt(searchParams.get('pageSize') || '10');
     const cursor = searchParams.get('cursor') || undefined;
+    const query = searchParams.get('query') || null;
+
+    console.log('server - query', query);
 
     const databaseId = process.env.NOTION_DATABASE_ID;
     // api 요청

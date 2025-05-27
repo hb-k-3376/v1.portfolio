@@ -38,13 +38,26 @@ export const getPageContentById = async (slug: string) => {
  * get pages
  * notion 데이터베이스 에서 pages list 가져오는 서비스 함수
  */
-export const getPages = async ({ pageSize = '10', cursor = undefined }: { pageSize?: string; cursor?: string }) => {
+export const getPages = async ({
+  pageSize = '10',
+  cursor = undefined,
+  query,
+}: {
+  pageSize?: string;
+  cursor?: string;
+  query: string | null;
+}) => {
   const params = new URLSearchParams({ pageSize });
 
   // cursor가 유효한 값일 때만 파라미터에 추가
   if (cursor) {
     params.append('cursor', cursor);
   }
+  // query 유효한 값일 때만 파라미터에 추가
+  if (query) {
+    params.append('query', query);
+  }
+
   const res = await api.get<APIResponse<IPagesResponse>>(`/notion?${params}`);
 
   return {

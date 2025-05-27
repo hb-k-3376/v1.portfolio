@@ -4,8 +4,10 @@ import { PageRow } from '@/entities/page';
 import { formatPageData } from '@/entities/page/model/helper';
 import { PageObjectResponse } from '@notionhq/client';
 import { usePagesQuery } from '../hook/usePagesQuery';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ARCHIVE_PAGE_SIZE } from '@/shared/conatants';
+import { Loader2 } from 'lucide-react';
+import { useSearchModalStore } from '../hook/useSearchModalStore';
 
 interface IArchiveListProps {
   initialData: PageObjectResponse[];
@@ -17,11 +19,20 @@ interface IArchiveListProps {
  */
 export const ArchiveList = ({ initialData }: IArchiveListProps) => {
   const [currentCursor, setCurrentCursor] = useState<string | undefined>(undefined);
+
+  const query = useSearchModalStore((state) => state.query);
+
   const { pages, cursor, isLoading } = usePagesQuery({
     initialData: { pages: initialData, cursor: undefined },
     pageSize: ARCHIVE_PAGE_SIZE,
     cursor: currentCursor,
+    query,
   });
+
+  // ArchiveList에서 query가 변경될 때 cursor 리셋
+  useEffect(() => {
+    setCurrentCursor(undefined); // 검색어 변경 시 첫 페이지로
+  }, [query]);
 
   const handleNextPage = () => {
     setCurrentCursor(cursor);
@@ -38,10 +49,29 @@ export const ArchiveList = ({ initialData }: IArchiveListProps) => {
         </tr>
       </thead>
       <tbody>
-        {pages.map((page, idx) => {
-          const formatted = formatPageData({ ...page.properties, id: page.id });
-          return <PageRow {...formatted} key={idx} />;
-        })}
+        {/** 데이터 페칭  */}
+        {isLoading ? (
+          <tr>
+            <td colSpan={4}>
+              <div className="flex justify-center items-center h-[300px]">
+                <Loader2 className="text-teal-300 animate-spin" size={100} />
+              </div>
+            </td>
+          </tr>
+        ) : pages.length === 0 ? ( // 검색 결과가 없는 경우
+          <tr>
+            <td colSpan={4}>
+              <div className="flex justify-center items-center h-[300px] text-slate-400 text-lg">결과가 없습니다.</div>
+            </td>
+          </tr>
+        ) : (
+          <>
+            {pages.map((page, idx) => {
+              const formatted = formatPageData({ ...page.properties, id: page.id });
+              return <PageRow {...formatted} key={idx} />;
+            })}
+          </>
+        )}
       </tbody>
     </table>
   );

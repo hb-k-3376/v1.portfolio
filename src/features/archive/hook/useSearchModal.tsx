@@ -33,5 +33,6 @@ export const useSearchModal = () => {
     isOpen,
     backdropRef,
     handleClickOutside,
+    close,
   };
 };
