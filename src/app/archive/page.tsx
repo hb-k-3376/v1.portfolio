@@ -1,8 +1,9 @@
 import { ArchiveList, getPages } from '@/features/archive';
+import { ARCHIVE_PAGE_SIZE } from '@/shared/conatants';
 import { BackButton } from '@/shared/ui';
 
 export default async function page() {
-  const initialData = await getPages({ pageSize: '1' });
+  const initialData = await getPages({ pageSize: ARCHIVE_PAGE_SIZE });
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:py-0">
       <div className="lg:py-24">

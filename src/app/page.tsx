@@ -3,6 +3,7 @@ import { formatPageData } from '@/entities/page/model/helper';
 import { PageCard } from '@/entities/page';
 import { Header } from '@/shared/ui/header';
 import { getPages } from '@/features/archive';
+import { HOME_PAGE_SIZE } from '@/shared/conatants';
 
 /**
  *  루트 페이지
@@ -11,7 +12,7 @@ import { getPages } from '@/features/archive';
  *  /archive    - archive 영역
  */
 export default async function page() {
-  const pages = await getPages({ pageSize: '5' });
+  const { pages } = await getPages({ pageSize: HOME_PAGE_SIZE });
 
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:py-0">

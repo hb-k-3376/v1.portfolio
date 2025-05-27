@@ -5,6 +5,7 @@ import { formatPageData } from '@/entities/page/model/helper';
 import { PageObjectResponse } from '@notionhq/client';
 import { usePagesQuery } from '../hook/usePagesQuery';
 import { useState } from 'react';
+import { ARCHIVE_PAGE_SIZE } from '@/shared/conatants';
 
 interface IArchiveListProps {
   initialData: PageObjectResponse[];
@@ -18,7 +19,7 @@ export const ArchiveList = ({ initialData }: IArchiveListProps) => {
   const [currentCursor, setCurrentCursor] = useState<string | undefined>(undefined);
   const { pages, cursor, isLoading } = usePagesQuery({
     initialData: { pages: initialData, cursor: undefined },
-    pageSize: '1',
+    pageSize: ARCHIVE_PAGE_SIZE,
     cursor: currentCursor,
   });
 
