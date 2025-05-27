@@ -1,30 +1,14 @@
-'use client';
-
 import { PageRow } from '@/entities/page';
 import { formatPageData } from '@/entities/page/model/helper';
-import { PageObjectResponse } from '@notionhq/client';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { getPages } from '../services';
 
 /**
  * /archive 페이지에서 notion Page 데이터를 렌더링하는 컴포넌트
  *  서버에서 page list를 페치해와서 tbody에 row 형태로 뿌린다.
  */
-export const ArchiveList = () => {
-  const [pages, setPages] = useState<PageObjectResponse[]>([]);
-
-  /**
-   *  fetch 함수
-   *  axios를 사용해서 데이터를 불러옴
-   */
-  const fetchNotionData = async () => {
-    const res = await axios.get('/api/notion/');
-    setPages(res.data.body);
-  };
-
-  useEffect(() => {
-    fetchNotionData();
-  }, []);
+export const ArchiveList = async () => {
+  await new Promise((resolve) => setTimeout(resolve, 3000)); // 3초 대기
+  const pages = await getPages();
 
   return (
     <table className="mt-12 w-full border-collapse text-left table-fixed">
