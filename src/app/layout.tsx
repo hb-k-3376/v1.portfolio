@@ -4,7 +4,7 @@ import { Providers } from '@/shared/lib';
 import '@/shared/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: 'Hyun Kim',
+  title: 'Hyun',
   description: 'v2 portfolio',
 };
 
