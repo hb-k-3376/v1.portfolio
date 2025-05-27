@@ -1,6 +1,5 @@
-import { ContentsText } from '@/shared/ui';
-import { getPageContentById } from '../services';
 import { ContentRenderer } from './ContentsRenderer';
+import { getPageContentById } from '../services';
 
 /**
  * page 상세 페이지
