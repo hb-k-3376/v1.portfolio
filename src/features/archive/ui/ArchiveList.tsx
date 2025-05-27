@@ -1,14 +1,30 @@
+'use client';
+
 import { PageRow } from '@/entities/page';
 import { formatPageData } from '@/entities/page/model/helper';
-import { getPages } from '../services';
+import { PageObjectResponse } from '@notionhq/client';
+import { usePagesQuery } from '../hook/usePagesQuery';
+import { useState } from 'react';
+
+interface IArchiveListProps {
+  initialData: PageObjectResponse[];
+}
 
 /**
  * /archive 페이지에서 notion Page 데이터를 렌더링하는 컴포넌트
  *  서버에서 page list를 페치해와서 tbody에 row 형태로 뿌린다.
  */
-export const ArchiveList = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 3000)); // 3초 대기
-  const pages = await getPages();
+export const ArchiveList = ({ initialData }: IArchiveListProps) => {
+  const [currentCursor, setCurrentCursor] = useState<string | undefined>(undefined);
+  const { pages, cursor, isLoading } = usePagesQuery({
+    initialData: { pages: initialData, cursor: undefined },
+    pageSize: '1',
+    cursor: currentCursor,
+  });
+
+  const handleNextPage = () => {
+    setCurrentCursor(cursor);
+  };
 
   return (
     <table className="mt-12 w-full border-collapse text-left table-fixed">
