@@ -14,19 +14,21 @@
 }
 
 /* 마진 제거 */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
+@layer base {
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
 }
 
 /* 기본 body 설정 */
@@ -72,11 +74,13 @@ h6 {
 }
 
 /* 목록 스타일 제거 */
-ul,
-ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+@layer base {
+  ul,
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 /* 링크 스타일 초기화 */
