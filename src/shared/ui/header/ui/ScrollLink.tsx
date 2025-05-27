@@ -1,7 +1,7 @@
 'use client';
 
 export const ScrollLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = () => {
     const id = href.replace('#', '');
     const element = document.getElementById(id);
 

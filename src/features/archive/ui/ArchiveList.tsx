@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { ARCHIVE_PAGE_SIZE } from '@/shared/conatants';
 import { Loader2 } from 'lucide-react';
 import { useSearchModalStore } from '../hook/useSearchModalStore';
+import { IFormattedPageData } from '@/entities/page/model/types';
 
 interface IArchiveListProps {
   initialData: PageObjectResponse[];
@@ -34,9 +35,12 @@ export const ArchiveList = ({ initialData }: IArchiveListProps) => {
     setCurrentCursor(undefined); // 검색어 변경 시 첫 페이지로
   }, [query]);
 
-  const handleNextPage = () => {
-    setCurrentCursor(cursor);
-  };
+  /**
+   * TODO : 페이지 네이션
+   */
+  // const handleNextPage = () => {
+  //   setCurrentCursor(cursor);
+  // };
 
   return (
     <table className="mt-12 w-full border-collapse text-left table-fixed">
@@ -66,8 +70,9 @@ export const ArchiveList = ({ initialData }: IArchiveListProps) => {
           </tr>
         ) : (
           <>
-            {pages.map((page, idx) => {
-              const formatted = formatPageData({ ...page.properties, id: page.id });
+            {pages.map(({ properties, id }, idx) => {
+              const pageData = { ...properties, id } as IFormattedPageData;
+              const formatted = formatPageData({ ...pageData });
               return <PageRow {...formatted} key={idx} />;
             })}
           </>

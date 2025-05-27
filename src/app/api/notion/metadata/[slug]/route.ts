@@ -20,6 +20,7 @@ export async function GET(_: NextRequest, { params }: ISlugProps) {
       status: 200,
     });
   } catch (error) {
-    return NextResponse.json(null);
+    console.error('Failed to fetch paginated pages:', error);
+    throw new Error('페이지 데이터를 가져오는데 실패했습니다.');
   }
 }

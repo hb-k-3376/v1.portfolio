@@ -4,6 +4,7 @@ import { PageCard } from '@/entities/page';
 import { Header } from '@/shared/ui/header';
 import { getPages } from '@/features/archive';
 import { HOME_PAGE_SIZE } from '@/shared/conatants';
+import { IFormattedPageData } from '@/entities/page/model/types';
 
 /**
  *  루트 페이지
@@ -27,8 +28,9 @@ export default async function page() {
               <h2 className="text-slate-200 uppercase tracking-widest font-bold lg:sr-only">Notion</h2>
             </div>
             <ul className="group/list">
-              {pages.map((page, idx) => {
-                const formatted = formatPageData(page.properties);
+              {pages.map(({ properties, id }, idx) => {
+                const pageData = { ...properties, id } as IFormattedPageData;
+                const formatted = formatPageData({ ...pageData });
                 return (
                   <li className="mb-12" key={idx}>
                     <PageCard {...formatted} />
@@ -41,34 +43,15 @@ export default async function page() {
            * project section
            */}
           <Section id="project">
-            <ul className="group/list">
-              {Array(5)
-                .fill(0)
-                .map((_, idx) => {
-                  return (
-                    <li className="mb-12" key={idx}>
-                      <PageCard id="" created_time="a" description="a" tags={[]} title="" />
-                    </li>
-                  );
-                })}
-            </ul>
+            <div className="h-[500px]"></div>
           </Section>
           {/**
            * archive section
            */}
           <Section id="archive">
-            <ul className="group/list">
-              {Array(5)
-                .fill(0)
-                .map((_, idx) => {
-                  return (
-                    <li className="mb-12" key={idx}>
-                      <PageCard id="" created_time="a" description="a" tags={[]} title="" />
-                    </li>
-                  );
-                })}
-            </ul>
+            <div className="h-[500px]"></div>
           </Section>
+          {/* <footer className="h-50 w-full">test</footer> */}
         </main>
       </div>
     </div>
