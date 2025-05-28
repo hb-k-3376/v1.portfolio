@@ -1,6 +1,6 @@
 import { ArchiveList, ArchiveNav, getPages } from '@/features/archive';
 import { SearchBox } from '@/features/archive/ui/SearchBox';
-import { ARCHIVE_PAGE_SIZE } from '@/shared/conatants';
+import { ARCHIVE_PAGE_SIZE } from '@/shared/constants';
 import { BackButton } from '@/shared/ui';
 
 export default async function page() {

@@ -3,7 +3,7 @@ import { formatPageData } from '@/entities/page/model/helper';
 import { PageCard } from '@/entities/page';
 import { Header } from '@/shared/ui/header';
 import { getPages } from '@/features/archive';
-import { HOME_PAGE_SIZE } from '@/shared/conatants';
+import { HOME_PAGE_SIZE } from '@/shared/constants';
 import { IFormattedPageData } from '@/entities/page/model/types';
 
 /**

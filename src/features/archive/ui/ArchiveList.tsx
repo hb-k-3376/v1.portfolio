@@ -5,7 +5,7 @@ import { formatPageData } from '@/entities/page/model/helper';
 import { PageObjectResponse } from '@notionhq/client';
 import { usePagesQuery } from '../hook/usePagesQuery';
 import { useEffect, useState } from 'react';
-import { ARCHIVE_PAGE_SIZE } from '@/shared/conatants';
+import { ARCHIVE_PAGE_SIZE } from '@/shared/constants';
 import { Loader2 } from 'lucide-react';
 import { useSearchModalStore } from '../hook/useSearchModalStore';
 import { IFormattedPageData } from '@/entities/page/model/types';
