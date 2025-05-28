@@ -19,7 +19,7 @@ export const Nav = ({ name, path, isActive }: IMenuProps) => {
           />
           <span
             className={clsx(
-              'text-sm leading-tight font-bold tracking-widest group-hover:text-slate-200 group-focus-visible:text-slate-200',
+              'text-xs leading-tight font-bold tracking-widest group-hover:text-slate-200 group-focus-visible:text-slate-200 uppercase',
               {
                 'text-slate-200': isActive,
                 'text-slate-500': !isActive,

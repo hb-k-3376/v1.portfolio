@@ -24,9 +24,9 @@ export default async function page() {
         <Header />
         <main className="pt-24 lg:w-[52%] lg:py-24">
           {/**
-           * intro section
+           * about section
            */}
-          <Section id="intro">
+          <Section id="about">
             <div className="h-[500px]"></div>
           </Section>
           {/**
