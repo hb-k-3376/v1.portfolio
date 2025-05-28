@@ -5,6 +5,9 @@ import { Header } from '@/shared/ui/header';
 import { getPages } from '@/features/archive';
 import { HOME_PAGE_SIZE } from '@/shared/constants';
 import { IFormattedPageData } from '@/entities/page/model/types';
+import Link from 'next/link';
+import { ArchiveSection } from '@/features/portfolio/ui/ArchiveSection';
+import { Footer } from '@/shared/ui/Footer';
 
 /**
  *  루트 페이지
@@ -24,20 +27,7 @@ export default async function page() {
            * intro section
            */}
           <Section id="intro">
-            <div className="sticky z-20 top-0 md-4 md:-mx-12 md:px-12 w-screen py-5 bg-slate-900/75 backdrop-blur lg:opacity-0 lg:relative lg:top-auto lg:w-full">
-              <h2 className="text-slate-200 uppercase tracking-widest font-bold lg:sr-only">Notion</h2>
-            </div>
-            <ul className="group/list">
-              {pages.map(({ properties, id }, idx) => {
-                const pageData = { ...properties, id } as IFormattedPageData;
-                const formatted = formatPageData({ ...pageData });
-                return (
-                  <li className="mb-12" key={idx}>
-                    <PageCard {...formatted} />
-                  </li>
-                );
-              })}
-            </ul>
+            <div className="h-[500px]"></div>
           </Section>
           {/**
            * project section
@@ -48,10 +38,9 @@ export default async function page() {
           {/**
            * archive section
            */}
-          <Section id="archive">
-            <div className="h-[500px]"></div>
-          </Section>
+          <ArchiveSection pages={pages} />
           {/* <footer className="h-50 w-full">test</footer> */}
+          <Footer />
         </main>
       </div>
     </div>
