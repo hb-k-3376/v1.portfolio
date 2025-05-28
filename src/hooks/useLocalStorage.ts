@@ -22,13 +22,12 @@ export const useLocalStorage = () => {
       setSearchHistory([]);
     }
   }, []);
-
   /**
    * searchHistory 업데이트 시 리렌더링 트리거
    */
   useEffect(() => {
     try {
-      localStorage.set(LOCALSTORAGE_KEY_SEARCH_HISTORY, JSON.stringify(searchHistory));
+      localStorage.setItem(LOCALSTORAGE_KEY_SEARCH_HISTORY, JSON.stringify(searchHistory));
     } catch (error) {
       console.error('검색 기록 저장 중 오류:', error);
     }
@@ -56,7 +55,6 @@ export const useLocalStorage = () => {
       if (newArray.length > LOCALSTORAGE_LIMIT) {
         newArray = newArray.slice(0, LOCALSTORAGE_LIMIT);
       }
-
       setSearchHistory(newArray); // 저장
     } catch (error) {
       console.error('검색어 추가 중 에러 발생 : ', error);

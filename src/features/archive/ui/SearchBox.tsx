@@ -4,7 +4,7 @@ import { ModalPortal } from '@/shared/ui/ModalPortal';
 import { useSearchModal } from '../hook/useSearchModal';
 import { Search, X } from 'lucide-react';
 import { useSearchModalStore } from '../hook/useSearchModalStore';
-import { FormEvent, useState } from 'react';
+import { useState } from 'react';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 export const SearchBox = () => {
@@ -18,11 +18,23 @@ export const SearchBox = () => {
   if (!isOpen) return null;
 
   /**
-   * 검색
+   * 폼 검색
    */
-  const handleSearch = () => {
-    setQuery(input);
-    setSearchHistory(input || '');
+  const handleFormSearch = () => {
+    if (!input || !input.trim()) return;
+
+    const trimmed = input.trim();
+
+    setQuery(trimmed);
+    setSearchHistory(trimmed || '');
+    close();
+  };
+
+  /**
+   * 히스토리 검색
+   */
+  const handleHistorySearch = (historyTerm: string) => {
+    setQuery(historyTerm);
     close();
   };
 
@@ -39,7 +51,7 @@ export const SearchBox = () => {
           onClick={(e) => e.stopPropagation()}
           onSubmit={(e) => {
             e.preventDefault();
-            handleSearch();
+            handleFormSearch();
           }}
         >
           <div className="border-b h-15 border-[#3f3f47] px-5 py-3 flex items-center gap-5">
@@ -55,7 +67,7 @@ export const SearchBox = () => {
             />
           </div>
           <div className="py-4">
-            <p className="text-slate-300 text-xs px-4 py-1">최근 검색어</p>
+            <p className="text-slate-300 text-xs px-4 mb-3">최근 검색어</p>
             {searchHistory.length === 0 ? (
               <div className="py-12 flex justify-center items-center text-sm text-slate-400">
                 최근 검색 기록이 없습니다.
@@ -67,11 +79,17 @@ export const SearchBox = () => {
                     <li
                       className="bg-zinc-950 w-full px-6 py-3 cursor-pointer hover:bg-zinc-700"
                       key={idx}
-                      onClick={handleSearch}
+                      onClick={() => handleHistorySearch(term)}
                     >
                       <div className="flex justify-between items-center">
                         <span className="text-xl">{term}</span>
-                        <button type="button" onClick={() => removeSearchHistory(term)}>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            removeSearchHistory(term);
+                          }}
+                        >
                           <X className="hover:text-slate-200 active:scale-[0.95]" />
                         </button>
                       </div>
