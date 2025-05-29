@@ -41,7 +41,7 @@ export const SocialList = () => {
       </li>
       <li className="mr-5 shrink-0 text-xs">
         <ExternalLink
-          href="https://leetcode.com/u/priest-kim/"
+          href="https://leetcode.com/u/hb-k-3376/"
           ariaLabel="Leet Code (opens in a new tab)"
           title="Leet Code"
           className="block hover:text-teal-300 focus-visible:text-teal-300 m-auto"
