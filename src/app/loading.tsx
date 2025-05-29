@@ -3,6 +3,9 @@
 import { Bubbles } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
+/**
+ * 전역 로딩 페이지
+ */
 export default function Loading() {
   const [dotCount, setDotCount] = useState(1);
 

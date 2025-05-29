@@ -7,6 +7,10 @@ interface IContentRendererProps {
   content: Omit<ContentProperty, 'id' | 'type'>;
 }
 
+/**
+ * 노션에서 받아온 본문 데이터의 타입에 따라 다른 컴포넌트로 렌더링해주는 컴포넌트
+ * H3 , Img , Bullet Pointer, Code Field, Callout, Paragraph
+ */
 export const ContentRenderer = ({ content }: IContentRendererProps) => {
   /**
    * 헤더 3 일 경우

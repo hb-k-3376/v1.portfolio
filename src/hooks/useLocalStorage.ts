@@ -3,6 +3,9 @@
 import { LOCALSTORAGE_KEY_SEARCH_HISTORY } from '@/shared/constants';
 import { useEffect, useState } from 'react';
 
+/**
+ * 로컬스토리지 검색 기록 커스텀 훅
+ */
 export const useLocalStorage = () => {
   const [searchHistory, setSearchHistory] = useState<string[]>([]);
   const LOCALSTORAGE_LIMIT = 10;

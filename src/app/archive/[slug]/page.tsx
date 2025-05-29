@@ -5,7 +5,9 @@ import { BackButton } from '@/shared/ui';
 export interface ISlugProps {
   params: Promise<{ slug: string }>;
 }
-
+/**
+ * archive 상세 페이지
+ */
 export default async function page({ params }: ISlugProps) {
   const { slug } = await params;
   const { createdBy, description, modifiedBy, tags, title } = await getPageMetadataById(slug);

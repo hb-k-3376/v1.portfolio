@@ -3,6 +3,9 @@ import { Title } from '@/shared/ui/Title';
 import { Fragment } from 'react';
 import { IPage } from '../model/types';
 
+/**
+ *  Page 데이터를 card 형태로 보여주느 entity
+ */
 export const PageCard = ({ created_time, description, tags, title, id }: IPage) => {
   return (
     <div className="group relative grid pb-1 transition-all group-hover/list:opacity-50 hover:opacity-100 sm:grid-cols-8">

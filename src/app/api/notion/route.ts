@@ -4,6 +4,9 @@ import { PageObjectResponse, QueryDatabaseResponse } from '@notionhq/client/buil
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
+/**
+ * 노션의 페이지( 데이터베이스 ) 리스트를 fetch하는 api router
+ */
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);

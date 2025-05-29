@@ -5,6 +5,9 @@ import { LayoutPanelLeft, FolderArchive, Search } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchModalStore } from '../hook/useSearchModalStore';
 
+/**
+ * Archive 페이지 SNB
+ */
 export const ArchiveNav = () => {
   const open = useSearchModalStore((state) => state.open);
 

@@ -3,6 +3,9 @@ import { SearchBox } from '@/features/archive/ui/SearchBox';
 import { ARCHIVE_PAGE_SIZE } from '@/shared/constants';
 import { BackButton } from '@/shared/ui';
 
+/**
+ * 노션에서 불러오는 archive list
+ */
 export default async function page() {
   const initialData = await getPages({ pageSize: ARCHIVE_PAGE_SIZE, query: null });
   return (

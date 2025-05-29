@@ -5,7 +5,9 @@ import type { NextRequest } from 'next/server';
 export interface ISlugProps {
   params: Promise<{ slug: string }>;
 }
-
+/**
+ * 노션 페이지의 본문 ( Contents ) 데이터를 가져오는 api router
+ */
 export async function GET(_: NextRequest, { params }: ISlugProps) {
   try {
     const { slug } = await params;

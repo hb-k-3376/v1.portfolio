@@ -7,6 +7,9 @@ import { useSearchModalStore } from '../hook/useSearchModalStore';
 import { useState } from 'react';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 
+/**
+ * Archive 검색 박스
+ */
 export const SearchBox = () => {
   const { backdropRef, handleClickOutside, isOpen, close } = useSearchModal();
   const setQuery = useSearchModalStore((state) => state.setQuery);

@@ -5,6 +5,9 @@ import { Section } from '@/shared/ui';
 import { PageObjectResponse } from '@notionhq/client';
 import Link from 'next/link';
 
+/**
+ * 메인 페이지의 Notion Archive 리스트 섹션
+ */
 export const ArchiveSection = ({ pages }: { pages: PageObjectResponse[] }) => {
   return (
     <Section id="archive">
