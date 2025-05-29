@@ -5,7 +5,7 @@ export const SocialList = () => {
     <ul className="ml-1 mt-8 flex items-center" aria-label="Social media">
       <li className="mr-5 shrink-0 text-xs">
         <ExternalLink
-          href="https://github.com/Priest-kim"
+          href="https://github.com/hb-k-3376/"
           ariaLabel="Github (opens in a new tab)"
           title="Github"
           className="block hover:text-teal-300 focus-visible:text-teal-300"
@@ -17,7 +17,7 @@ export const SocialList = () => {
       </li>
       <li className="mr-5 shrink-0 text-xs">
         <ExternalLink
-          href="https://github.com/Priest-kim"
+          href="https://github.com/hb-k-3376/"
           ariaLabel="LinkedIn (opens in a new tab)"
           title="LinkedIn"
           className="block hover:text-teal-300 focus-visible:text-teal-300"

@@ -25,7 +25,7 @@ export const Footer = () => {
         로 스타일링 했습니다.
         <br />더 자세한 내용은 제&nbsp;
         <a
-          href="https://github.com/Priest-kim/"
+          href="https://github.com/hb-k-3376/"
           className="font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300"
           target="_blank"
           rel="noreferrer noopener"
@@ -37,7 +37,7 @@ export const Footer = () => {
         <br />
         Portfolio inspired by&nbsp;
         <a
-          href="https://github.com/bchiang7"
+          href="https://github.com/bchiang7/"
           className="font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300"
           target="_blank"
           rel="noreferrer noopener"
