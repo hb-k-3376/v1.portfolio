@@ -31,7 +31,7 @@ export const ArchiveSection = ({ pages }: { pages: PageObjectResponse[] }) => {
           className="flex items-center leading-tight font-semibold text-slate-200 group"
           aria-label="View Development Archive"
         >
-          <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">
+          <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none group-focus-visible:border-teal-300">
             View Development Archive
           </span>
           <svg
