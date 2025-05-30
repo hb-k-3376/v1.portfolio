@@ -1,7 +1,8 @@
 import { ContentProperty } from '@/shared/types';
 import { ContentsText } from '@/shared/ui';
-import { RichText } from '@/shared/ui/RichText';
 import { getColorClass } from '@/shared/utils';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { cb } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface IContentRendererProps {
   content: Omit<ContentProperty, 'id' | 'type'>;
@@ -66,14 +67,13 @@ export const ContentRenderer = ({ content }: IContentRendererProps) => {
    */
   if (content.code) {
     return (
-      <div className={`bg-gray-600 rounded-lg p-5 my-5`}>
-        <div className="uppercase pb-2">{content.code.language}</div>
-        {content.code.rich_text.map((text, idx) => {
-          console.log(text);
-
-          return <RichText item={text} key={idx} />;
-        })}
-      </div>
+      <SyntaxHighlighter
+        language={content.code.language}
+        style={cb}
+        customStyle={{ padding: '15px', borderRadius: '8px' }}
+      >
+        {content.code.rich_text[0].plain_text}
+      </SyntaxHighlighter>
     );
   }
   return null;

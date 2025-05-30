@@ -2,9 +2,9 @@
 @import 'tailwindcss';
 
 /* 테마 설정 */
-@theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-}
+/* @theme {
+  --text-primary: them(colors.amber.600)
+} */
 
 /* Box sizing 규칙 */
 *,
@@ -150,8 +150,6 @@ html {
 
 /* 셀렉션 스타일 */
 ::selection {
-  background-color: #b3d4fc;
-  color: #000;
   text-shadow: none;
 }
 
