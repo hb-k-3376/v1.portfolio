@@ -41,7 +41,7 @@ export const getStyleClasses = (annotations: Annotations): string => {
   if (annotations.strikethrough) classes.push('line-through');
   if (annotations.underline) classes.push('underline');
   if (annotations.code) {
-    classes.push('bg-gray-100 text-red-600! px-1 py-0.5 rounded text-sm font-mono');
+    classes.push('bg-gray-700 text-rose-400! px-1 py-0.5 rounded text-sm font-mono');
   }
 
   // 색상 적용

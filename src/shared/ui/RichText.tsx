@@ -5,6 +5,8 @@ import { getStyleClasses } from '../utils';
  * Rich text 별 스타일 적용
  */
 export const RichText = ({ item }: { item: RichTextProperty }) => {
+  console.log(item);
+
   const styleClasses = getStyleClasses(item.annotations);
   const content = item.plain_text;
 
