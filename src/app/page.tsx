@@ -1,13 +1,9 @@
 import { Section } from '@/shared/ui';
-import { formatPageData } from '@/entities/page/model/helper';
-import { PageCard } from '@/entities/page';
 import { Header } from '@/shared/ui/header';
 import { getPages } from '@/features/archive';
 import { HOME_PAGE_SIZE } from '@/shared/constants';
-import { IFormattedPageData } from '@/entities/page/model/types';
-import Link from 'next/link';
 import { ArchiveSection } from '@/features/portfolio/ui/ArchiveSection';
-import { Footer } from '@/shared/ui/Footer';
+import { Footer } from '@/shared/ui/footer';
 
 /**
  *  루트 페이지
