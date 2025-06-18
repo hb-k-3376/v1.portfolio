@@ -40,7 +40,7 @@ export const getPageContentById = async (slug: string) => {
  */
 export const getPages = async ({
   pageSize = '10',
-  cursor = undefined,
+  cursor,
   query,
 }: {
   pageSize?: string;
