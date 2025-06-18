@@ -45,7 +45,7 @@ export const Footer = () => {
         >
           Brittany Chiang
         </a>
-        's design aesthetic.
+        &apos;s design aesthetic.
       </p>
     </footer>
   );
