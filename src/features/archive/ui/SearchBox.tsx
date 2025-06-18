@@ -4,7 +4,7 @@ import { ModalPortal } from '@/shared/ui/ModalPortal';
 import { useSearchModal } from '../hook/useSearchModal';
 import { Search, X } from 'lucide-react';
 import { useSearchModalStore } from '../hook/useSearchModalStore';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 /**
@@ -44,7 +44,7 @@ export const SearchBox = () => {
   return (
     <ModalPortal>
       <div
-        className="fixed inset-0 z-50 bg-black/70 flex justify-center items-center items-start"
+        className="fixed inset-0 z-50 bg-black/70 flex justify-center items-start"
         ref={backdropRef}
         onClick={handleClickOutside}
       >
@@ -60,6 +60,7 @@ export const SearchBox = () => {
           <div className="border-b h-15 border-[#3f3f47] px-5 py-3 flex items-center gap-5">
             <Search size={18} className="text-[#7a7a7c]" />
             <input
+              autoFocus
               placeholder="검색어를 입력해주세요."
               className="text-lg text-slate-400 w-full bg-transparent placeholder-text-[#7a7a7c] placeholder-text-sm"
               aria-label="검색어"
