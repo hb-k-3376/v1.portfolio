@@ -23,7 +23,12 @@ export const ArchiveList = ({ initialData }: IArchiveListProps) => {
 
   const query = useSearchModalStore((state) => state.query);
 
-  const { pages, cursor, isLoading } = usePagesQuery({
+  const {
+    pages,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    cursor: _cursor, // TODO : 페이지 네이션
+    isLoading,
+  } = usePagesQuery({
     initialData: { pages: initialData, cursor: undefined },
     pageSize: ARCHIVE_PAGE_SIZE,
     cursor: currentCursor,
