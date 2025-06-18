@@ -6,6 +6,8 @@ import { BackButton } from '@/shared/ui';
 /**
  * 노션에서 불러오는 archive list
  */
+export const dynamic = 'force-dynamic'; // api 같은 외부 api를 서버 사이드에서 호출하려고 할 시 에 문제가 됨
+
 export default async function page() {
   const initialData = await getPages({ pageSize: ARCHIVE_PAGE_SIZE, query: null });
   return (
