@@ -14,7 +14,28 @@ export async function GET(request: NextRequest) {
     const cursor = searchParams.get('cursor') || undefined;
     const query = searchParams.get('query') || null;
 
-    console.log('server - query', query);
+    const baseFilter = {
+      property: 'status',
+      status: {
+        equals: 'published',
+      },
+    };
+
+    const hasQueryKeyword = query && query.trim() !== '';
+
+    const filter = hasQueryKeyword
+      ? {
+          and: [
+            baseFilter,
+            {
+              property: 'title',
+              rich_text: {
+                contains: query.trim(),
+              },
+            },
+          ],
+        }
+      : baseFilter;
 
     const databaseId = process.env.NOTION_DATABASE_ID;
     // api 요청
@@ -22,12 +43,7 @@ export async function GET(request: NextRequest) {
       database_id: databaseId!,
       start_cursor: cursor,
       page_size: pageSize,
-      filter: {
-        property: 'status',
-        status: {
-          equals: 'published',
-        },
-      },
+      filter,
       sorts: [
         {
           property: 'created_time', // 최신글 순서대로
