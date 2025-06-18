@@ -50,15 +50,11 @@ export const useLocalStorage = () => {
     try {
       const trimmed = query.trim();
       if (trimmed === '') return;
-      let newArray = removeDuplication(searchHistory, trimmed);
+      const uniqueHistory = removeDuplication(searchHistory, trimmed);
 
-      newArray.unshift(trimmed); // 검색어 가장 앞에 저장
+      uniqueHistory.unshift(trimmed); // 검색어 가장 앞에 저장
 
-      // 검색 기록 개수 제한
-      if (newArray.length > LOCALSTORAGE_LIMIT) {
-        newArray = newArray.slice(0, LOCALSTORAGE_LIMIT);
-      }
-      setSearchHistory(newArray); // 저장
+      setSearchHistory(uniqueHistory.slice(0, LOCALSTORAGE_LIMIT)); // 저장
     } catch (error) {
       console.error('검색어 추가 중 에러 발생 : ', error);
       setSearchHistory([]); // 초기화
@@ -72,9 +68,8 @@ export const useLocalStorage = () => {
     try {
       const trimmed = query.trim();
       if (trimmed === '') return;
-      let newArray = removeDuplication(searchHistory, trimmed); // 삭제
 
-      setSearchHistory(newArray); // 저장
+      setSearchHistory(removeDuplication(searchHistory, trimmed)); // 저장
     } catch (error) {
       console.error('검색어 추가 중 에러 발생 : ', error);
     }
