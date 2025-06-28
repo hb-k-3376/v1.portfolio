@@ -2,13 +2,15 @@ import { PageCard } from '@/entities/page';
 import { formatPageData } from '@/entities/page/model/helper';
 import { IFormattedPageData } from '@/entities/page/model/types';
 import { Section } from '@/shared/ui';
-import { PageObjectResponse } from '@notionhq/client';
+import { HOME_PAGE_SIZE } from '@/shared/constants';
+import { getPages } from '@/features/archive';
 import Link from 'next/link';
 
 /**
  * 메인 페이지의 Notion Archive 리스트 섹션
  */
-export const ArchiveSection = ({ pages }: { pages: PageObjectResponse[] }) => {
+export const ArchiveSection = async () => {
+  const { pages } = await getPages({ pageSize: HOME_PAGE_SIZE, query: null });
   return (
     <Section id="archive">
       <div className="sticky z-20 top-0 md-4 md:-mx-12 md:px-12 w-screen py-5 bg-slate-900/75 backdrop-blur lg:opacity-0 lg:relative lg:top-auto lg:w-full">
