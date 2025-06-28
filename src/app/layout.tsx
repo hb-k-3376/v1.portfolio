@@ -5,7 +5,10 @@ import '@/shared/styles/globals.css';
 
 export const metadata: Metadata = {
   title: 'Hyun',
-  description: 'v2 portfolio',
+  description: 'v1 portfolio',
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

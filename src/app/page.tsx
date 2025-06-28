@@ -7,7 +7,7 @@ import { SectionLoading } from '@/shared/ui/loading/SectionLoading';
 
 /**
  *  루트 페이지
- *  /intro - introduction 영역
+ *  /about - about 영역
  *  /project   - project 영역
  *  /archive    - archive 영역
  */
