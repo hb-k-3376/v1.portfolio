@@ -28,7 +28,7 @@ export const PageRow = ({ created_time, description, tags, title, id }: IPage) =
         <Link
           href={`/archive/${id}`}
           ref={linkRef}
-          className="group-hover:text-teal-300 group-hover:font-bold focus-visible:text-teal-300 items-baseline leading-tight"
+          className="group-hover:text-primary group-hover:font-bold focus-visible:text-primary items-baseline leading-tight"
         >
           {title}
         </Link>

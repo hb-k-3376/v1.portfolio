@@ -94,7 +94,7 @@ export const SearchBox = () => {
                             removeSearchHistory(term);
                           }}
                         >
-                          <X className="hover:text-slate-200 active:scale-[0.95]" />
+                          <X className="hover:text-base active:scale-[0.95]" />
                         </button>
                       </div>
                     </li>

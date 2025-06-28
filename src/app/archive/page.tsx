@@ -16,7 +16,7 @@ export default async function page() {
         <SearchBox />
         <ArchiveNav />
         <BackButton label="Hyunbin" path="/" />
-        <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">Archive</h1>
+        <h1 className="text-4xl font-bold tracking-tight text-base sm:text-5xl">Archive</h1>
         <ArchiveList initialData={initialData.pages} />
       </div>
     </main>

@@ -12,7 +12,7 @@ export const ArchiveSection = ({ pages }: { pages: PageObjectResponse[] }) => {
   return (
     <Section id="archive">
       <div className="sticky z-20 top-0 md-4 md:-mx-12 md:px-12 w-screen py-5 bg-slate-900/75 backdrop-blur lg:opacity-0 lg:relative lg:top-auto lg:w-full">
-        <h2 className="text-slate-200 uppercase tracking-widest font-bold lg:sr-only">Archive</h2>
+        <h2 className="text-base uppercase tracking-widest font-bold lg:sr-only">Archive</h2>
       </div>
       <ul className="group/list">
         {pages.map(({ properties, id }, idx) => {
@@ -28,10 +28,10 @@ export const ArchiveSection = ({ pages }: { pages: PageObjectResponse[] }) => {
       <div className="mt-12">
         <Link
           href={'/archive'}
-          className="flex items-center leading-tight font-semibold text-slate-200 group"
+          className="flex items-center leading-tight font-semibold text-base group"
           aria-label="View Development Archive"
         >
-          <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none group-focus-visible:border-teal-300">
+          <span className="border-b border-transparent pb-px transition group-hover:border-primary motion-reduce:transition-none group-focus-visible:border-primary">
             View Development Archive
           </span>
           <svg

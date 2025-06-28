@@ -51,10 +51,10 @@ export const ArchiveList = ({ initialData }: IArchiveListProps) => {
     <table className="mt-12 w-full border-collapse text-left table-fixed">
       <thead className="sticky top-0 z-10 border-b border-slate-300/10 bg-slate-900/75 px-6 py-5 backdrop-blur">
         <tr>
-          <th className="py-4 pr-8 w-1/12 text-sm font-semibold text-slate-200">created</th>
-          <th className="py-4 pr-8 w-1/6 text-sm font-semibold text-slate-200">subject</th>
-          <th className="hidden py-4 pr-8 w-1/5 text-sm font-semibold text-slate-200 md:table-cell">tags</th>
-          <th className="hidden py-4 w-1/4 pr-8 text-sm font-semibold text-slate-200 lg:table-cell">desc</th>
+          <th className="py-4 pr-8 w-1/12 text-sm font-semibold text-base">created</th>
+          <th className="py-4 pr-8 w-1/6 text-sm font-semibold text-base">subject</th>
+          <th className="hidden py-4 pr-8 w-1/5 text-sm font-semibold text-base md:table-cell">tags</th>
+          <th className="hidden py-4 w-1/4 pr-8 text-sm font-semibold text-base lg:table-cell">desc</th>
         </tr>
       </thead>
       <tbody>
@@ -63,7 +63,7 @@ export const ArchiveList = ({ initialData }: IArchiveListProps) => {
           <tr>
             <td colSpan={4}>
               <div className="flex justify-center items-center h-[300px]">
-                <Loader2 className="text-teal-300 animate-spin" size={100} />
+                <Loader2 className="text-primary animate-spin" size={100} />
               </div>
             </td>
           </tr>

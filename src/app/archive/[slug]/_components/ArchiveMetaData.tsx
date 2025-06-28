@@ -10,21 +10,21 @@ export const ArchiveMetaData = ({ createdBy, description, modifiedBy, tags }: Ar
   return (
     <dl className="flex flex-col gap-4 py-8">
       <div className="lg:flex lg:items-center">
-        <dt className="w-40 mb-2 lg:mb-0 text-slate-200 flex items-center gap-1">
+        <dt className="w-40 mb-2 lg:mb-0 text-base flex items-center gap-1">
           <Clock size={14} />
           created
         </dt>
         <dd>{createdBy}</dd>
       </div>
       <div className="lg:flex lg:items-center w-full">
-        <dt className="w-40 mb-2 lg:mb-0 text-slate-200 flex-shrink-0 flex items-center gap-1">
+        <dt className="w-40 mb-2 lg:mb-0 text-base flex-shrink-0 flex items-center gap-1">
           <Text size={14} />
           description
         </dt>
         <dd className="flex-1">{description}</dd>
       </div>
       <div className="lg:flex lg:items-center ">
-        <dt className="w-40 mb-2 lg:mb-0 text-slate-200 flex items-center gap-1">
+        <dt className="w-40 mb-2 lg:mb-0 text-base flex items-center gap-1">
           <List size={14} />
           tags
         </dt>
@@ -37,7 +37,7 @@ export const ArchiveMetaData = ({ createdBy, description, modifiedBy, tags }: Ar
         </dd>
       </div>
       <div className="lg:flex lg:items-center">
-        <dt className="w-40 mb-2 lg:mb-0 text-slate-200 flex items-center gap-1">
+        <dt className="w-40 mb-2 lg:mb-0 text-base flex items-center gap-1">
           <Clock size={14} />
           modified
         </dt>

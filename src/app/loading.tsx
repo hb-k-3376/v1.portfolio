@@ -7,10 +7,10 @@ export default function Loading() {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="flex gap-10 items-center">
-        <div className="animate-spin text-teal-300">
+        <div className="animate-spin text-primary">
           <Bubbles size={50} />
         </div>
-        <p className="text-slate-600 text-xl font-semibold">페이지를 불러 오는 중입니다.</p>
+        <p className="text-slate-600 text-lg font-semibold">페이지를 불러 오는 중입니다.</p>
       </div>
     </div>
   );

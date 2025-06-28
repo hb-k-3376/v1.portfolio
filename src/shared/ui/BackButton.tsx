@@ -8,7 +8,7 @@ interface BackButtonProps {
 
 export const BackButton = ({ path, label }: BackButtonProps) => {
   return (
-    <Link className="group text-teal-300 mb-2 inline-flex items-center font-semibold leading-tight " href={path}>
+    <Link className="group text-primary mb-2 inline-flex items-center font-semibold leading-tight " href={path}>
       <ArrowLeft className="mr-1 w-4 h-4 transition-transform group-hover:-translate-x-2" fill="currentColor" />
       {label}
     </Link>

@@ -12,7 +12,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ko" className="scroll-smooth">
       <body
-        className="bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900"
+        className="bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-primary selection:text-teal-900"
         cz-shortcut-listen="true"
       >
         <Providers>

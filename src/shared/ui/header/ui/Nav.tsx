@@ -10,19 +10,19 @@ export const Nav = ({ name, path, isActive }: IMenuProps) => {
           <span
             className={clsx(
               'mr-4 h-px transition-all',
-              'group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none',
+              'group-hover:w-16 group-hover:bg-base group-focus-visible:w-16 group-focus-visible:bg-base motion-reduce:transition-none',
               {
-                'w-16 bg-slate-200': isActive,
-                ' w-8 bg-slate-600': !isActive,
+                'w-16 bg-primary': isActive,
+                'w-8 bg-slate-600': !isActive,
               }
             )}
           />
           <span
             className={clsx(
-              'text-xs leading-tight font-bold tracking-widest group-hover:text-slate-200 group-focus-visible:text-slate-200 uppercase',
+              'text-xs leading-tight font-bold tracking-widest group-hover:text-base group-focus-visible:text-base uppercase',
               {
-                'text-slate-200': isActive,
-                'text-slate-500': !isActive,
+                'text-primary': isActive,
+                'text-muted': !isActive,
               }
             )}
           >
