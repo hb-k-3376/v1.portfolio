@@ -4,13 +4,12 @@ const isServer = typeof window === 'undefined';
 
 // 서버 사이드에서 baseURL 생성
 const getServerBaseURL = () => {
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}/api`;
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api`;
   }
   // 로컬 개발 환경
-  return 'http://localhost:3000';
+  return 'http://localhost:3000/api';
 };
-console.log(getServerBaseURL());
 const baseURL = isServer ? getServerBaseURL() : '/api';
 
 /**
