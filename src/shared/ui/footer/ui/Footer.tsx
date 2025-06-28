@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="max-w-md pb-16 text-sm text-muted sm:pb-0">
+    <footer className="max-w-lg pb-16 text-sm text-muted sm:pb-0">
       <p>
         이 프로젝트는&nbsp;
         <a
@@ -12,7 +12,18 @@ export const Footer = () => {
         >
           Next.js
         </a>
-        로 만들었으며,
+        로 제작되었고,
+        <a
+          href="https://vercel.com/"
+          className="font-medium text-slate-400 hover:text-primary focus-visible:text-primary"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="Vercel (opens in a new tab)"
+        >
+          Vercel&nbsp;
+        </a>
+        에 배포되었습니다.
+        <br />
         <a
           href="https://tailwindcss.com/"
           className="font-medium text-slate-400 hover:text-primary focus-visible:text-primary"
@@ -22,7 +33,17 @@ export const Footer = () => {
         >
           Tailwind CSS
         </a>
-        로 스타일링 했습니다.
+        로 스타일링 했으며, 타이포그래피에는&nbsp;
+        <a
+          href="https://fonts.google.com/specimen/Inter"
+          className="font-medium text-slate-400 hover:text-primary focus-visible:text-primary"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="Inter Font (opens in a new tab)"
+        >
+          Inter&nbsp;
+        </a>
+        폰트를 사용했습니다.
         <br />더 자세한 내용은 제&nbsp;
         <a
           href="https://github.com/hb-k-3376/"
@@ -33,7 +54,7 @@ export const Footer = () => {
         >
           Github
         </a>
-        를 참고하시면 됩니다.
+        저장소를 참고해주세요.
         <br />
         Portfolio inspired by&nbsp;
         <a

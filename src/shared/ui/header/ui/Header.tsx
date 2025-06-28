@@ -15,7 +15,9 @@ export const Header = () => {
         <h1 className="text-4xl font-bold tracking-tight text-base sm:text-5xl">Hyunbin Kim</h1>
         <h2 className="mt-3 text-lg font-medium tracking-tight text-base sm:text-xl">Frontend Engineer</h2>
         <p className="mt-4 max-w-xs leading-tight text-inherit">
-          호기심과 끈기로 사용자 중심의 웹 경험을 구축하며, 깊이 있는 사고와 꼼꼼한 실행으로 완성도 높은 웹을 만듭니다.
+          호기심을 원동력으로, 끈기 있게 사용자 중심의 웹을 만들어갑니다.
+          <br />
+          깊이 있게 고민하고, 꼼꼼하게 구현하여 완성도 높은 사용자 경험을 추구합니다.
         </p>
         <nav className="mt-16 w-max hidden lg:block">
           <ul>
