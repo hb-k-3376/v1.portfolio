@@ -1,11 +1,11 @@
 'use client';
 
-import { ModalPortal } from '@/shared/ui/ModalPortal';
-import { useSearchModal } from '../hook/useSearchModal';
-import { Search, X } from 'lucide-react';
-import { useSearchModalStore } from '../hook/useSearchModalStore';
-import { useRef, useState } from 'react';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
+import { ModalPortal } from '@/shared/ui/ModalPortal';
+import { Search, X } from 'lucide-react';
+import { useState } from 'react';
+import { useSearchModal } from '../hook/useSearchModal';
+import { useSearchModalStore } from '../hook/useSearchModalStore';
 
 /**
  * Archive 검색 박스
