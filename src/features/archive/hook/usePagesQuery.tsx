@@ -1,4 +1,4 @@
-import { useSuspenseQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { PageObjectResponse } from '@notionhq/client';
 import { getPages } from '../services';
 
@@ -19,7 +19,7 @@ interface IUsePagesQueryProps {
  * @returns
  */
 export const usePagesQuery = ({ initialData, pageSize = '10', cursor = undefined, query }: IUsePagesQueryProps) => {
-  const getPagesQuery = useSuspenseQuery({
+  const getPagesQuery = useQuery({
     queryKey: ['pages', { pageSize, cursor, query }], // pageSize와 cursor로 캐시 키
     queryFn: () => getPages({ pageSize, cursor, query }),
     initialData,

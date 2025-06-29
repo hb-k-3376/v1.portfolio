@@ -7,28 +7,33 @@ import { Section } from '@/shared/ui';
 import { HOME_PAGE_SIZE } from '@/shared/constants';
 import Link from 'next/link';
 import { usePagesQuery } from '@/features/archive/hook/usePagesQuery';
+import { SectionLoading } from '@/shared/ui/skeleton/SectionLoading';
 
 /**
  * 메인 페이지의 Notion Archive 리스트 섹션
  */
 export const ArchiveSection = () => {
-  const { pages } = usePagesQuery({ pageSize: HOME_PAGE_SIZE, query: null });
+  const { pages, isLoading } = usePagesQuery({ pageSize: HOME_PAGE_SIZE, query: null });
   return (
     <Section id="archive">
       <div className="sticky z-20 top-0 md-4 md:-mx-12 md:px-12 w-screen py-5 bg-slate-900/75 backdrop-blur lg:opacity-0 lg:relative lg:top-auto lg:w-full">
         <h2 className="text-base uppercase tracking-widest font-bold lg:sr-only">Archive</h2>
       </div>
-      <ul className="group/list">
-        {pages.map(({ properties, id }, idx) => {
-          const pageData = { ...properties, id } as IFormattedPageData;
-          const formatted = formatPageData({ ...pageData });
-          return (
-            <li className="mb-12" key={idx}>
-              <PageCard {...formatted} />
-            </li>
-          );
-        })}
-      </ul>
+      {isLoading ? (
+        <SectionLoading />
+      ) : (
+        <ul className="group/list">
+          {pages.map(({ properties, id }, idx) => {
+            const pageData = { ...properties, id } as IFormattedPageData;
+            const formatted = formatPageData({ ...pageData });
+            return (
+              <li className="mb-12" key={idx}>
+                <PageCard {...formatted} />
+              </li>
+            );
+          })}
+        </ul>
+      )}
       <div className="mt-12">
         <Link
           href={'/archive'}

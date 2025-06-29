@@ -1,9 +1,7 @@
 import { Section } from '@/shared/ui';
 import { Header } from '@/shared/ui/header';
-import { Suspense } from 'react';
 import { ArchiveSection } from '@/features/portfolio/ui/ArchiveSection';
 import { Footer } from '@/shared/ui/footer';
-import { SectionLoading } from '@/shared/ui/suspense/SectionLoading';
 
 /**
  *  루트 페이지
@@ -34,9 +32,7 @@ export default function page() {
            * archive section
            * 동적으로 노션에서 데이터를 불러오기 떄문에 lazy loading
            */}
-          <Suspense fallback={<SectionLoading />}>
-            <ArchiveSection />
-          </Suspense>
+          <ArchiveSection />
           <Footer />
         </main>
       </div>
