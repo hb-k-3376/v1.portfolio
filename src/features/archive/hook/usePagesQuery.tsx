@@ -3,10 +3,6 @@ import { PageObjectResponse } from '@notionhq/client';
 import { getPages } from '../services';
 
 interface IUsePagesQueryProps {
-  initialData?: {
-    pages: PageObjectResponse[];
-    cursor: string | undefined;
-  };
   pageSize?: string;
   cursor?: string | undefined;
   query: string | null;
@@ -18,11 +14,10 @@ interface IUsePagesQueryProps {
  * @param {string} object.cursor 초기값은 undefined, 다음 페이지의 시작 위치 저장 데이터
  * @returns
  */
-export const usePagesQuery = ({ initialData, pageSize = '10', cursor = undefined, query }: IUsePagesQueryProps) => {
+export const usePagesQuery = ({ pageSize = '10', cursor = undefined, query }: IUsePagesQueryProps) => {
   const getPagesQuery = useQuery({
     queryKey: ['pages', { pageSize, cursor, query }], // pageSize와 cursor로 캐시 키
     queryFn: () => getPages({ pageSize, cursor, query }),
-    initialData,
   });
 
   return {

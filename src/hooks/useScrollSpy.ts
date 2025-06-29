@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 
 /**
  * 스크롤을 감지하고 섹션의 id를 return 해주는 커스텀 훅
- * @param sectionIds about |  project | archive
- * @param options style | elements
+ * @param {string} sectionIds about |  project | archive
+ * @param {object} options style | elements
  */
 export const useScrollSpy = (sectionIds: string[], options?: IntersectionObserverInit) => {
   const [activeId, setActiveId] = useState<string>('');
