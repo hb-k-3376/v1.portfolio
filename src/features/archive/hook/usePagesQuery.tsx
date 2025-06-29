@@ -1,5 +1,4 @@
 import { useQuery } from '@tanstack/react-query';
-import { PageObjectResponse } from '@notionhq/client';
 import { getPages } from '../services';
 
 interface IUsePagesQueryProps {
