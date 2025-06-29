@@ -3,7 +3,7 @@ import { Header } from '@/shared/ui/header';
 import { Suspense } from 'react';
 import { ArchiveSection } from '@/features/portfolio/ui/ArchiveSection';
 import { Footer } from '@/shared/ui/footer';
-import { SectionLoading } from '@/shared/ui/loading/SectionLoading';
+import { SectionLoading } from '@/shared/ui/suspense/SectionLoading';
 
 /**
  *  루트 페이지
