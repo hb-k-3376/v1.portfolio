@@ -10,9 +10,30 @@ interface IContentRendererProps {
 
 /**
  * 노션에서 받아온 본문 데이터의 타입에 따라 다른 컴포넌트로 렌더링해주는 컴포넌트
- * H3 , Img , Bullet Pointer, Code Field, Callout, Paragraph
+ * 빈 블럭, H1, H2, H3, Img , Bullet Pointer, Code Field, Callout, Paragraph
  */
 export const ContentRenderer = ({ content }: IContentRendererProps) => {
+  /**
+   * 헤더 1 일 경우
+   */
+  if (content.heading_1) {
+    return (
+      <h1 className="text-4xl pt-5">
+        <ContentsText paragraph={content.heading_1} className="font-bold" />
+      </h1>
+    );
+  }
+  /**
+   * 헤더 2 일 경우
+   */
+  if (content.heading_2) {
+    return (
+      <h3 className="text-3xl pt-5">
+        <ContentsText paragraph={content.heading_2} className="font-bold" />
+      </h3>
+    );
+  }
+
   /**
    * 헤더 3 일 경우
    */
@@ -27,9 +48,16 @@ export const ContentRenderer = ({ content }: IContentRendererProps) => {
    * 이미지 일 경우
    */
   if (content.image) {
+    if (content.image.external) {
+      return (
+        <div className="flex justify-center py-5">
+          <img src={content.image?.external?.url} loading="lazy" alt={content?.image?.caption[0] || '이미지'} />
+        </div>
+      );
+    }
     return (
       <div className="flex justify-center py-5">
-        <img src={content.image?.file.url} loading="lazy" alt={content?.image?.caption[0] || '이미지'} />
+        <img src={content.image?.file?.url} loading="lazy" alt={content?.image?.caption[0] || '이미지'} />
       </div>
     );
   }
@@ -37,6 +65,9 @@ export const ContentRenderer = ({ content }: IContentRendererProps) => {
    * 글 (text) 일 경우
    */
   if (content.paragraph) {
+    if (content.paragraph.rich_text.length === 0) {
+      return <div className="h-10" />; // 공백
+    }
     return <ContentsText paragraph={content.paragraph} className="py-2" />;
   }
   /**

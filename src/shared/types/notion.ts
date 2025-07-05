@@ -42,7 +42,9 @@ export type MultiSelectProperty = {
 export type ContentProperty = {
   paragraph?: ParagraphProperty;
   image?: ImageProperty;
-  heading_3?: Heading3Property;
+  heading_1?: HeadingProperty;
+  heading_2?: HeadingProperty;
+  heading_3?: HeadingProperty;
   bulleted_list_item?: BulletedPointProperty;
   callout?: CallOutProperty;
   code?: CodeFieldProperty;
@@ -77,7 +79,7 @@ export type BulletedPointProperty = {
 /**
  * 헤더 3 프로퍼티
  */
-export type Heading3Property = {
+export type HeadingProperty = {
   is_toggleable: boolean;
   color: string;
   rich_text: RichTextProperty[];
@@ -109,10 +111,11 @@ export type RichTextProperty = {
  */
 export type ImageProperty = {
   caption: string[];
-  file: {
+  file?: {
     url: string;
     expiry_time: string;
   };
+  external?: { url: string };
   type: string;
 };
 

@@ -34,7 +34,6 @@ export const ArchiveList = () => {
   // const handleNextPage = () => {
   //   setCurrentCursor(cursor);
   // };
-
   return (
     <tbody>
       {/** 데이터 페칭  */}

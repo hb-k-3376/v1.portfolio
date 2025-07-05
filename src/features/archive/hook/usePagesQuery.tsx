@@ -17,6 +17,7 @@ export const usePagesQuery = ({ pageSize = '10', cursor = undefined, query }: IU
   const getPagesQuery = useQuery({
     queryKey: ['pages', { pageSize, cursor, query }], // pageSize와 cursor로 캐시 키
     queryFn: () => getPages({ pageSize, cursor, query }),
+    refetchOnWindowFocus: true, // default
   });
 
   return {

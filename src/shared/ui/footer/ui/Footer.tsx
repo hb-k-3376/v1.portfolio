@@ -33,7 +33,7 @@ export const Footer = () => {
         >
           Tailwind CSS
         </a>
-        로 스타일링 했으며, 타이포그래피에는&nbsp;
+        로 스타일링 했으며,&nbsp;
         <a
           href="https://fonts.google.com/specimen/Inter"
           className="font-medium text-slate-400 hover:text-primary focus-visible:text-primary"
