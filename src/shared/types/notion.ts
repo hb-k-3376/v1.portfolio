@@ -116,7 +116,7 @@ export type ImageProperty = {
     expiry_time: string;
   };
   external?: { url: string };
-  type: string;
+  type: 'external' | 'file';
 };
 
 /**

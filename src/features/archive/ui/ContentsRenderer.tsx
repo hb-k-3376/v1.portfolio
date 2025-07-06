@@ -1,8 +1,11 @@
 import { ContentProperty } from '@/shared/types';
 import { ContentsText } from '@/shared/ui';
-import { getColorClass } from '@/shared/utils';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { cb } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { BulletPointBlock } from './content-blocks/BulletPointBlock';
+import { CalloutBlock } from './content-blocks/CalloutBlock';
+import { CodeBlock } from './content-blocks/CodeBlock';
+import { HeadingBlock } from './content-blocks/HeadingBlock';
+import { ImageBlock } from './content-blocks/ImageBlock';
+import { ParagraphBlock } from './content-blocks/ParagraphBlock';
 
 interface IContentRendererProps {
   content: Omit<ContentProperty, 'id' | 'type'>;
@@ -13,99 +16,54 @@ interface IContentRendererProps {
  * 빈 블럭, H1, H2, H3, Img , Bullet Pointer, Code Field, Callout, Paragraph
  */
 export const ContentRenderer = ({ content }: IContentRendererProps) => {
-  /**
-   * 헤더 1 일 경우
-   */
+  // 제목 블록 렌더링
   if (content.heading_1) {
     return (
-      <h1 className="text-4xl pt-5">
+      <HeadingBlock level={1}>
         <ContentsText paragraph={content.heading_1} className="font-bold" />
-      </h1>
+      </HeadingBlock>
     );
   }
-  /**
-   * 헤더 2 일 경우
-   */
   if (content.heading_2) {
     return (
-      <h3 className="text-3xl pt-5">
+      <HeadingBlock level={2}>
         <ContentsText paragraph={content.heading_2} className="font-bold" />
-      </h3>
+      </HeadingBlock>
     );
   }
-
-  /**
-   * 헤더 3 일 경우
-   */
   if (content.heading_3) {
     return (
-      <h3 className="text-2xl pt-5">
+      <HeadingBlock level={3}>
         <ContentsText paragraph={content.heading_3} className="font-bold" />
-      </h3>
-    );
-  }
-  /**
-   * 이미지 일 경우
-   */
-  if (content.image) {
-    if (content.image.external) {
-      return (
-        <div className="flex justify-center py-5">
-          <img src={content.image?.external?.url} loading="lazy" alt={content?.image?.caption[0] || '이미지'} />
-        </div>
-      );
-    }
-    return (
-      <div className="flex justify-center py-5">
-        <img src={content.image?.file?.url} loading="lazy" alt={content?.image?.caption[0] || '이미지'} />
-      </div>
-    );
-  }
-  /**
-   * 글 (text) 일 경우
-   */
-  if (content.paragraph) {
-    if (content.paragraph.rich_text.length === 0) {
-      return <div className="h-10" />; // 공백
-    }
-    return <ContentsText paragraph={content.paragraph} className="py-2" />;
-  }
-  /**
-   * 블렛 포인터 인 경우
-   */
-  if (content.bulleted_list_item) {
-    return (
-      <span className="flex gap-2">
-        •
-        <ContentsText paragraph={content.bulleted_list_item} />
-      </span>
-    );
-  }
-  /**
-   * 콜아웃 인 경우
-   */
-  if (content.callout) {
-    return (
-      <div className={`${getColorClass(content.callout.color)} rounded-lg p-5 flex my-5`}>
-        <div className="mr-5">{content.callout.icon.emoji}</div>
-        <ContentsText paragraph={content.callout} />
-      </div>
+      </HeadingBlock>
     );
   }
 
-  /**
-   * 코드 인 경우
-   */
-  if (content.code) {
-    return (
-      <SyntaxHighlighter
-        language={content.code.language}
-        style={cb}
-        customStyle={{ padding: '15px', borderRadius: '8px' }}
-      >
-        {content.code.rich_text[0].plain_text}
-      </SyntaxHighlighter>
-    );
+  // 이미지 블록 렌더링
+  if (content.image) {
+    return <ImageBlock image={content.image} type={content.image.type} />;
   }
-  return null;
+
+  // 텍스트 블록 렌더링
+  if (content.paragraph) {
+    return <ParagraphBlock paragraph={content.paragraph} />;
+  }
+
+  // 리스트 블록 렌더링
+  if (content.bulleted_list_item) {
+    return <BulletPointBlock bulletPoint={content.bulleted_list_item} />;
+  }
+
+  // 콜아웃 블록 렌더링
+  if (content.callout) {
+    return <CalloutBlock callout={content.callout} />;
+  }
+
+  // 코드 블록 렌더링
+  if (content.code) {
+    return <CodeBlock code={content.code} />;
+  }
+
+  // 매칭되는 컨텐츠 타입이 없거나 빈 블록인 경우
+  return <div className="h-4" />; // 빈 공간 유지
 };
