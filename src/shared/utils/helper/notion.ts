@@ -1,4 +1,4 @@
-import { Annotations } from '@/shared/types';
+import { Annotations, ImageProperty, RichTextProperty } from '@/shared/types';
 
 /**
  * 색을 테일윈드 색으로 매칭 해주는 헬퍼 함수
@@ -48,4 +48,31 @@ export const getStyleClasses = (annotations: Annotations): string => {
   classes.push(getColorClass(annotations.color));
 
   return classes.join(' ');
+};
+
+/**
+ * rich_text 배열에서 모든 plain_text를 추출하여 하나의 문자열 합침.
+ */
+export const getPlainText = (richTexts: RichTextProperty[]): string => {
+  return richTexts.map((richText) => richText.plain_text).join('');
+};
+
+/**
+ * image 블록에서 type에 따라 적절한 URL을 반환.
+ */
+export const getImageUrl = (image: ImageProperty): string | undefined => {
+  if (image.type === 'external') {
+    return image.external?.url;
+  }
+  if (image.type === 'file') {
+    return image.file?.url;
+  }
+  return undefined;
+};
+
+/**
+ * image 블록에서 캡션을 추출. 없으면 기본값을 반환
+ */
+export const getImageCaption = (image: ImageProperty, defaultCaption = '이미지'): string => {
+  return getPlainText(image.caption) || defaultCaption;
 };

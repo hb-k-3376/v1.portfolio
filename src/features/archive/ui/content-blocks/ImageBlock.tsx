@@ -1,23 +1,21 @@
 import { ImageProperty } from '@/shared/types';
+import { getImageUrl, getImageCaption } from '@/shared/utils';
 
 interface IImageBlockProps {
   image: ImageProperty;
-  type: 'external' | 'file';
 }
 
-export const ImageBlock = ({ image, type }: IImageBlockProps) => {
-  switch (type) {
-    case 'external':
-      return (
-        <div className="flex justify-center py-5">
-          <img src={image.external?.url} loading="lazy" alt={image?.caption[0] || '이미지'} />
-        </div>
-      );
-    case 'file':
-      return (
-        <div className="flex justify-center py-5">
-          <img src={image.file?.url} loading="lazy" alt={image?.caption[0] || '이미지'} />
-        </div>
-      );
+export const ImageBlock = ({ image }: IImageBlockProps) => {
+  const src = getImageUrl(image);
+  const alt = getImageCaption(image);
+
+  if (!src) {
+    return null; // 또는 placeholder 이미지
   }
+
+  return (
+    <div className="flex justify-center py-5">
+      <img src={src} loading="lazy" alt={alt} />
+    </div>
+  );
 };

@@ -110,7 +110,7 @@ export type RichTextProperty = {
  * 이미지 프로퍼티
  */
 export type ImageProperty = {
-  caption: string[];
+  caption: RichTextProperty[];
   file?: {
     url: string;
     expiry_time: string;

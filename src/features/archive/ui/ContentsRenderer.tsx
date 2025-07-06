@@ -41,7 +41,7 @@ export const ContentRenderer = ({ content }: IContentRendererProps) => {
 
   // 이미지 블록 렌더링
   if (content.image) {
-    return <ImageBlock image={content.image} type={content.image.type} />;
+    return <ImageBlock image={content.image} />;
   }
 
   // 텍스트 블록 렌더링
