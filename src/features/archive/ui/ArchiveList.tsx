@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { ARCHIVE_PAGE_SIZE } from '@/shared/constants';
 import { Loader2 } from 'lucide-react';
 import { useSearchModalStore } from '../hook/useSearchModalStore';
-import { IFormattedPageData } from '@/entities/page/model/types';
+import { NotionPageProperties } from '@/shared/types';
 
 /**
  * /archive 페이지에서 notion Page 데이터를 렌더링하는 컴포넌트
@@ -54,7 +54,7 @@ export const ArchiveList = () => {
       ) : (
         <>
           {pages.map(({ properties, id }, idx) => {
-            const pageData = { ...properties, id } as IFormattedPageData;
+            const pageData = { ...properties, id } as NotionPageProperties;
             const formatted = formatPageData({ ...pageData });
             return <PageRow {...formatted} key={idx} />;
           })}

@@ -2,12 +2,12 @@
 
 import { PageCard } from '@/entities/page';
 import { formatPageData } from '@/entities/page/model/helper';
-import { IFormattedPageData } from '@/entities/page/model/types';
 import { Section } from '@/shared/ui';
 import { HOME_PAGE_SIZE } from '@/shared/constants';
 import Link from 'next/link';
 import { usePagesQuery } from '@/features/archive/hook/usePagesQuery';
 import { SectionLoading } from '@/shared/ui/skeleton/SectionLoading';
+import { NotionPageProperties } from '@/shared/types';
 
 /**
  * 메인 페이지의 Notion Archive 리스트 섹션
@@ -24,7 +24,7 @@ export const ArchiveSection = () => {
       ) : (
         <ul className="group/list">
           {pages.map(({ properties, id }, idx) => {
-            const pageData = { ...properties, id } as IFormattedPageData;
+            const pageData = { ...properties, id } as NotionPageProperties;
             const formatted = formatPageData({ ...pageData });
             return (
               <li className="mb-12" key={idx}>

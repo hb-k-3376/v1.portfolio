@@ -1,4 +1,4 @@
-import { ITag, MultiSelectProperty, TextProperty, TimeProperty } from '@/shared/types';
+import { ITag } from '@/shared/types';
 
 export interface IPage {
   id: string;
@@ -6,15 +6,4 @@ export interface IPage {
   tags: ITag[];
   title: string;
   description: string;
-}
-/**
- * Formatted page data
- */
-export interface IFormattedPageData {
-  title: TextProperty;
-  description: TextProperty;
-  tags: MultiSelectProperty;
-  created_time: TimeProperty;
-  modified_time: TimeProperty;
-  id: string;
 }

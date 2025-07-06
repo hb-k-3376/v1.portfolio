@@ -1,3 +1,5 @@
+import { PageObjectResponse } from '@notionhq/client';
+
 /**
  * title, text 프로퍼티
  */
@@ -130,3 +132,34 @@ export type Annotations = {
   strikethrough: boolean;
   underline: boolean;
 };
+
+/**
+ * 노션 페이지 타입 프로퍼티
+ */
+export type NotionPageProperties = {
+  title: TextProperty;
+  description: TextProperty;
+  tags: MultiSelectProperty;
+  created_time: TimeProperty;
+  modified_time: TimeProperty;
+  id: string;
+};
+
+/**
+ * Notion 페이지의 본문 블록 콘텐츠.
+ */
+export interface NotionPageContent {
+  object: string;
+  results: ContentProperty[];
+}
+
+/**
+ * Notion pages API의 응답 형태. 페이지네이션 포함.
+ * 노션 pages로 가져오는 인터페이스
+ * 페이지네이션을 위한 next_cursor
+ * { pages , cursor }
+ */
+export interface NotionPagesResponse {
+  pages: PageObjectResponse[];
+  cursor: string | undefined;
+}

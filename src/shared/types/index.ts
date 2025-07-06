@@ -1,4 +1,3 @@
-export type { ITag } from './tag';
-export type { APIResponse } from './api';
-
-export type * from './notion';
+export * from './api';
+export * from './notion';
+export * from './tag';
