@@ -4,6 +4,8 @@ import { PageObjectResponse, QueryDatabaseResponse } from '@notionhq/client/buil
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
+// export const revalidate = 360; // Next js 서버 캐싱
+
 /**
  * 노션의 페이지( 데이터베이스 ) 리스트를 fetch하는 api router
  */

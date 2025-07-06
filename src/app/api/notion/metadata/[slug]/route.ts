@@ -6,6 +6,9 @@ import type { NextRequest } from 'next/server';
 export interface ISlugProps {
   params: Promise<{ slug: string }>;
 }
+
+// export const revalidate = 3600; // Next js 서버 캐싱
+
 /**
  * 노션 페이지의 메타 데이터를 가져오는 api router
  */
