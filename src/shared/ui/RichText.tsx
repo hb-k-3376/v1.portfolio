@@ -1,4 +1,3 @@
-import { ARCHIVE_URL } from '../constants';
 import { RichTextProperty } from '../types';
 import { getStyleClasses } from '../utils';
 
