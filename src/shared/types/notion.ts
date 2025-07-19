@@ -103,7 +103,9 @@ export type RichTextProperty = {
   plain_text: string;
   text: {
     content: string;
-    link: string | null;
+    link: {
+      url: string | null;
+    };
   };
   type: string;
 };
