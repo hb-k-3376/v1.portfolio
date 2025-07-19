@@ -1,6 +1,12 @@
 'use client';
 
-export const ScrollLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+export const ScrollLink = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => {
   const handleClick = () => {
     const id = href.replace('#', '');
     const element = document.getElementById(id);
@@ -11,7 +17,11 @@ export const ScrollLink = ({ href, children }: { href: string; children: React.R
   };
 
   return (
-    <a href={href} onClick={handleClick} className="group flex items-center py-3">
+    <a
+      href={href}
+      onClick={handleClick}
+      className="group flex items-center py-3"
+    >
       {children}
     </a>
   );

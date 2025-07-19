@@ -7,7 +7,10 @@ import { useEffect, useState } from 'react';
  * @param {string} sectionIds about |  project | archive
  * @param {object} options style | elements
  */
-export const useScrollSpy = (sectionIds: string[], options?: IntersectionObserverInit) => {
+export const useScrollSpy = (
+  sectionIds: string[],
+  options?: IntersectionObserverInit
+) => {
   const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
@@ -24,7 +27,7 @@ export const useScrollSpy = (sectionIds: string[], options?: IntersectionObserve
       },
       {
         root: null, // viewport
-        rootMargin: '0px 0px -70% 0px', // 섹션 상단이 뷰포트 상단에서 30% 내려왔을 때 잡기
+        rootMargin: '0px 0px -50% 0px', // 섹션 상단이 뷰포트 상단에서 50% 내려왔을 때 잡기
         threshold: [0, 0.25, 0.5, 0.75, 1],
         ...options,
       }

@@ -20,13 +20,17 @@ export default function page() {
            * about section
            */}
           <Section id="about">
-            <div className="h-[500px]"></div>
+            <div className="flex justify-center items-center bg-slate-800/50 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] rounded-md drop-shadow-lg p-10">
+              <div className="h-[500px]"></div>
+            </div>
           </Section>
           {/**
            * project section
            */}
           <Section id="project">
-            <div className="h-[500px]"></div>
+            <div className="flex justify-center items-center bg-slate-800/50 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] rounded-md drop-shadow-lg p-10">
+              <div className="h-[500px]"></div>
+            </div>
           </Section>
           {/**
            * archive section
