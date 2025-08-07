@@ -1,14 +1,26 @@
 import { APIResponse } from '@/shared/types/api';
-import { getCreatedDate, getDescription, getModifiedDate, getTags, getTitle } from '@/shared/utils';
+import {
+  getCreatedDate,
+  getDescription,
+  getModifiedDate,
+  getTags,
+  getTitle,
+} from '@/shared/utils';
 import { api } from '@/shared/lib';
-import { NotionPageContent, NotionPageProperties, NotionPagesResponse } from '@/shared/types';
+import {
+  NotionPageContent,
+  NotionPageProperties,
+  NotionPagesResponse,
+} from '@/shared/types';
 
 /**
  * get page metadata by id (service)
  * notion 데이터베이스 에서 id로 page metadata 가져오는 서비스 함수
  */
 export const getPageMetadataById = async (slug: string) => {
-  const { data } = await api.get<APIResponse<NotionPageProperties>>(`/notion/metadata/${slug}`);
+  const { data } = await api.get<APIResponse<NotionPageProperties>>(
+    `/notion/metadata/${slug}`
+  );
 
   const title = getTitle(data.body.title);
   const createdBy = getCreatedDate(data.body.created_time);
@@ -17,6 +29,7 @@ export const getPageMetadataById = async (slug: string) => {
   const description = getDescription(data.body.description);
 
   return {
+    id: data.body.id,
     title,
     createdBy,
     tags,
@@ -30,7 +43,9 @@ export const getPageMetadataById = async (slug: string) => {
  * notion 데이터베이스 에서 id로 page content 가져오는 서비스 함수
  */
 export const getPageContentById = async (slug: string) => {
-  const res = await api.get<APIResponse<NotionPageContent>>(`/notion/content/${slug}`);
+  const res = await api.get<APIResponse<NotionPageContent>>(
+    `/notion/content/${slug}`
+  );
   return res.data.body.results;
 };
 
@@ -58,7 +73,9 @@ export const getPages = async ({
     params.append('query', query);
   }
 
-  const res = await api.get<APIResponse<NotionPagesResponse>>(`/notion?${params}`);
+  const res = await api.get<APIResponse<NotionPagesResponse>>(
+    `/notion?${params}`
+  );
 
   return {
     pages: res.data.body.pages,

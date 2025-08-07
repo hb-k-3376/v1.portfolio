@@ -14,14 +14,20 @@ import { NotionPageProperties } from '@/shared/types';
  *  서버에서 page list를 페치해와서 tbody에 row 형태로 뿌린다.
  */
 export const ArchiveList = () => {
-  const [currentCursor, setCurrentCursor] = useState<string | undefined>(undefined);
+  const [currentCursor, setCurrentCursor] = useState<string | undefined>(
+    undefined
+  );
   const query = useSearchModalStore((state) => state.query);
   const {
     pages,
     isLoading,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     cursor: _cursor, // TODO : 페이지 네이션
-  } = usePagesQuery({ pageSize: ARCHIVE_PAGE_SIZE, cursor: currentCursor, query: query });
+  } = usePagesQuery({
+    pageSize: ARCHIVE_PAGE_SIZE,
+    cursor: currentCursor,
+    query: query,
+  });
 
   // ArchiveList에서 query가 변경될 때 cursor 리셋
   useEffect(() => {
@@ -48,7 +54,9 @@ export const ArchiveList = () => {
       ) : pages.length === 0 ? ( // 검색 결과가 없는 경우
         <tr>
           <td colSpan={4}>
-            <div className="flex justify-center items-center h-[400px] text-slate-400 text-lg">결과가 없습니다.</div>
+            <div className="flex justify-center items-center h-[400px] text-slate-400 text-lg">
+              결과가 없습니다.
+            </div>
           </td>
         </tr>
       ) : (

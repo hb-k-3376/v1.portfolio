@@ -145,6 +145,7 @@ export type NotionPageProperties = {
   created_time: TimeProperty;
   modified_time: TimeProperty;
   id: string;
+  slug: TextProperty;
 };
 
 /**

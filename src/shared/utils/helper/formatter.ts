@@ -1,4 +1,9 @@
-import { MultiSelectProperty, ParagraphProperty, TextProperty, TimeProperty } from '@/shared/types/notion';
+import {
+  MultiSelectProperty,
+  ParagraphProperty,
+  TextProperty,
+  TimeProperty,
+} from '@/shared/types/notion';
 
 /**
  * @param title  rawData에 title
@@ -45,7 +50,18 @@ export const getModifiedDate = (modifiedDate: TimeProperty): string => {
   const dateString = modifiedDate.last_edited_time;
   return new Date(dateString).toLocaleDateString('en-CA');
 };
-
+/**
+ * @param contents 본문
+ */
 export const getContents = (contents: ParagraphProperty) => {
   contents.rich_text[0].annotations.bold;
+};
+
+/**
+ * @param slug rawData에 slug 추출
+ * @returns 추출된 slug
+ */
+export const getSlug = (slug: TextProperty): string => {
+  if (!slug.rich_text) return '';
+  return slug.rich_text[0]?.plain_text;
 };

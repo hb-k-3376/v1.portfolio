@@ -8,7 +8,13 @@ import { useRef } from 'react';
 /**
  *  Page 데이터를 row 형태로 보여주느 entity
  */
-export const PageRow = ({ created_time, description, tags, title, id }: IPage) => {
+export const PageRow = ({
+  created_time,
+  description,
+  tags,
+  title,
+  slug,
+}: IPage) => {
   const linkRef = useRef<HTMLAnchorElement | null>(null);
 
   const handleClick = (e: React.MouseEvent) => {
@@ -20,13 +26,16 @@ export const PageRow = ({ created_time, description, tags, title, id }: IPage) =
   };
 
   return (
-    <tr className="group border-b border-slate-300/10 last:border-none cursor-pointer" onClick={handleClick}>
+    <tr
+      className="group border-b border-slate-300/10 last:border-none cursor-pointer"
+      onClick={handleClick}
+    >
       <td className="py-4 pr-4 align-top text-sm">
         <div className="translate-y-px">{created_time}</div>
       </td>
       <td className="py-4 pr-4 align-top font-semibold leading-snug">
         <Link
-          href={`/archive/${id}`}
+          href={`/archive/${slug}`}
           ref={linkRef}
           className="group-hover:text-primary group-hover:font-bold focus-visible:text-primary items-baseline leading-tight"
         >
@@ -41,7 +50,9 @@ export const PageRow = ({ created_time, description, tags, title, id }: IPage) =
         </ul>
       </td>
       <td className="hidden lg:table-cell">
-        <div className="translate-y-px whitespace-nowrap truncate max-w-xs">{description}</div>
+        <div className="translate-y-px whitespace-nowrap truncate max-w-xs">
+          {description}
+        </div>
       </td>
     </tr>
   );

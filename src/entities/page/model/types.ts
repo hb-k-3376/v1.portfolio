@@ -6,4 +6,5 @@ export interface IPage {
   tags: ITag[];
   title: string;
   description: string;
+  slug: string;
 }

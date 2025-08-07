@@ -1,5 +1,6 @@
 import { notion } from '@/shared/lib';
 import { PageObjectResponse } from '@notionhq/client';
+import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
@@ -15,13 +16,21 @@ export interface ISlugProps {
 export async function GET(_: NextRequest, { params }: ISlugProps) {
   try {
     const { slug } = await params;
-    const { properties } = (await notion.pages.retrieve({
-      page_id: slug,
-    })) as PageObjectResponse;
+    // const { properties } = (await notion.pages.retrieve({
+    //   page_id: slug,
+    // })) as PageObjectResponse;
+
+    const { results } = (await notion.databases.query({
+      database_id: process.env.NOTION_DATABASE_ID!,
+      filter: { property: 'slug', rich_text: { equals: slug } },
+    })) as QueryDatabaseResponse;
 
     // 결과 값 리턴
     return NextResponse.json({
-      body: properties,
+      body: {
+        ...(results[0] as PageObjectResponse).properties,
+        id: results[0].id,
+      },
       status: 200,
     });
   } catch (error) {
