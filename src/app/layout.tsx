@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { Lighter } from '@/shared/ui';
 import { Providers } from '@/shared/lib';
+import { Analytics } from '@vercel/analytics/next';
 import '@/shared/styles/globals.css';
 
 export const metadata: Metadata = {
@@ -8,7 +9,9 @@ export const metadata: Metadata = {
   description: 'v1 portfolio',
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ko" className="scroll-smooth">
       <body
@@ -19,6 +22,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="relative">
             <Lighter />
             {children}
+            <Analytics />
           </div>
         </Providers>
       </body>

@@ -12,6 +12,7 @@
     "@giscus/react": "^3.1.0",
     "@notionhq/client": "^3.0.1",
     "@tanstack/react-query": "^5.76.1",
+    "@vercel/analytics": "^1.5.0",
     "axios": "^1.9.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.511.0",
