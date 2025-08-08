@@ -1,13 +1,14 @@
 'use client';
+import { useEffect, useState } from 'react';
+import { Loader2 } from 'lucide-react';
+
+import { useSearchModalStore } from '../hook/useSearchModalStore';
 
 import { PageRow } from '@/entities/page';
 import { formatPageData } from '@/entities/page/model/helper';
-import { usePagesQuery } from '../hook/usePagesQuery';
-import { useEffect, useState } from 'react';
 import { ARCHIVE_PAGE_SIZE } from '@/shared/constants';
-import { Loader2 } from 'lucide-react';
-import { useSearchModalStore } from '../hook/useSearchModalStore';
 import { NotionPageProperties } from '@/shared/types';
+import { usePagesQuery } from '@/hooks/usePagesQuery';
 
 /**
  * /archive 페이지에서 notion Page 데이터를 렌더링하는 컴포넌트
@@ -61,10 +62,10 @@ export const ArchiveList = () => {
         </tr>
       ) : (
         <>
-          {pages.map(({ properties, id }, idx) => {
+          {pages.map(({ properties, id }) => {
             const pageData = { ...properties, id } as NotionPageProperties;
             const formatted = formatPageData({ ...pageData });
-            return <PageRow {...formatted} key={idx} />;
+            return <PageRow {...formatted} key={id} />;
           })}
         </>
       )}

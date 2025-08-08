@@ -23,8 +23,8 @@ export const PageCard = ({
         <Title title={title} slug={slug} />
         <p className="text-sm leading-normal">{description}</p>
         <ul className="flex flex-wrap">
-          {tags?.map((tag, idx) => (
-            <Fragment key={idx}>
+          {tags?.map((tag) => (
+            <Fragment key={tag.id}>
               <Tag name={tag.name} />
             </Fragment>
           ))}

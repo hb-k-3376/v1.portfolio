@@ -44,8 +44,8 @@ export const PageRow = ({
       </td>
       <td className="hidden md:table-cell">
         <ul className="flex -translate-y-1.5 flex-wrap">
-          {tags.map((tag, idx) => (
-            <Tag name={tag.name} key={idx} />
+          {tags.map((tag) => (
+            <Tag name={tag.name} key={tag.id} />
           ))}
         </ul>
       </td>

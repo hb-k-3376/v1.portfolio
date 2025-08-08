@@ -16,7 +16,8 @@ export const SearchBox = () => {
   const [input, setInput] = useState<string | null>(null);
 
   // 로컬 스토리지 훅
-  const { searchHistory, setSearchHistory, removeSearchHistory } = useLocalStorage();
+  const { searchHistory, setSearchHistory, removeSearchHistory } =
+    useLocalStorage();
 
   if (!isOpen) return null;
 
@@ -78,11 +79,11 @@ export const SearchBox = () => {
               </div>
             ) : (
               <ul className="flex flex-col gap-2">
-                {searchHistory.map((term, idx) => {
+                {searchHistory.map((term) => {
                   return (
                     <li
                       className="bg-zinc-950 w-full px-6 py-3 cursor-pointer hover:bg-zinc-700"
-                      key={idx}
+                      key={term}
                       onClick={() => handleHistorySearch(term)}
                     >
                       <div className="flex justify-between items-center">
