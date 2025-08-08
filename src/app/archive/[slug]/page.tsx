@@ -7,14 +7,14 @@ import { ArchiveMetaData } from './_components/ArchiveMetaData';
 import { BackButton } from '@/shared/ui';
 import Comments from './_components/Giscus';
 
-export interface ISlugProps {
-  params: { slug: string };
+interface ISlugProps {
+  params: Promise<{ slug: string }>;
 }
 /**
  * archive 상세 페이지
  */
 export default async function page({ params }: ISlugProps) {
-  const { slug } = params;
+  const { slug } = await params;
   const { createdBy, description, modifiedBy, tags, title, id } =
     await getPageMetadataById(slug);
 
