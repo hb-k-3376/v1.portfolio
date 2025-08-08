@@ -2,6 +2,7 @@ import { Section } from '@/shared/ui';
 import { Header } from '@/shared/ui/header';
 import { ArchiveSection } from '@/features/portfolio/ui/ArchiveSection';
 import { Footer } from '@/shared/ui/footer';
+import { ProjectSection } from '@/features/portfolio/ui/ProjectSection';
 
 /**
  *  루트 페이지
@@ -27,11 +28,7 @@ export default function page() {
           {/**
            * project section
            */}
-          <Section id="project">
-            <div className="flex justify-center items-center bg-slate-800/50 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] rounded-md drop-shadow-lg p-10">
-              <div className="h-[500px]"></div>
-            </div>
-          </Section>
+          <ProjectSection />
           {/**
            * archive section
            * 동적으로 노션에서 데이터를 불러오기 떄문에 lazy loading
