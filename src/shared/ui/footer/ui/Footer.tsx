@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="max-w-lg pb-16 text-sm text-muted sm:pb-0">
+    <footer className="pb-16 text-sm text-muted sm:pb-0">
       <p>
         이 프로젝트는&nbsp;
         <a
@@ -35,16 +35,17 @@ export const Footer = () => {
         </a>
         로 스타일링 했으며,&nbsp;
         <a
-          href="https://fonts.google.com/specimen/Inter"
+          href="https://github.com/orioncactus/pretendard"
           className="font-medium text-slate-400 hover:text-primary focus-visible:text-primary"
           target="_blank"
           rel="noreferrer noopener"
-          aria-label="Inter Font (opens in a new tab)"
+          aria-label="Pretendard Font (opens in a new tab)"
         >
-          Inter&nbsp;
+          Pretendard&nbsp;
         </a>
         폰트를 사용했습니다.
-        <br />더 자세한 내용은 제&nbsp;
+        <br />
+        저의 &nbsp;
         <a
           href="https://github.com/hb-k-3376/"
           className="font-medium text-slate-400 hover:text-primary focus-visible:text-primary"
@@ -52,9 +53,9 @@ export const Footer = () => {
           rel="noreferrer noopener"
           aria-label="Github(opens in a new tab)"
         >
-          Github
+          Github&nbsp;
         </a>
-        저장소를 참고해주세요.
+        저장소에서 더 많은 정보를 확인하실 수 있습니다.
         <br />
         Portfolio inspired by&nbsp;
         <a
