@@ -3,7 +3,7 @@
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { ModalPortal } from '@/shared/ui/ModalPortal';
 import { Search, X } from 'lucide-react';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useSearchModal } from '../hook/useSearchModal';
 import { useSearchModalStore } from '../hook/useSearchModalStore';
 

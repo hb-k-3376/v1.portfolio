@@ -1,4 +1,3 @@
-import { Section } from '@/shared/ui';
 import { Header } from '@/shared/ui/header';
 import { ArchiveSection } from '@/features/portfolio/ui/ArchiveSection';
 import { Footer } from '@/shared/ui/footer';
