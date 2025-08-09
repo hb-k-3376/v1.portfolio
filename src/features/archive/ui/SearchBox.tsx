@@ -3,7 +3,7 @@
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { ModalPortal } from '@/shared/ui/ModalPortal';
 import { Search, X } from 'lucide-react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useSearchModal } from '../hook/useSearchModal';
 import { useSearchModalStore } from '../hook/useSearchModalStore';
 
@@ -13,7 +13,7 @@ import { useSearchModalStore } from '../hook/useSearchModalStore';
 export const SearchBox = () => {
   const { backdropRef, handleClickOutside, isOpen, close } = useSearchModal();
   const setQuery = useSearchModalStore((state) => state.setQuery);
-  const [input, setInput] = useState<string | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   // 로컬 스토리지 훅
   const { searchHistory, setSearchHistory, removeSearchHistory } =
@@ -25,12 +25,12 @@ export const SearchBox = () => {
    * 폼 검색
    */
   const handleFormSearch = () => {
-    if (!input || !input.trim()) return;
+    if (!inputRef.current || !inputRef.current.value.trim()) return;
 
-    const trimmed = input.trim();
+    const trimmed = inputRef.current.value.trim();
 
     setQuery(trimmed);
-    setSearchHistory(trimmed || '');
+    setSearchHistory(trimmed);
     close();
   };
 
@@ -65,10 +65,7 @@ export const SearchBox = () => {
               placeholder="검색어를 입력해주세요."
               className="text-lg text-slate-400 w-full bg-transparent placeholder-text-[#7a7a7c] placeholder-text-sm"
               aria-label="검색어"
-              onChange={(e) => {
-                const { value } = e.currentTarget;
-                setInput(value);
-              }}
+              ref={inputRef}
             />
           </div>
           <div className="py-4">
@@ -90,6 +87,7 @@ export const SearchBox = () => {
                         <span className="text-xl">{term}</span>
                         <button
                           type="button"
+                          aria-label={`'${term}' 검색 기록 삭제`}
                           onClick={(e) => {
                             e.stopPropagation();
                             removeSearchHistory(term);

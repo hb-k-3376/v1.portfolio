@@ -19,6 +19,7 @@ export const ArchiveList = () => {
     undefined
   );
   const query = useSearchModalStore((state) => state.query);
+  const setQuery = useSearchModalStore((state) => state.setQuery);
   const {
     pages,
     isLoading,
@@ -34,6 +35,13 @@ export const ArchiveList = () => {
   useEffect(() => {
     setCurrentCursor(undefined); // 검색어 변경 시 첫 페이지로
   }, [query]);
+
+  // 컨포넌트 언마운트 시 query 리셋
+  useEffect(() => {
+    return () => {
+      setQuery(null);
+    };
+  }, [setQuery]);
 
   /**
    * TODO : 페이지 네이션
