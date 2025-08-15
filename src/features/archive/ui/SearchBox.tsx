@@ -50,7 +50,7 @@ export const SearchBox = () => {
         onClick={handleClickOutside}
       >
         <form
-          className="mt-40 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl bg-black rounded-xl overflow-hidden shadow-xl border-[#3f3f47] border"
+          className="mx-5 mt-40 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl bg-black rounded-xl overflow-hidden shadow-xl border-[#3f3f47] border"
           role="search"
           onClick={(e) => e.stopPropagation()}
           onSubmit={(e) => {
