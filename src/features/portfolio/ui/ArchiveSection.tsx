@@ -7,8 +7,7 @@ import { HOME_PAGE_SIZE } from '@/shared/constants';
 import { SectionLoading } from '@/shared/ui/skeleton/SectionLoading';
 import { NotionPageProperties } from '@/shared/types';
 import { usePagesQuery } from '@/hooks/usePagesQuery';
-
-import LinkMoreContent from './LinkMoreContent';
+import { LinkMoreContent } from './LinkMoreContent';
 
 /**
  * 메인 페이지의 Notion Archive 리스트 섹션

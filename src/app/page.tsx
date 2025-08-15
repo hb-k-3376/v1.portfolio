@@ -2,7 +2,7 @@ import { Header } from '@/shared/ui/header';
 import { ArchiveSection } from '@/features/portfolio/ui/ArchiveSection';
 import { Footer } from '@/shared/ui/footer';
 import { ProjectSection } from '@/features/portfolio/ui/ProjectSection';
-import AboutSection from '@/features/portfolio/ui/AboutSection';
+import { AboutSection } from '@/features/portfolio/ui/AboutSection';
 
 /**
  *  루트 페이지

@@ -3,8 +3,8 @@
 import { Section } from '@/shared/ui';
 
 import { PROJECT_LIST } from '../model/constants';
-import LinkMoreContent from './LinkMoreContent';
-import ProjectCard from './ProjectCard';
+import { ProjectCard } from './ProjectCard';
+import { LinkMoreContent } from './LinkMoreContent';
 
 /**
  * 메인 페이지의 Notion Project 리스트 섹션

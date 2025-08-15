@@ -1,6 +1,6 @@
 import { ArchiveList } from '@/features/archive';
 
-const ArchiveTable = () => {
+export const ArchiveTable = () => {
   return (
     <table className="w-full border-collapse text-left table-fixed">
       <thead className="sticky top-0 z-10 border-b border-slate-300/10 bg-slate-900/75 px-6 py-5 backdrop-blur">
@@ -23,4 +23,3 @@ const ArchiveTable = () => {
     </table>
   );
 };
-export default ArchiveTable;

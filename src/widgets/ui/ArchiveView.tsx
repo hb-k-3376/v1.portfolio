@@ -1,8 +1,8 @@
 import { SearchBox } from '@/features/archive/ui/SearchBox';
-import ArchiveHeader from '../_components/ArchiveHeader';
-import ArchiveTable from '../_components/ArchiveTable';
+import { ArchiveHeader } from '../_components/ArchiveHeader';
+import { ArchiveTable } from '../_components/ArchiveTable';
 
-const ArchiveView = () => {
+export const ArchiveView = () => {
   return (
     <>
       <SearchBox />
@@ -11,4 +11,3 @@ const ArchiveView = () => {
     </>
   );
 };
-export default ArchiveView;

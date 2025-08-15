@@ -3,7 +3,7 @@
 import { Search, X } from 'lucide-react';
 import { useSearchModalStore } from '../hook/useSearchModalStore';
 
-const SearchInput = () => {
+export const SearchInput = () => {
   const open = useSearchModalStore((state) => state.open);
   const setQuery = useSearchModalStore((state) => state.setQuery);
   const query = useSearchModalStore((state) => state.query);
@@ -44,4 +44,3 @@ const SearchInput = () => {
     </div>
   );
 };
-export default SearchInput;

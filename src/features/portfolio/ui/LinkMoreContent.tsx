@@ -5,7 +5,7 @@ interface Props {
   link: string;
 }
 
-const LinkMoreContent = ({ text, link }: Props) => {
+export const LinkMoreContent = ({ text, link }: Props) => {
   return (
     <div className="mt-12">
       <Link
@@ -33,4 +33,3 @@ const LinkMoreContent = ({ text, link }: Props) => {
     </div>
   );
 };
-export default LinkMoreContent;

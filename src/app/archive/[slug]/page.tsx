@@ -5,7 +5,7 @@ import {
 } from '@/features/archive';
 import { ArchiveMetaData } from './_components/ArchiveMetaData';
 import { BackButton } from '@/shared/ui';
-import Comments from './_components/Giscus';
+import { Comments } from './_components/Giscus';
 
 interface ISlugProps {
   params: Promise<{ slug: string }>;

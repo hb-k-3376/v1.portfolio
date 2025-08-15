@@ -1,5 +1,5 @@
 import { BackButton } from '@/shared/ui';
-import ArchiveView from '@/widgets/ui/ArchiveView';
+import { ArchiveView } from '@/widgets';
 
 /**
  * 노션에서 불러오는 archive list
