@@ -9,7 +9,11 @@ interface ICodeBlockProps {
 
 export const CodeBlock = ({ code }: ICodeBlockProps) => {
   return (
-    <SyntaxHighlighter language={code.language} style={cb} customStyle={{ padding: '15px', borderRadius: '8px' }}>
+    <SyntaxHighlighter
+      language={code.language}
+      style={cb}
+      customStyle={{ padding: '15px', borderRadius: '8px', fontSize: '.8rem' }}
+    >
       {getPlainText(code.rich_text)}
     </SyntaxHighlighter>
   );
