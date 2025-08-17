@@ -64,7 +64,8 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       body: {
         pages: pages as PageObjectResponse[],
-        cursor: response.next_cursor,
+        next_cursor: response.next_cursor,
+        has_more: response.has_more,
       },
     });
   } catch (error) {

@@ -55,22 +55,21 @@ export const getPageContentById = async (slug: string) => {
  */
 export const getPages = async ({
   pageSize = '10',
-  cursor,
   query,
+  cursor,
 }: {
   pageSize?: string;
-  cursor: string | null;
   query: string | null;
+  cursor?: string | null;
 }) => {
   const params = new URLSearchParams({ pageSize });
 
-  // cursor가 유효한 값일 때만 파라미터에 추가
-  if (cursor) {
-    params.append('cursor', cursor);
-  }
   // query 유효한 값일 때만 파라미터에 추가
   if (query) {
     params.append('query', query);
+  }
+  if (cursor) {
+    params.append('cursor', cursor);
   }
 
   const res = await api.get<APIResponse<NotionPagesResponse>>(
@@ -79,6 +78,7 @@ export const getPages = async ({
 
   return {
     pages: res.data.body.pages,
-    cursor: res.data.body.cursor,
+    next_cursor: res.data.body.next_cursor,
+    has_more: res.data.body.has_more,
   };
 };
