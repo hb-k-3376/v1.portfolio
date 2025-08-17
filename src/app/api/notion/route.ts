@@ -1,6 +1,9 @@
 import { notion } from '@/shared/lib';
 import { isPageObjectResponse } from '@/shared/utils';
-import { PageObjectResponse, QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
+import {
+  PageObjectResponse,
+  QueryDatabaseResponse,
+} from '@notionhq/client/build/src/api-endpoints';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
@@ -13,7 +16,7 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const pageSize = parseInt(searchParams.get('pageSize') || '10');
-    const cursor = searchParams.get('cursor') || undefined;
+    const cursor = searchParams.get('cursor') || null;
     const query = searchParams.get('query') || null;
 
     const baseFilter = {
@@ -43,7 +46,7 @@ export async function GET(request: NextRequest) {
     // api 요청
     const response: QueryDatabaseResponse = await notion.databases.query({
       database_id: databaseId!,
-      start_cursor: cursor,
+      start_cursor: cursor ?? undefined,
       page_size: pageSize,
       filter,
       sorts: [

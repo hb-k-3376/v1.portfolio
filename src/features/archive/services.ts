@@ -59,7 +59,7 @@ export const getPages = async ({
   query,
 }: {
   pageSize?: string;
-  cursor?: string;
+  cursor: string | null;
   query: string | null;
 }) => {
   const params = new URLSearchParams({ pageSize });

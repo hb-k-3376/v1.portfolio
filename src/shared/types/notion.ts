@@ -164,5 +164,5 @@ export interface NotionPageContent {
  */
 export interface NotionPagesResponse {
   pages: PageObjectResponse[];
-  cursor: string | undefined;
+  cursor: string | null;
 }

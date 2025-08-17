@@ -41,7 +41,9 @@ export const getStyleClasses = (annotations: Annotations): string => {
   if (annotations.strikethrough) classes.push('line-through');
   if (annotations.underline) classes.push('underline');
   if (annotations.code) {
-    classes.push('bg-gray-700 text-rose-400! px-1 py-0.5 rounded text-sm font-mono');
+    classes.push(
+      'bg-gray-700 text-rose-400! px-1 py-0.5 rounded text-sm font-mono'
+    );
   }
 
   // 색상 적용
@@ -60,19 +62,22 @@ export const getPlainText = (richTexts: RichTextProperty[]): string => {
 /**
  * image 블록에서 type에 따라 적절한 URL을 반환.
  */
-export const getImageUrl = (image: ImageProperty): string | undefined => {
-  if (image.type === 'external') {
-    return image.external?.url;
+export const getImageUrl = (image: ImageProperty): string | null => {
+  if (image.type === 'external' && image.external) {
+    return image.external.url;
   }
-  if (image.type === 'file') {
+  if (image.type === 'file' && image.file) {
     return image.file?.url;
   }
-  return undefined;
+  return null;
 };
 
 /**
  * image 블록에서 캡션을 추출. 없으면 기본값을 반환
  */
-export const getImageCaption = (image: ImageProperty, defaultCaption = '이미지'): string => {
+export const getImageCaption = (
+  image: ImageProperty,
+  defaultCaption = '이미지'
+): string => {
   return getPlainText(image.caption) || defaultCaption;
 };

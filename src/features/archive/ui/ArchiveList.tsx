@@ -15,9 +15,7 @@ import { usePagesQuery } from '@/hooks/usePagesQuery';
  *  서버에서 page list를 페치해와서 tbody에 row 형태로 뿌린다.
  */
 export const ArchiveList = () => {
-  const [currentCursor, setCurrentCursor] = useState<string | undefined>(
-    undefined
-  );
+  const [currentCursor, setCurrentCursor] = useState<string | null>(null);
   const query = useSearchModalStore((state) => state.query);
   const setQuery = useSearchModalStore((state) => state.setQuery);
   const {
@@ -33,7 +31,7 @@ export const ArchiveList = () => {
 
   // ArchiveList에서 query가 변경될 때 cursor 리셋
   useEffect(() => {
-    setCurrentCursor(undefined); // 검색어 변경 시 첫 페이지로
+    setCurrentCursor(null); // 검색어 변경 시 첫 페이지로
   }, [query]);
 
   // 컨포넌트 언마운트 시 query 리셋
