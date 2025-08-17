@@ -1,6 +1,6 @@
 'use client';
 
-import { useScrollSpy } from '@/hooks';
+import { useScrollSpy } from '@/shared/hooks';
 import { MENU_LIST } from '../model/constant';
 import { Nav } from './Nav';
 import { SocialList } from './SocialList';

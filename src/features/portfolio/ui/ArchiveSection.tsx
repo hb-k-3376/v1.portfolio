@@ -6,7 +6,7 @@ import { Section } from '@/shared/ui';
 import { HOME_PAGE_SIZE } from '@/shared/constants';
 import { SectionLoading } from '@/shared/ui/skeleton/SectionLoading';
 import { NotionPageProperties } from '@/shared/types';
-import { usePagesQuery } from '@/hooks/usePagesQuery';
+import { usePagesQuery } from '@/shared/hooks/usePagesQuery';
 import { LinkMoreContent } from './LinkMoreContent';
 
 /**

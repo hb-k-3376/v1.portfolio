@@ -26,7 +26,6 @@ export const usePagesQuery = ({
 
   return {
     pages: getPagesQuery.data?.pages ?? [],
-    cursor: getPagesQuery.data?.cursor ?? null,
     isLoading: getPagesQuery.isPending,
   };
 };

@@ -1,6 +1,6 @@
 'use client';
 
-import { useLocalStorage } from '@/hooks/useLocalStorage';
+import { useLocalStorage } from '@/shared/hooks/useLocalStorage';
 import { ModalPortal } from '@/shared/ui/ModalPortal';
 import { Search, X } from 'lucide-react';
 import { useRef } from 'react';
