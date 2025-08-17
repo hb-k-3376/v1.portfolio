@@ -54,7 +54,7 @@ export const getPageContentById = async (slug: string) => {
  * notion 데이터베이스 에서 pages list 가져오는 서비스 함수
  */
 export const getPages = async ({
-  pageSize = '10',
+  pageSize = '20',
   query,
   cursor,
 }: {

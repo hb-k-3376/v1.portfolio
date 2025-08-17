@@ -17,7 +17,7 @@ import { useInfinityPages } from '../hook/useInfinityPages';
 export const ArchiveList = () => {
   const query = useSearchModalStore((state) => state.query);
   const setQuery = useSearchModalStore((state) => state.setQuery);
-  const { pages, isLoading, fetchNextPage } = useInfinityPages({
+  const { pages, isLoading, fetchNextPage, hasMore } = useInfinityPages({
     query: query,
   });
 
@@ -29,48 +29,59 @@ export const ArchiveList = () => {
   }, [setQuery]);
 
   /**
-   * TODO : 페이지 네이션
+   * 로딩 중
    */
-  // const handleNextPage = () => {
-  //   setCurrentCursor(cursor);
-  // };
+  if (isLoading) {
+    return (
+      <tbody>
+        <tr>
+          <td colSpan={4}>
+            <div className="flex justify-center items-center h-[400px]">
+              <Loader2 className="text-primary animate-spin" size={100} />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    );
+  }
+
+  /**
+   * 결과가 없는 경우
+   */
+  if (pages.length === 0) {
+    return (
+      <tbody>
+        <tr>
+          <td colSpan={4}>
+            <div className="flex justify-center items-center h-[400px] text-slate-400 text-lg">
+              결과가 없습니다.
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    );
+  }
+
   return (
     <>
       <tbody>
         {/** 데이터 페칭  */}
-        {isLoading ? (
-          <tr>
-            <td colSpan={4}>
-              <div className="flex justify-center items-center h-[400px]">
-                <Loader2 className="text-primary animate-spin" size={100} />
-              </div>
-            </td>
-          </tr>
-        ) : pages.length === 0 ? ( // 검색 결과가 없는 경우
-          <tr>
-            <td colSpan={4}>
-              <div className="flex justify-center items-center h-[400px] text-slate-400 text-lg">
-                결과가 없습니다.
-              </div>
-            </td>
-          </tr>
-        ) : (
-          <>
-            {pages.map(({ properties, id }) => {
-              const pageData = { ...properties, id } as NotionPageProperties;
-              const formatted = formatPageData({ ...pageData });
-              return <PageRow {...formatted} key={id} />;
-            })}
-          </>
-        )}
+        {pages.map(({ properties, id }) => {
+          const pageData = { ...properties, id } as NotionPageProperties;
+          const formatted = formatPageData({ ...pageData });
+          return <PageRow {...formatted} key={id} />;
+        })}
       </tbody>
-      <tfoot>
-        <tr>
-          <td colSpan={4} className="text-center py-4">
-            <button onClick={() => fetchNextPage()}>테스트</button>
-          </td>
-        </tr>
-      </tfoot>
+      {/* page 목록이 더 있자면 렌더링 */}
+      {hasMore && (
+        <tfoot>
+          <tr>
+            <td colSpan={4} className="text-center py-4">
+              <button onClick={() => fetchNextPage()}>테스트</button>
+            </td>
+          </tr>
+        </tfoot>
+      )}
     </>
   );
 };
