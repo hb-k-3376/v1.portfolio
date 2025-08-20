@@ -1,6 +1,8 @@
 import { ArchiveSection } from '@/features/portfolio';
 import { AboutSection } from '@/features/portfolio/ui/AboutSection';
 import { ProjectSection } from '@/features/portfolio/ui/ProjectSection';
+import { SectionLoading } from '@/shared/ui/skeleton/SectionLoading';
+import { Suspense } from 'react';
 
 export const PortfolioView = () => {
   return (
@@ -16,7 +18,9 @@ export const PortfolioView = () => {
       {/**
        * archive section
        */}
-      <ArchiveSection />
+      <Suspense fallback={<SectionLoading sectionId="archive" />}>
+        <ArchiveSection />
+      </Suspense>
     </>
   );
 };

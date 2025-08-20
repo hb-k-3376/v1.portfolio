@@ -1,5 +1,5 @@
 import { getPages } from '@/features/archive';
-import { useQuery } from '@tanstack/react-query';
+import { useSuspenseQuery } from '@tanstack/react-query';
 
 interface IUsePagesQueryProps {
   pageSize: string;
@@ -18,7 +18,7 @@ export const usePagesQuery = ({
   cursor = null,
   query,
 }: IUsePagesQueryProps) => {
-  const getPagesQuery = useQuery({
+  const getPagesQuery = useSuspenseQuery({
     queryKey: ['pages', { pageSize, cursor, query }], // pageSize와 cursor로 캐시 키
     queryFn: () => getPages({ pageSize, cursor, query }),
     refetchOnWindowFocus: true, // default
