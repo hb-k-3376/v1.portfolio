@@ -35,7 +35,7 @@ export const ArchiveSection = () => {
           );
         })}
       </ul>
-      <LinkMoreContent text="   View Development Archive" link="/archive" />
+      <LinkMoreContent text="   View More Archive" link="/archive" />
     </Section>
   );
 };
