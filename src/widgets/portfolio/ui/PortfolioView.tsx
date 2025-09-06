@@ -1,26 +1,27 @@
-import { ArchiveSection } from '@/features/portfolio';
+'use client';
+
+import dynamic from 'next/dynamic';
 import { AboutSection } from '@/features/portfolio/ui/AboutSection';
 import { ProjectSection } from '@/features/portfolio/ui/ProjectSection';
 import { SectionLoading } from '@/shared/ui/skeleton/SectionLoading';
-import { Suspense } from 'react';
+
+const ArchiveSection = dynamic(
+  () => import('@/features/portfolio').then((mod) => ({ default: mod.ArchiveSection })),
+  {
+    ssr: false,
+    loading: () => <SectionLoading sectionId="archive" />,
+  }
+);
 
 export const PortfolioView = () => {
   return (
     <>
-      {/**
-       * about section
-       */}
+      {/** about section */}
       <AboutSection />
-      {/**
-       * project section
-       */}
+      {/**  project section */}
       <ProjectSection />
-      {/**
-       * archive section
-       */}
-      <Suspense fallback={<SectionLoading sectionId="archive" />}>
-        <ArchiveSection />
-      </Suspense>
+      {/** archive section */}
+      <ArchiveSection />
     </>
   );
 };
