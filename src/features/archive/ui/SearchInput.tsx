@@ -18,15 +18,15 @@ export const SearchInput = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="group relative">
       <button
         type="button"
         role="searchbox"
         aria-label="아키이브 검색"
-        className="flex gap-3 border-b-1 w-full sm:min-w-xs items-center cursor-pointer p-3 focus:border-primary"
+        className="flex gap-3 border-b-1 w-full sm:min-w-xs items-center cursor-pointer p-3 hover:border-primary"
         onClick={handleClickSearch}
       >
-        <Search aria-hidden="true" />
+        <Search aria-hidden="true" className="group-hover:text-primary" />
         <div className="flex justify-between items-center w-full">
           <span>{query ? query : '키워드를 입력해주세요.'} </span>
         </div>
