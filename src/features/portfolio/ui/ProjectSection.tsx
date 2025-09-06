@@ -1,11 +1,9 @@
-'use client';
-
 import { Section } from '@/shared/ui';
 
-import { PROJECT_LIST } from '../model/constants';
 import { ProjectCard } from './ProjectCard';
 import { LinkMoreContent } from './LinkMoreContent';
 
+import { PROJECT_LIST } from '../model/constants';
 /**
  * 메인 페이지의 Notion Project 리스트 섹션
  */
