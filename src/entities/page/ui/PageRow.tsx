@@ -8,13 +8,7 @@ import { useRef } from 'react';
 /**
  *  Page 데이터를 row 형태로 보여주느 entity
  */
-export const PageRow = ({
-  created_time,
-  description,
-  tags,
-  title,
-  slug,
-}: IPage) => {
+export const PageRow = ({ created_time, description, tags, title, slug }: IPage) => {
   const linkRef = useRef<HTMLAnchorElement | null>(null);
 
   const handleClick = (e: React.MouseEvent) => {
@@ -50,7 +44,7 @@ export const PageRow = ({
         </ul>
       </td>
       <td className="hidden lg:table-cell">
-        <div className="translate-y-px whitespace-nowrap truncate max-w-xs">
+        <div className="translate-y-px whitespace-nowrap truncate max-w-base">
           {description}
         </div>
       </td>
