@@ -1,0 +1,42 @@
+/* Tailwind Base Layer */
+@layer base {
+  /* 기본 폰트 설정 */
+  html {
+    font-family: 'Pretendard Variable', sans-serif;
+    scroll-behavior: smooth;
+    height: 100%;
+  }
+
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+  }
+
+  /* iOS 클릭 영역 투명 */
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* 입력 필드 기본 스타일 제거 */
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='number'],
+  input[type='search'],
+  input[type='tel'],
+  input[type='url'],
+  textarea {
+    @apply appearance-none;
+  }
+
+  /* 포커스 아웃라인 초기화 */
+  :focus {
+    @apply outline-none;
+  }
+}
