@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { Tag, Title } from '@/shared/ui';
 import { ProjectType } from '../model/type';
-import Link from 'next/link';
 
 export const ProjectCard = ({
   description,
