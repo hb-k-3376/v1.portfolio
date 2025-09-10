@@ -73,7 +73,7 @@ export const ArchiveList = () => {
         })}
       </tbody>
       {/* page 목록이 더 있자면 렌더링 */}
-      {hasMore && (
+      {/* {hasMore && (
         <tfoot>
           <tr>
             <td colSpan={4} className="text-center py-4">
@@ -81,7 +81,7 @@ export const ArchiveList = () => {
             </td>
           </tr>
         </tfoot>
-      )}
+      )} */}
     </>
   );
 };
