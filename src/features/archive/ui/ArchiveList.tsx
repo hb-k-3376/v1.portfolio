@@ -9,6 +9,7 @@ import { PageRow } from '@/entities/page';
 import { formatPageData } from '@/entities/page/model/helper';
 import { NotionPageProperties } from '@/shared/types';
 import { useInfinityPages } from '../hook/useInfinityPages';
+import useInfinityScrollObserver from '@/shared/hooks/useInfinityScrollObserver';
 
 /**
  * /archive 페이지에서 notion Page 데이터를 렌더링하는 컴포넌트
@@ -17,8 +18,21 @@ import { useInfinityPages } from '../hook/useInfinityPages';
 export const ArchiveList = () => {
   const query = useSearchModalStore((state) => state.query);
   const setQuery = useSearchModalStore((state) => state.setQuery);
-  const { pages, isLoading, fetchNextPage, hasMore } = useInfinityPages({
-    query: query,
+  const { pages, isLoading, fetchNextPage, hasMore, isFetchingNextPage } =
+    useInfinityPages({
+      query: query,
+    });
+
+  // 중복 호출 방지를 위해 isFetchingNextPage 상태 체크
+  const handleIntersect = () => {
+    if (hasMore && !isFetchingNextPage) {
+      fetchNextPage();
+    }
+  };
+  const targetRef = useInfinityScrollObserver({
+    onIntersect: handleIntersect,
+    rootMargin: '100px', // 미리 로딩
+    threshold: 0.1,
   });
 
   // 컨포넌트 언마운트 시 query 리셋
@@ -72,16 +86,8 @@ export const ArchiveList = () => {
           return <PageRow {...formatted} key={id} />;
         })}
       </tbody>
-      {/* page 목록이 더 있자면 렌더링 */}
-      {hasMore && (
-        <tfoot>
-          <tr>
-            <td colSpan={4} className="text-center py-4">
-              <button onClick={() => fetchNextPage()}>테스트</button>
-            </td>
-          </tr>
-        </tfoot>
-      )}
+      {/* page 목록이 더 있으면 렌더링 */}
+      {hasMore && <tfoot ref={targetRef}></tfoot>}
     </>
   );
 };

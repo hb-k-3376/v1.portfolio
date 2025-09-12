@@ -14,7 +14,7 @@ const useInfinityScrollObserver = ({
   /*
   트리거 요소를 설정하고 해당 트리거 요소가 보이면 isIntersecting가 동작하면서 onIntersect가 실행됨
   */
-  const targetRef = useRef<HTMLDivElement>(null);
+  const targetRef = useRef<HTMLTableSectionElement>(null);
 
   useEffect(() => {
     if (!targetRef.current) return;

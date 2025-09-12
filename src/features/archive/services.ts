@@ -43,9 +43,7 @@ export const getPageMetadataById = async (slug: string) => {
  * notion 데이터베이스 에서 id로 page content 가져오는 서비스 함수
  */
 export const getPageContentById = async (slug: string) => {
-  const res = await api.get<APIResponse<NotionPageContent>>(
-    `/notion/content/${slug}`
-  );
+  const res = await api.get<APIResponse<NotionPageContent>>(`/notion/content/${slug}`);
   return res.data.body.results;
 };
 
@@ -54,7 +52,7 @@ export const getPageContentById = async (slug: string) => {
  * notion 데이터베이스 에서 pages list 가져오는 서비스 함수
  */
 export const getPages = async ({
-  pageSize = '20',
+  pageSize = '10',
   query,
   cursor,
 }: {
@@ -72,9 +70,7 @@ export const getPages = async ({
     params.append('cursor', cursor);
   }
 
-  const res = await api.get<APIResponse<NotionPagesResponse>>(
-    `/notion?${params}`
-  );
+  const res = await api.get<APIResponse<NotionPagesResponse>>(`/notion?${params}`);
 
   return {
     pages: res.data.body.pages,
