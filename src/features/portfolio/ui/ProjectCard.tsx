@@ -17,7 +17,7 @@ export const ProjectCard = ({
 
         <div className="z-10 sm:col-span-6 flex flex-col gap-2 sm:order-2 order-1">
           <Title title={name} slug={link} />
-          <p className="text-sm leading-normal">{description}</p>
+          <p className="text-sm leading-normal whitespace-pre-line">{description}</p>
           <ul className="flex flex-col text-sm leading-normal">
             {roles.map((role, index) => (
               <li key={index}>• {role}</li>
