@@ -19,7 +19,7 @@ export const ArchiveSection = () => {
 
   return (
     <Section id="archive">
-      <header className="sticky z-20 top-0 md-4 md:-mx-12 md:px-12 w-screen py-5 bg-slate-900/75 backdrop-blur lg:opacity-0 lg:relative lg:top-auto lg:w-full">
+      <header className="sticky z-20 top-0 md-4 md:-mx-12 md:px-12 w-full py-5 bg-slate-900/75 backdrop-blur lg:opacity-0 lg:relative lg:top-auto">
         <h2 className="text-base uppercase tracking-widest font-bold lg:sr-only">
           Archive
         </h2>
