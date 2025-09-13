@@ -23,7 +23,7 @@ export const SocialList = () => {
       </li>
       <li className="mr-5 shrink-0 text-xs">
         <ExternalLink
-          href="https://github.com/hb-k-3376/"
+          href="https://www.linkedin.com/in/%ED%98%84%EB%B9%88-%EA%B9%80-1571b4350/"
           ariaLabel="LinkedIn (opens in a new tab)"
           title="LinkedIn"
           className="block hover:text-primary focus-visible:text-primary"
