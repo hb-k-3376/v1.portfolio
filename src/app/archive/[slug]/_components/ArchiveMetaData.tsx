@@ -6,7 +6,12 @@ interface ArchiveMetadataProps {
   modifiedBy: string;
   tags: Array<{ id: string; name: string; color: string }>;
 }
-export const ArchiveMetaData = ({ createdBy, description, modifiedBy, tags }: ArchiveMetadataProps) => {
+export const ArchiveMetaData = ({
+  createdBy,
+  description,
+  modifiedBy,
+  tags,
+}: ArchiveMetadataProps) => {
   return (
     <dl className="flex flex-col gap-4 py-8">
       <div className="lg:flex lg:items-center">
@@ -29,7 +34,7 @@ export const ArchiveMetaData = ({ createdBy, description, modifiedBy, tags }: Ar
           tags
         </dt>
         <dd>
-          <ul className="flex ">
+          <ul className="flex flex-wrap">
             {tags.map((tag) => (
               <Tag name={tag.name} key={tag.id} />
             ))}
