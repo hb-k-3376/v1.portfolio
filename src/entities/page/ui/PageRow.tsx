@@ -25,7 +25,7 @@ export const PageRow = ({ created_time, description, tags, title, slug }: IPage)
       onClick={handleClick}
     >
       <td className="py-4 pr-4 align-top text-sm">
-        <div className="translate-y-px">{created_time}</div>
+        <p className="translate-y-px">{created_time}</p>
       </td>
       <td className="py-4 pr-4 align-top font-semibold leading-snug">
         <Link
@@ -44,9 +44,7 @@ export const PageRow = ({ created_time, description, tags, title, slug }: IPage)
         </ul>
       </td>
       <td className="hidden lg:table-cell">
-        <div className="translate-y-px whitespace-nowrap truncate max-w-base">
-          {description}
-        </div>
+        <p className="truncate">{description}</p>
       </td>
     </tr>
   );
