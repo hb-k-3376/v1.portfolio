@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import { Lighter } from '@/shared/ui';
-import { Providers } from '@/shared/lib';
 import { Analytics } from '@vercel/analytics/next';
-import './styles/globals.css';
+import { Providers } from './_providers';
+import './_styles/globals.css';
 
 export const metadata: Metadata = {
   title: 'Hyun',
