@@ -1,9 +1,7 @@
-import { Section } from '@/shared/ui';
-
-import { ProjectCard } from './ProjectCard';
 import { LinkMoreContent } from './LinkMoreContent';
 
-import { PROJECT_LIST } from '../model/constants';
+import { PROJECT_LIST, ProjectCard } from '@/entities/project';
+import { Section } from '@/shared/ui';
 /**
  * 메인 페이지의 Notion Project 리스트 섹션
  */

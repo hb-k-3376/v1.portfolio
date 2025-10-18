@@ -5,7 +5,7 @@ import {
   getTags,
   getTitle,
 } from '@/shared/utils';
-import { IPage } from './types';
+import { Page } from './type';
 import { NotionPageProperties } from '@/shared/types';
 
 /**
@@ -19,7 +19,7 @@ export const formatPageData = ({
   title,
   id,
   slug,
-}: NotionPageProperties): IPage => {
+}: NotionPageProperties): Page => {
   const formattedTitle = getTitle(title);
   const formattedDescription = getDescription(description);
   const formattedTags = getTags(tags);

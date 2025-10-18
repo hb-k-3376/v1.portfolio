@@ -1,7 +1,7 @@
 'use client';
 
 import { Search, X } from 'lucide-react';
-import { useSearchModalStore } from '../hook/useSearchModalStore';
+import { useSearchModalStore } from '../hooks/useSearchModalStore';
 
 export const SearchInput = () => {
   const open = useSearchModalStore((state) => state.open);

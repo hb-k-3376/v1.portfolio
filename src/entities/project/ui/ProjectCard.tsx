@@ -1,15 +1,8 @@
 import Image from 'next/image';
 import { Tag, Title } from '@/shared/ui';
-import { ProjectType } from '../model/type';
+import { Project } from '../model';
 
-export const ProjectCard = ({
-  description,
-  tags,
-  name,
-  image,
-  link,
-  roles,
-}: ProjectType) => {
+export const ProjectCard = ({ description, tags, name, image, link, roles }: Project) => {
   return (
     <>
       <div className="group relative grid gap-4 pb-1 transition-all group-hover/list:opacity-50 hover:opacity-100 sm:grid-cols-8">

@@ -1,6 +1,6 @@
-import { ProjectType } from './type';
+import { Project } from './type';
 
-export const PROJECT_LIST: ProjectType[] = [
+export const PROJECT_LIST: Project[] = [
   {
     name: 'Anonimo 익명 소통 서비스',
     period: '08.18 - 09.08',

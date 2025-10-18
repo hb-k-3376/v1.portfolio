@@ -3,12 +3,12 @@
 import { useEffect } from 'react';
 import { Loader2 } from 'lucide-react';
 
-import { useSearchModalStore } from '../hook/useSearchModalStore';
+import { useSearchModalStore } from '../hooks/useSearchModalStore';
 
 import { PageRow } from '@/entities/page';
 import { formatPageData } from '@/entities/page/model/helper';
 import { NotionPageProperties } from '@/shared/types';
-import { useInfinityPages } from '../hook/useInfinityPages';
+import { useInfinityPages } from '../hooks/useInfinityPages';
 import useInfinityScrollObserver from '@/shared/hooks/useInfinityScrollObserver';
 
 /**

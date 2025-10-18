@@ -1,4 +1,5 @@
-export { PageCard } from './ui/PageCard';
-export { PageRow } from './ui/PageRow';
-export { formatPageData } from './model/helper';
-export type { IPage } from './model/types';
+export { PageCard, PageRow } from './ui';
+
+export { formatPageData } from './model';
+// 타입
+export type { Page } from './model';

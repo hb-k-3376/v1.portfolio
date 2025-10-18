@@ -1,14 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { IPage } from '../model/types';
+import { Page } from '../model/';
 import { Tag } from '@/shared/ui/Tag';
 import { useRef } from 'react';
 
 /**
  *  Page 데이터를 row 형태로 보여주느 entity
  */
-export const PageRow = ({ created_time, description, tags, title, slug }: IPage) => {
+export const PageRow = ({ created_time, description, tags, title, slug }: Page) => {
   const linkRef = useRef<HTMLAnchorElement | null>(null);
 
   const handleClick = (e: React.MouseEvent) => {

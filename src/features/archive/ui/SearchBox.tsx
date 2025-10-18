@@ -4,8 +4,8 @@ import { useLocalStorage } from '@/shared/hooks/useLocalStorage';
 import { ModalPortal } from '@/shared/ui/ModalPortal';
 import { Search, X } from 'lucide-react';
 import { useRef } from 'react';
-import { useSearchModal } from '../hook/useSearchModal';
-import { useSearchModalStore } from '../hook/useSearchModalStore';
+import { useSearchModal } from '../hooks/useSearchModal';
+import { useSearchModalStore } from '../hooks/useSearchModalStore';
 
 /**
  * Archive 검색 박스
@@ -16,8 +16,7 @@ export const SearchBox = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   // 로컬 스토리지 훅
-  const { searchHistory, setSearchHistory, removeSearchHistory } =
-    useLocalStorage();
+  const { searchHistory, setSearchHistory, removeSearchHistory } = useLocalStorage();
 
   if (!isOpen) return null;
 
