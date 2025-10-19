@@ -1,19 +1,12 @@
 import { unstable_cache } from 'next/cache';
 
-import { formatPageData, GetPagesOptions } from '../model';
+import { GetPagesOptions } from '../model';
 
 import { fetchNotionDataQuery, fetchNotionPageContent } from '@/entities/page/api/server';
 import { buildMetaQuery, buildPagesQuery } from '@/shared/lib/build-query';
-import {
-  getCreatedDate,
-  getDescription,
-  getModifiedDate,
-  getTags,
-  getTitle,
-  isPageObjectResponse,
-} from '@/shared/utils';
-import { PageObjectResponse } from '@notionhq/client';
 import { ContentProperty, MultiSelectProperty } from '@/shared/types';
+import { isPageObjectResponse } from '@/shared/utils';
+import { PageObjectResponse } from '@notionhq/client';
 import { formatMetaData } from '../model/helper';
 
 // 서버 컴포넌트 호출 래핑 함수

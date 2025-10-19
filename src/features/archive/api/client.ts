@@ -1,26 +1,6 @@
 import { APIResponse } from '@/shared/types/api';
-import {
-  getCreatedDate,
-  getDescription,
-  getModifiedDate,
-  getTags,
-  getTitle,
-} from '@/shared/utils';
 import { api } from '@/shared/lib';
-import {
-  NotionPageContent,
-  NotionPageProperties,
-  NotionPagesResponse,
-} from '@/shared/types';
-
-/**
- * get page content by id (service)
- * notion 데이터베이스 에서 id로 page content 가져오는 서비스 함수
- */
-export const getPageContentById = async (slug: string) => {
-  const res = await api.get<APIResponse<NotionPageContent>>(`/${slug}/content`);
-  return res.data.body.results;
-};
+import { NotionPagesResponse } from '@/shared/types';
 
 /**
  * get pages

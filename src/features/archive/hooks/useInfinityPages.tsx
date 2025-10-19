@@ -1,6 +1,6 @@
-import { getPages } from '@/features/archive';
 import { PageObjectResponse } from '@notionhq/client';
 import { InfiniteData, useInfiniteQuery } from '@tanstack/react-query';
+import { getPages } from '../api/client';
 
 interface IUsePagesQueryProps {
   query: string | null;
