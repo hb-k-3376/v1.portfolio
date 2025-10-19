@@ -1,21 +1,14 @@
-'use client';
-
 import { PageCard } from '@/entities/page';
 import { formatPageData } from '@/entities/page/model/helper';
-import { Section } from '@/shared/ui';
-import { HOME_PAGE_SIZE } from '@/shared/constants';
+import { LinkMoreContent, Section } from '@/shared/ui';
 import { NotionPageProperties } from '@/shared/types';
-import { usePagesQuery } from '@/shared/hooks/usePagesQuery';
-import { LinkMoreContent } from './LinkMoreContent';
+import { getPages } from '@/entities/page/api/queries';
 
 /**
  * 메인 페이지의 Notion Archive 리스트 섹션
  */
-export const ArchiveSection = () => {
-  const { pages } = usePagesQuery({
-    pageSize: HOME_PAGE_SIZE,
-    query: null,
-  });
+export const ArchiveSection = async () => {
+  const { pages } = await getPages();
 
   return (
     <Section id="archive">
@@ -35,7 +28,7 @@ export const ArchiveSection = () => {
           );
         })}
       </ul>
-      <LinkMoreContent text="   View More Archive" link="/archive" />
+      <LinkMoreContent text="View More Archive" link="/archive" />
     </Section>
   );
 };

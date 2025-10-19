@@ -8,3 +8,10 @@ export interface Page {
   description: string;
   slug: string;
 }
+
+// 페이지 옵션 파라미터
+export type GetPagesOptions = {
+  pageSize?: number;
+  cursor?: string | null;
+  searchQuery?: string | null;
+};

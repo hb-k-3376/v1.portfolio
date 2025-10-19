@@ -1,17 +1,12 @@
-'use client';
+import { Suspense } from 'react';
 
-import dynamic from 'next/dynamic';
-import { AboutSection } from '@/features/portfolio/ui/AboutSection';
-import { ProjectSection } from '@/features/portfolio/ui/ProjectSection';
+import { ArchiveSection } from '@/features/portfolio';
 import { SectionLoading } from '@/shared/ui/skeleton/SectionLoading';
+import { AboutSection } from './AboutSection';
+import { ProjectSection } from './ProjectSection';
 
-const ArchiveSection = dynamic(
-  () => import('@/features/portfolio').then((mod) => ({ default: mod.ArchiveSection })),
-  {
-    ssr: false,
-    loading: () => <SectionLoading sectionId="archive" />,
-  }
-);
+// ArchiveSection 컴포넌트에 partial prerendering 적용
+export const experimental_ppr = true;
 
 export const PortfolioView = () => {
   return (
@@ -21,7 +16,9 @@ export const PortfolioView = () => {
       {/**  project section */}
       <ProjectSection />
       {/** archive section */}
-      <ArchiveSection />
+      <Suspense fallback={<SectionLoading sectionId="archive" />}>
+        <ArchiveSection />
+      </Suspense>
     </>
   );
 };
