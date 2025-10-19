@@ -1,6 +1,7 @@
 import { Tag } from '@/shared/ui/Tag';
 import { Clock, Text, List } from 'lucide-react';
-interface ArchiveMetadataProps {
+
+interface Props {
   createdBy: string;
   description: string;
   modifiedBy: string;
@@ -13,7 +14,7 @@ export const ArchiveMetaData = ({
   modifiedBy,
   tags,
   title,
-}: ArchiveMetadataProps) => {
+}: Props) => {
   return (
     <>
       <h1 className="text-4xl font-bold tracking-tight text-base sm:text-5xl">{title}</h1>

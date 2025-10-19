@@ -1,1 +1,2 @@
-export * from './ui/ArchiveView';
+export { ArchiveView } from './ui/ArchiveView';
+export { ArchiveMetaData } from './ui/ArchiveMetaData';

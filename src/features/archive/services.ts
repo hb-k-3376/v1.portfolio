@@ -14,36 +14,11 @@ import {
 } from '@/shared/types';
 
 /**
- * get page metadata by id (service)
- * notion 데이터베이스 에서 id로 page metadata 가져오는 서비스 함수
- */
-export const getPageMetadataById = async (slug: string) => {
-  const { data } = await api.get<APIResponse<NotionPageProperties>>(
-    `/notion/metadata/${slug}`
-  );
-
-  const title = getTitle(data.body.title);
-  const createdBy = getCreatedDate(data.body.created_time);
-  const tags = getTags(data.body.tags);
-  const modifiedBy = getModifiedDate(data.body.modified_time);
-  const description = getDescription(data.body.description);
-
-  return {
-    id: data.body.id,
-    title,
-    createdBy,
-    tags,
-    modifiedBy,
-    description,
-  };
-};
-
-/**
  * get page content by id (service)
  * notion 데이터베이스 에서 id로 page content 가져오는 서비스 함수
  */
 export const getPageContentById = async (slug: string) => {
-  const res = await api.get<APIResponse<NotionPageContent>>(`/notion/content/${slug}`);
+  const res = await api.get<APIResponse<NotionPageContent>>(`/${slug}/content`);
   return res.data.body.results;
 };
 

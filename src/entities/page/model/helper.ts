@@ -1,6 +1,7 @@
 import {
   getCreatedDate,
   getDescription,
+  getModifiedDate,
   getSlug,
   getTags,
   getTitle,
@@ -33,5 +34,29 @@ export const formatPageData = ({
     tags: formattedTags,
     created_time: formattedCreatedTime,
     slug: formattedSlug,
+  };
+};
+
+export const formatMetaData = ({
+  created_time,
+  description,
+  tags,
+  title,
+  modified_time,
+  id,
+}: Omit<NotionPageProperties, 'slug'>) => {
+  const formattedTitle = getTitle(title);
+  const formattedDescription = getDescription(description);
+  const formattedTags = getTags(tags);
+  const formattedCreatedTime = getCreatedDate(created_time);
+  const formattedModifiedTime = getModifiedDate(modified_time);
+
+  return {
+    id,
+    title: formattedTitle,
+    description: formattedDescription,
+    tags: formattedTags,
+    createdBy: formattedCreatedTime,
+    modifiedBy: formattedModifiedTime,
   };
 };

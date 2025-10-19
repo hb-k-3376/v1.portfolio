@@ -1,35 +1,23 @@
-import {
-  ArchiveContent,
-  getPageContentById,
-  getPageMetadataById,
-} from '@/features/archive';
-import { ArchiveMetaData } from './_components/ArchiveMetaData';
-import { BackButton } from '@/shared/ui';
-import { Comments } from './_components/Giscus';
+import { ArchiveContent } from '@/features/archive';
+import { BackButton, Comments } from '@/shared/ui';
+import { getPageContentById, getPageMetadataBySlug } from '@/entities/page/api/queries';
+import { ArchiveMetaData } from '@/widgets/archive';
 
-interface ISlugProps {
+interface Props {
   params: Promise<{ slug: string }>;
 }
 /**
  * archive 상세 페이지
  */
-export default async function page({ params }: ISlugProps) {
+export default async function page({ params }: Props) {
   const { slug } = await params;
-  const { createdBy, description, modifiedBy, tags, title, id } =
-    await getPageMetadataById(slug);
-
+  const { id, ...restMetadata } = await getPageMetadataBySlug(slug);
   const contents = await getPageContentById(id);
 
   return (
-    <section className="lg:py-24">
+    <section className="lg:py-24 lg:px-60">
       <BackButton label="Archive" path="/archive" />
-      <ArchiveMetaData
-        createdBy={createdBy}
-        description={description}
-        modifiedBy={modifiedBy}
-        tags={tags}
-        title={title}
-      />
+      <ArchiveMetaData {...restMetadata} />
       <hr />
       <ArchiveContent contents={contents} />
       <Comments />

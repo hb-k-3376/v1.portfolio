@@ -1,6 +1,7 @@
 import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints';
 import { getEnv } from './env';
 
+// 페이지 네이션 파라미터
 export const buildPagesQuery = (options: {
   pageSize: number;
   cursor: string | null;
@@ -37,4 +38,15 @@ export const buildPagesQuery = (options: {
       },
     ],
   } satisfies QueryDatabaseParameters;
+};
+
+// 메타 데이터 파라미터
+export const buildMetaQuery = (options: { slug: string }) => {
+  const { slug } = options;
+  const databaseId = getEnv('NOTION_DATABASE_ID');
+
+  return {
+    database_id: databaseId,
+    filter: { property: 'slug', rich_text: { equals: slug } },
+  };
 };
