@@ -21,11 +21,7 @@ export const ArchiveSection = async () => {
         {pages.map(({ properties, id }) => {
           const pageData = { ...properties, id } as NotionPageProperties;
           const formatted = formatPageData({ ...pageData });
-          return (
-            <li className="mb-12" key={id}>
-              <PageCard {...formatted} />
-            </li>
-          );
+          return <PageCard {...formatted} key={id} />;
         })}
       </ul>
       <LinkMoreContent text="View More Archive" link="/archive" />

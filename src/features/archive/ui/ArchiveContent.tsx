@@ -10,10 +10,10 @@ interface Props {
  */
 export const ArchiveContent = async ({ contents }: Props) => {
   return (
-    <section className="py-10 px-4">
+    <div className="py-10">
       {contents.map((content) => (
         <ContentRenderer content={content} key={content.id} />
       ))}
-    </section>
+    </div>
   );
 };

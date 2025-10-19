@@ -1,5 +1,4 @@
-import { Footer, Header } from '@/widgets/layout';
-import { PortfolioView } from '@/widgets/portfolio';
+import { PortfolioView, Footer, Header } from '@/widgets/portfolio';
 
 /**
  *  포트폴리오 페이지

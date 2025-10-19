@@ -1,9 +1,9 @@
-import { ITag } from '@/shared/types';
+import { Tag } from '@/shared/types';
 
 export interface Page {
   id: string;
   created_time: string;
-  tags: ITag[];
+  tags: Tag[];
   title: string;
   description: string;
   slug: string;

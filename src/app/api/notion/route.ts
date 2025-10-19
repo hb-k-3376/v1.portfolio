@@ -1,15 +1,7 @@
-import { getPages } from '@/entities/page/api/queries';
-import { fetchNotionPages } from '@/entities/page/api/server';
-import { notion } from '@/shared/lib';
-import { buildPagesQuery } from '@/shared/lib/build-query';
-import { isPageObjectResponse } from '@/shared/utils';
-import {
-  PageObjectResponse,
-  QueryDatabaseResponse,
-} from '@notionhq/client/build/src/api-endpoints';
-import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
+import { getPages } from '@/entities/page/api/queries';
 /**
  * 노션의 페이지( 데이터베이스 ) 리스트를 fetch하는 api router
  */

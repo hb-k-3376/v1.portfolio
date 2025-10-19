@@ -11,7 +11,6 @@ import {
  */
 export const getTitle = (title: TextProperty) => {
   if (!title.title) return '';
-
   return title.title[0]?.plain_text;
 };
 

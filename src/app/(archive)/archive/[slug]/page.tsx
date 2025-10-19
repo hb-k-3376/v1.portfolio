@@ -21,22 +21,18 @@ export default async function page({ params }: ISlugProps) {
   const contents = await getPageContentById(id);
 
   return (
-    <main className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-16 lg:px-60 lg:py-0 lg:pb-12">
-      <section className="lg:pt-24 ">
-        <BackButton label="Archive" path="/archive" />
-        <h1 className="text-4xl font-bold tracking-tight text-base sm:text-5xl">
-          {title}
-        </h1>
-        <ArchiveMetaData
-          createdBy={createdBy}
-          description={description}
-          modifiedBy={modifiedBy}
-          tags={tags}
-        />
-      </section>
+    <section className="lg:py-24">
+      <BackButton label="Archive" path="/archive" />
+      <ArchiveMetaData
+        createdBy={createdBy}
+        description={description}
+        modifiedBy={modifiedBy}
+        tags={tags}
+        title={title}
+      />
       <hr />
       <ArchiveContent contents={contents} />
       <Comments />
-    </main>
+    </section>
   );
 }
