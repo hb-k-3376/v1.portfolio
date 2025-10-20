@@ -18,7 +18,7 @@ export const ProjectSection = () => {
           </li>
         ))}
       </ul>
-      <LinkMoreContent text="View More Project" link="/#" />
+      <LinkMoreContent text="프로젝트 더보기" link="/#" />
     </Section>
   );
 };

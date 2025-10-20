@@ -24,7 +24,7 @@ export const ArchiveSection = async () => {
           return <PageCard {...formatted} key={id} />;
         })}
       </ul>
-      <LinkMoreContent text="View More Archive" link="/archive" />
+      <LinkMoreContent text="아카이브 더보기" link="/archive" />
     </Section>
   );
 };
