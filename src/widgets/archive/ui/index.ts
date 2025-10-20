@@ -1,2 +1,3 @@
 export { ArchiveMetaData } from './ArchiveMetaData';
-export { ArchiveView } from './ArchiveView';
+export { ArchiveHeader } from './ArchiveHeader';
+export { ArchiveTable } from './ArchiveTable';

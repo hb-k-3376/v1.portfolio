@@ -8,6 +8,7 @@ import { ContentProperty, MultiSelectProperty } from '@/shared/types';
 import { isPageObjectResponse } from '@/shared/utils';
 import { PageObjectResponse } from '@notionhq/client';
 import { formatMetaData } from '../model/helper';
+import { PagesApiResponse } from '../model/type';
 
 // 서버 컴포넌트 호출 래핑 함수
 
@@ -18,7 +19,7 @@ import { formatMetaData } from '../model/helper';
  * cacheOptions : { revalidate: 3600, tags: ['pages'] }
  */
 export const getPages = unstable_cache(
-  async (options: GetPagesOptions = {}) => {
+  async (options: GetPagesOptions = {}): Promise<PagesApiResponse> => {
     const { pageSize = 5, cursor = null, searchQuery = null } = options;
     const params = buildPagesQuery({
       pageSize,

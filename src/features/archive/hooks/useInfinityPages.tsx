@@ -1,21 +1,10 @@
-import { PageObjectResponse } from '@notionhq/client';
 import { InfiniteData, useInfiniteQuery } from '@tanstack/react-query';
 import { getPages } from '../api/client';
+import { PageCursor, PagesApiResponse, PagesQueryKey } from '@/entities/page';
 
 interface IUsePagesQueryProps {
   query: string | null;
 }
-
-// 페이지 응답
-type PagesApiResponse = {
-  pages: PageObjectResponse[];
-  next_cursor: string | null;
-  has_more: boolean;
-};
-// 쿼리키
-type PagesQueryKey = (string | null)[];
-// 커서
-type PageCursor = string | null;
 
 /**
  * @description  페이지 목록을 서버에서 가져오고, 로딩 상태와 함께 반환하는 커스텀 훅

@@ -1,4 +1,5 @@
 import { Tag } from '@/shared/types';
+import { PageObjectResponse } from '@notionhq/client';
 
 export interface Page {
   id: string;
@@ -15,3 +16,12 @@ export type GetPagesOptions = {
   cursor?: string | null;
   searchQuery?: string | null;
 };
+
+export type PagesApiResponse = {
+  pages: PageObjectResponse[];
+  next_cursor: string | null;
+  has_more: boolean;
+};
+
+export type PagesQueryKey = ['pages', string | null];
+export type PageCursor = string | null | undefined;

@@ -1,2 +1,2 @@
-export type { Page, GetPagesOptions } from './type';
-export { formatPageData } from './helper';
+export type * from './type';
+export { formatPageData, formatMetaData } from './helper';

@@ -5,9 +5,6 @@ import { SectionLoading } from '@/shared/ui/skeleton/SectionLoading';
 import { AboutSection } from './AboutSection';
 import { ProjectSection } from './ProjectSection';
 
-// ArchiveSection 컴포넌트에 partial prerendering 적용
-export const experimental_ppr = true;
-
 export const PortfolioView = () => {
   return (
     <>

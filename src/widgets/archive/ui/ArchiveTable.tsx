@@ -1,5 +1,5 @@
 import { ArchiveList } from '@/features/archive';
-import TableHeader from './TableHeader';
+import TableHeader from '../_components/TableHeader';
 
 export const ArchiveTable = () => {
   return (

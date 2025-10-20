@@ -1,2 +1,1 @@
-export { ArchiveList } from './ui/ArchiveList';
-export { ArchiveContent } from './ui/ArchiveContent';
+export { SearchBox, ArchiveContent, ArchiveList } from './ui';
