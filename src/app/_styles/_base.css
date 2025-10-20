@@ -35,4 +35,8 @@
   :focus {
     @apply outline-none;
   }
+
+  strong {
+    @apply text-white font-medium;
+  }
 }
