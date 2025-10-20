@@ -1,7 +1,7 @@
-import { ArchiveContent } from '@/features/archive';
 import { BackButton, Comments } from '@/shared/ui';
 import { getPageContentById, getPageMetadataBySlug } from '@/entities/page/api/queries';
 import { ArchiveMetaData } from '@/widgets/archive';
+import { ArchiveContent } from '@/features/archive/detail/ui';
 
 interface Props {
   params: Promise<{ slug: string }>;

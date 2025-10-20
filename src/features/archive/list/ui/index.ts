@@ -1,0 +1,1 @@
+export { ArchiveTable } from './ArchiveTable';

@@ -4,8 +4,8 @@ import { useLocalStorage } from '@/shared/hooks/useLocalStorage';
 import { ModalPortal } from '@/shared/ui/ModalPortal';
 import { Search, X } from 'lucide-react';
 import { useRef } from 'react';
-import { useSearchModal } from '../hooks/useSearchModal';
-import { useSearchModalStore } from '../hooks/useSearchModalStore';
+import { useSearchModal } from '../model/useSearchModal';
+import { useSearchModalStore } from '../model/useSearchModalStore';
 
 /**
  * Archive 검색 박스

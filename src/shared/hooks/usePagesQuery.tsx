@@ -1,4 +1,4 @@
-import { getPages } from '@/features/archive/api/client';
+import { getPages } from '@/features/archive/list/api/client';
 import { useSuspenseQuery } from '@tanstack/react-query';
 
 interface IUsePagesQueryProps {

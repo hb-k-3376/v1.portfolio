@@ -1,1 +1,1 @@
-export { ArchiveMetaData, ArchiveHeader, ArchiveTable } from './ui';
+export { ArchiveMetaData, ArchiveHeader, ArchiveListView } from './ui';

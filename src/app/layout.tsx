@@ -16,8 +16,8 @@ export default function RootLayout({
     <html lang="ko">
       <body cz-shortcut-listen="true">
         <Providers>
-          <Lighter />
           {children}
+          <Lighter />
           <Analytics />
         </Providers>
       </body>

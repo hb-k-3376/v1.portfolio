@@ -6,7 +6,7 @@ interface Props {
   threshold?: number;
 }
 
-const useInfinityScrollObserver = ({
+export const useInfinityScrollObserver = ({
   onIntersect,
   rootMargin = '200px',
   threshold = 0.1,
@@ -35,5 +35,3 @@ const useInfinityScrollObserver = ({
 
   return targetRef;
 };
-
-export default useInfinityScrollObserver;
