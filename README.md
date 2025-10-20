@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 김현빈 | 프론트엔드 개발자 포트폴리오
 
-## Getting Started
+안녕하세요, 사용자 경험을 최우선으로 생각하는 프론트엔드 개발자 김현빈입니다. 백엔드 개발 경험을 바탕으로 원활한 협업과 커뮤니케이션을 지향하며, 디테일을 놓치지 않는 완성도 높은 제품을 만들기 위해 노력합니다.
 
-First, run the development server:
+이 프로젝트는 저의 프로젝트와 아티클을 소개하기 위해 Next.js와 TypeScript 기반으로 제작한 개인 포트폴리오 웹사이트입니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **🌐 Live Site**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> [포트폴리오 웹사이트 바로가기](https://your-portfolio-url.com) 👈
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ 주요 기능
 
-To learn more about Next.js, take a look at the following resources:
+-   **소개**: 저에 대한 간략한 소개입니다.
+-   **프로젝트**: 제가 진행했던 프로젝트 목록입니다.
+-   **아카이브**: Notion API를 통해 동적으로 가져오는 기술 블로그 섹션입니다.
+-   **검색**: 아카이브 내의 게시물을 검색할 수 있습니다.
+-   **댓글**: Giscus를 연동하여 댓글 기능을 구현했습니다.
+-   **반응형 디자인**: 다양한 화면 크기에 최적화되어 있습니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ 기술 스택
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+-   **프레임워크**: [Next.js](https://nextjs.org/)
+-   **언어**: [TypeScript](https://www.typescriptlang.org/)
+-   **스타일링**: [Tailwind CSS](https://tailwindcss.com/)
+-   **데이터 페칭**: [TanStack Query](https://tanstack.com/query/latest), [Axios](https://axios-http.com/)
+-   **CMS**: [Notion API](https://developers.notion.com/)
+-   **댓글**: [Giscus](https://giscus.app/)
 
-## Deploy on Vercel
+## 🏛️ 아키텍처 및 주요 결정
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-   **Notion을 Headless CMS로 활용**
+    -   블로그 게시물(아카이브) 관리를 위해 Notion을 Headless CMS로 선택했습니다. 이를 통해 개발 지식이 없어도 콘텐츠를 쉽게 작성하고 수정할 수 있으며, API를 통해 데이터를 동적으로 웹사이트에 표시하여 유지보수 편의성을 높였습니다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-   **컴포넌트 기반 아키텍처**
+    -   재사용 가능하고 응집도 높은 컴포넌트를 설계하기 위해 Atomic Design 패턴에 영감을 받은 구조를 적용했습니다. 컴포넌트의 역할을 `entities`, `features`, `widgets` 등으로 명확히 분리하여 코드의 유지보수성과 확장성을 높이고자 했습니다.
+
+-   **성능 최적화**
+    -   Next.js의 SSG(Static Site Generation)와 ISR(Incremental Static Regeneration)을 활용하여 초기 로딩 속도를 개선하고 SEO를 최적화했습니다.
+    -   이미지와 같이 무거운 리소스는 `next/image`를 통해 최적화하고, 인터랙션이 필요한 부분은 Code Splitting을 적용하여 사용자 경험을 향상시켰습니다.
