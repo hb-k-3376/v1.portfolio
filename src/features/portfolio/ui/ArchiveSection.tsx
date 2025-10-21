@@ -1,6 +1,6 @@
 import { PageCard } from '@/entities/page';
 import { formatPageData } from '@/entities/page/model/helper';
-import { LinkMoreContent, Section, SectionHeader } from '@/shared/ui';
+import { LinkMoreContent, Section } from '@/shared/ui';
 import { NotionPageProperties } from '@/shared/types';
 import { getPages } from '@/entities/page/api/queries';
 
@@ -12,7 +12,7 @@ export const ArchiveSection = async () => {
 
   return (
     <Section id="archive">
-      <SectionHeader>Archive</SectionHeader>
+      <Section.Header>Archive</Section.Header>
       <ul className="group/list">
         {pages.map(({ properties, id }) => {
           const pageData = { ...properties, id } as NotionPageProperties;

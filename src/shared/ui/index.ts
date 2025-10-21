@@ -1,10 +1,9 @@
-export { Lighter } from './Lighter';
 export { Section } from './Section';
+export { Lighter } from './Lighter';
 export { BackButton } from './BackButton';
 export { Tag } from './Tag';
 export { Title } from './Title';
 export { ContentsText } from './ContentsText';
 export { LinkMoreContent } from './LinkMoreContent';
 export { Comments } from './Comments';
-export { SectionHeader } from './SectionHeader';
 export { Highlight } from './Highlight';

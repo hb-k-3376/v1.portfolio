@@ -1,10 +1,10 @@
-import { Highlight, Section, SectionHeader } from '@/shared/ui';
+import { Highlight, Section } from '@/shared/ui';
 
 export const AboutSection = () => {
   return (
     <Section id="about">
       {/* 섹션 헤더 */}
-      <SectionHeader>About</SectionHeader>
+      <Section.Header>About</Section.Header>
       <div aria-labelledby="about-heading">
         <h2 id="about-heading" className="sr-only">
           자기소개
