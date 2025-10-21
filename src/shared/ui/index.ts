@@ -6,3 +6,4 @@ export { Title } from './Title';
 export { ContentsText } from './ContentsText';
 export { LinkMoreContent } from './LinkMoreContent';
 export { Comments } from './Comments';
+export { SectionHeader } from './SectionHeader';

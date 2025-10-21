@@ -10,12 +10,10 @@ export const LinkMoreContent = ({ text, link }: Props) => {
     <div className="mt-12">
       <Link
         href={link}
-        className="flex items-center leading-tight font-semibold text-base group"
+        className="group flex items-center leading-tight font-semibold text-base hover:text-primary group-focus-visible:text-primary"
         aria-label={text}
       >
-        <span className="border-b border-transparent pb-px transition group-hover:border-primary motion-reduce:transition-none group-focus-visible:border-primary">
-          {text}
-        </span>
+        <span className="pb-px transition motion-reduce:transition-none">{text}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"

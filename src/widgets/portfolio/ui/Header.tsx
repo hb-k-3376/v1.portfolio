@@ -19,8 +19,6 @@ export const Header = () => {
           Frontend Engineer
         </h2>
         <p className="mt-4 max-w-xs leading-tight text-inherit">
-          호기심을 원동력으로, 성실하게 사용자 중심의 웹을 만들어갑니다.
-          <br />
           깊이 있게 고민하고, 꼼꼼하게 구현하여 완성도 높은 사용자 경험을 추구합니다.
         </p>
         <nav className="mt-16 w-max hidden lg:block">

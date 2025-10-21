@@ -37,6 +37,6 @@
   }
 
   strong {
-    @apply text-white font-medium;
+    @apply text-white font-medium hover:text-primary;
   }
 }

@@ -1,13 +1,10 @@
-import { Section } from '@/shared/ui';
+import { Section, SectionHeader } from '@/shared/ui';
 
 export const AboutSection = () => {
   return (
     <Section id="about">
-      <header className="sticky z-20 top-0 md-4 md:-mx-12 md:px-12 w-full py-5 bg-slate-900/75 backdrop-blur lg:opacity-0 lg:relative lg:top-auto">
-        <h2 className="text-base uppercase tracking-widest font-bold lg:sr-only">
-          About
-        </h2>
-      </header>
+      {/* 섹션 헤더 */}
+      <SectionHeader>About</SectionHeader>
       <div aria-labelledby="about-heading">
         <h2 id="about-heading" className="sr-only">
           자기소개
@@ -31,9 +28,9 @@ export const AboutSection = () => {
             찾아가는 과정
           </strong>
           에서 가장 큰 에너지를 얻습니다. 특히 백엔드 개발 경험 덕분에 API 설계와 데이터
-          흐름을 깊이 이해하고 있어, 백엔드 팀과 더욱 원활히 소통할 수 있습니다.
+          흐름을 이해하고 있어, 백엔드와 원활히 소통할 수 있습니다.
         </p>
-
+        <br />
         <p>
           개발할 때는 단순히 기능을 구현하는 것을 넘어,{' '}
           <strong>
@@ -41,7 +38,7 @@ export const AboutSection = () => {
           </strong>
           합니다.{' '}
           <strong>
-            접근성, 성능, 예외 상황까지 꼼꼼하게 고려하며, 디테일에 타협하지 않습니다.
+            접근성, 성능, 예외 상황까지 꼼꼼하게 고려하며 작업에 임하고 있습니다.
           </strong>{' '}
           이런 접근이 결국 완성도 높은 사용자 경험으로 이어진다고 믿습니다.
         </p>

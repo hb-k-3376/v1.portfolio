@@ -12,8 +12,8 @@ export const SocialList = () => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height="24"
-            width="24"
+            height="21"
+            width="21"
             viewBox="0 0 496 512"
             fill="currentColor"
           >
@@ -30,8 +30,8 @@ export const SocialList = () => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height="24"
-            width="24"
+            height="21"
+            width="21"
             viewBox="0 0 448 512"
             fill="currentColor"
           >
@@ -48,8 +48,8 @@ export const SocialList = () => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height="24"
-            width="24"
+            height="21"
+            width="21"
             viewBox="0 0 512 512"
             fill="currentColor"
           >
@@ -66,8 +66,8 @@ export const SocialList = () => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height="24"
-            width="24"
+            height="21"
+            width="21"
             viewBox="0 0 640 512"
             fill="currentColor"
           >
