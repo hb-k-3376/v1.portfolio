@@ -7,7 +7,7 @@ export const AboutSection = () => {
     <Section id="about">
       {/* 섹션 헤더 */}
       <Section.Header>About</Section.Header>
-      <div aria-labelledby="about-heading" className="mb-8">
+      <div aria-labelledby="about-heading" className="mb-6">
         <h2 id="about-heading" className="sr-only">
           자기소개
         </h2>
@@ -16,7 +16,7 @@ export const AboutSection = () => {
         </p>
         <br />
         <p>
-          저의 가장 큰 강점은 <Highlight>끈기 있고 열정적인 태도</Highlight>입니다.{' '}
+          저의 가장 큰 강점은 <Highlight>끈기 있고 열정적인 태도</Highlight>입니다.
           프로그래머스 데브코스를 수료하며 2차, 3차, 4차 프로젝트 모두{' '}
           <Highlight>최우수상</Highlight>을 받을 만큼 몰입하고 노력했습니다. 구현한 기능이
           즉각적으로 화면에 나타나는 프론트엔드의 매력에 빠져들었고, 빠른 성장을

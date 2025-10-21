@@ -17,8 +17,8 @@ export const TechStackCard = ({ image, tech, url }: Props) => {
       >
         <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-lg transition motion-reduce:transition-none lg:-inset-x-4 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg lg:group-focus-visible:bg-slate-800/50 lg:group-focus-visible:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-focus-visible:drop-shadow-lg" />
 
-        <div className="relative z-10 flex flex-col items-center gap-3 pb-1">
-          <div className="flex items-center justify-center aspect-square size-20 sm:size-24">
+        <div className="relative z-10 flex flex-col items-center gap-3">
+          <div className="flex items-center justify-center aspect-square size-20">
             <Image
               src={`/images/techs/${image}`}
               alt={`${tech} logo`}
