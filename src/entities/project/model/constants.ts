@@ -21,7 +21,7 @@ export const PROJECT_LIST: Project[] = [
       'Zustand',
       'Tailwind CSS',
     ],
-    image: '/images/projects/anonimo.png',
+    image: '/images/projects/anonimo.webp',
     link: 'https://v1-portfolio-nine.vercel.app/archive/3rd-project-anonimo',
   },
   {
@@ -36,7 +36,7 @@ export const PROJECT_LIST: Project[] = [
       'useForm, localStorage, useAuth 등 공통 훅',
     ],
     tags: ['React', 'Vite', 'Supabase', 'Gemini API', 'React-router-dom', 'Tailwind CSS'],
-    image: '/images/projects/seediary.png',
+    image: '/images/projects/seediary.webp',
     link: 'https://v1-portfolio-nine.vercel.app/archive/2nd-project-seediary',
   },
 ];

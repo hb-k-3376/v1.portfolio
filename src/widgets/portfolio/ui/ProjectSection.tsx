@@ -7,6 +7,11 @@ export const ProjectSection = () => {
   return (
     <Section id="project">
       <Section.Header>Projects</Section.Header>
+      {/* <ul className="group/list">
+        {PROJECT_LIST.map((project) => (
+          <ProjectCard {...project} key={project.name} />
+        ))}
+      </ul> */}
       <ul className="group/list">
         {PROJECT_LIST.map((project) => (
           <ProjectCard {...project} key={project.name} />

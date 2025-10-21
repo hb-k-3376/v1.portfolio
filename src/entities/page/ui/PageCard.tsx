@@ -1,6 +1,7 @@
-import { Tag } from '@/shared/ui/Tag';
-import { Title } from '@/shared/ui/Title';
 import { Fragment } from 'react';
+
+import { Badge } from '@/shared/ui';
+import { Title } from '@/shared/ui/Title';
 import { Page } from '../model';
 
 /**
@@ -15,12 +16,12 @@ export const PageCard = ({ created_time, description, tags, title, slug }: Page)
           {created_time}
         </div>
         <div className="z-10 sm:col-span-6 flex flex-col gap-2">
-          <Title title={title} slug={slug} />
+          <Title slug={slug}>{title}</Title>
           <p className="text-sm leading-normal">{description}</p>
-          <ul className="flex flex-wrap">
+          <ul className="flex flex-wrap gap-3">
             {tags?.map((tag) => (
               <Fragment key={tag.id}>
-                <Tag name={tag.name} />
+                <Badge name={tag.name} />
               </Fragment>
             ))}
           </ul>

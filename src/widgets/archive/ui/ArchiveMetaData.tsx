@@ -1,4 +1,4 @@
-import { Tag } from '@/shared/ui/Tag';
+import { Badge } from '@/shared/ui';
 import { Clock, Text, List } from 'lucide-react';
 
 interface Props {
@@ -39,9 +39,9 @@ export const ArchiveMetaData = ({
             tags
           </dt>
           <dd>
-            <ul className="flex flex-wrap">
+            <ul className="flex flex-wrap gap-3">
               {tags.map((tag) => (
-                <Tag name={tag.name} key={tag.id} />
+                <Badge name={tag.name} key={tag.id} />
               ))}
             </ul>
           </dd>

@@ -1,10 +1,10 @@
-import { Tag } from '@/shared/types';
+import { Badge } from '@/shared/types';
 import { PageObjectResponse } from '@notionhq/client';
 
 export interface Page {
   id: string;
   created_time: string;
-  tags: Tag[];
+  tags: Badge[];
   title: string;
   description: string;
   slug: string;

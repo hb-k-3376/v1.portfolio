@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Page } from '../model/';
-import { Tag } from '@/shared/ui/Tag';
+import { Badge } from '@/shared/ui';
 import { useRef } from 'react';
 
 /**
@@ -37,9 +37,9 @@ export const PageRow = ({ created_time, description, tags, title, slug }: Page) 
         </Link>
       </td>
       <td className="hidden md:table-cell">
-        <ul className="flex -translate-y-1.5 flex-wrap">
+        <ul className="flex -translate-y-1.5 flex-wrap gap-3">
           {tags.map((tag) => (
-            <Tag name={tag.name} key={tag.id} />
+            <Badge name={tag.name} key={tag.id} />
           ))}
         </ul>
       </td>
