@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Hyun-bin',
+  title: 'Portfolio | Hyunbin',
   description: 'v1 portfolio',
 };
 
