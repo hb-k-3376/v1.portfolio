@@ -1,6 +1,6 @@
-import type { IMenuItem } from './type';
+import type { Menu } from './type';
 
-export const MENU_LIST: IMenuItem[] = [
+export const MENU_LIST: Menu[] = [
   {
     name: 'about',
     path: '/#about',

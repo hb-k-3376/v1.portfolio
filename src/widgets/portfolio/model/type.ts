@@ -1,8 +1,4 @@
-export interface IMenuItem {
+export interface Menu {
   name: string;
   path: string;
-}
-
-export interface IMenuProps extends IMenuItem {
-  isActive: boolean;
 }

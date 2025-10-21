@@ -1,13 +1,13 @@
 'use client';
 
-import { useScrollSpy } from '@/shared/hooks';
+import { useScrollObserver } from '@/shared/hooks';
 import { MENU_LIST } from '../model/constant';
-import { Nav } from './Nav';
+import { NavItem } from './NavItem';
 import { SocialList } from './SocialList';
 
 export const Header = () => {
   const sectionIds = MENU_LIST.map((item) => item.name);
-  const activeId = useScrollSpy(sectionIds);
+  const activeId = useScrollObserver(sectionIds);
 
   return (
     <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24">
@@ -24,7 +24,7 @@ export const Header = () => {
         <nav className="mt-16 w-max hidden lg:block">
           <ul>
             {MENU_LIST.map((menu) => (
-              <Nav {...menu} isActive={activeId === menu.name} key={menu.name} />
+              <NavItem {...menu} isActive={activeId === menu.name} key={menu.name} />
             ))}
           </ul>
         </nav>
