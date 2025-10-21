@@ -2,6 +2,22 @@ import { Project } from './type';
 
 export const PROJECT_LIST: Project[] = [
   {
+    name: 'ZOOPZOOP 자료 공유 협업 플랫폼',
+    period: '09.11 - 10.20',
+    description:
+      '웹에서 찾은 콘텐츠를 손쉽게 저장하고 팀과 함께 시각적으로 아이디어를 확장할 수 있는 지식 협업 플랫폼입니다. \n프로그래머스 데브코스 4차 프로젝트 🥇최우수작으로 선정',
+    roles: [
+      '확장 프로그램 설계 및 구현',
+      '스페이스 관리 및 팀원 관리',
+      '로그인, 회원가입, 토큰 컨트롤 및 Auth 기능',
+      'API(server, client) 통신 흐름 설계 및 공통 에러 설계',
+      'Next, tanstack-query 캐시 전략 설계',
+    ],
+    tags: ['Next.js', 'Tanstack-query', 'Zustand', 'Tailwind CSS', 'Chrome-extension'],
+    image: '/images/projects/ZOOPZOOP.webp',
+    link: 'https://v1-portfolio-nine.vercel.app/archive/last-project-ZOOPZOOP',
+  },
+  {
     name: 'Anonimo 익명 소통 서비스',
     period: '08.18 - 09.08',
     description:
