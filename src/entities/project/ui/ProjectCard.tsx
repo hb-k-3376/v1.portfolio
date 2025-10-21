@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export const ProjectCard = ({ description, tags, name, image, link, roles }: Project) => {
   return (
-    <li className="w-full rounded-lg border-2 border-gray-700 overflow-hidden mb-6 transition-all group-hover/list:opacity-50 hover:opacity-100 group-focus-within/list:opacity-50 focus-within:opacity-100">
+    <li className="w-full rounded-lg border-2 border-gray-700 overflow-hidden mb-6 transition-all group-hover/list:opacity-50 hover:opacity-100 group-focus-within/list:opacity-50 focus-within:opacity-100 cursor-pointer">
       <Link
         href={link}
         target="_blank"

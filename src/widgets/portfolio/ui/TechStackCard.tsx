@@ -13,7 +13,7 @@ export const TechStackCard = ({ image, tech, url }: Props) => {
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative block transition-all group-hover/list:opacity-50 hover:opacity-100 focus-visible:opacity-100"
+        className="group relative block transition-all group-hover/list:opacity-50 hover:opacity-100 focus-visible:opacity-100 cursor-pointer"
       >
         <div className="absolute -inset-x-3 -inset-y-3 z-0 hidden rounded-lg transition motion-reduce:transition-none lg:-inset-x-3 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg lg:group-focus-visible:bg-slate-800/50 lg:group-focus-visible:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-focus-visible:drop-shadow-lg" />
 
@@ -25,6 +25,7 @@ export const TechStackCard = ({ image, tech, url }: Props) => {
               width={60}
               height={60}
               className="object-contain"
+              aria-hidden
             />
           </div>
           <span className="text-sm text-slate-200 font-medium whitespace-nowrap text-center">

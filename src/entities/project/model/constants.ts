@@ -13,7 +13,14 @@ export const PROJECT_LIST: Project[] = [
       'API(server, client) 통신 흐름 설계 및 공통 에러 설계',
       'Next, tanstack-query 캐시 전략 설계',
     ],
-    tags: ['Next.js', 'Tanstack-query', 'Zustand', 'Tailwind CSS', 'Chrome-extension'],
+    tags: [
+      'Next.js',
+      'Tanstack-query',
+      'Typescript',
+      'Zustand',
+      'Tailwind CSS',
+      'Chrome-extension',
+    ],
     image: '/images/projects/ZOOPZOOP.webp',
     link: 'https://v1-portfolio-nine.vercel.app/archive/last-project-ZOOPZOOP',
   },
@@ -54,5 +61,19 @@ export const PROJECT_LIST: Project[] = [
     tags: ['React', 'Vite', 'Supabase', 'Gemini API', 'React-router-dom', 'Tailwind CSS'],
     image: '/images/projects/seediary.webp',
     link: 'https://v1-portfolio-nine.vercel.app/archive/2nd-project-seediary',
+  },
+  {
+    name: 'connectdid 해외 패션 플랫폼',
+    period: '2024.07 - 2025.01',
+    description:
+      '패션 업계의 창작자들(사진작가, 디자이너, 스타일리스트, 아티스트)을 연결하고, 그들의 진정성 있는 창작 스토리와 창의성을 공유하는 플랫폼입니다',
+    roles: [
+      'next-auth 도입으로 OAuth 2.0기반의 인증 시스템 구축 및 소셜 로그인 연동',
+      '전반적인 기능 구현',
+      '어드민 프로젝트 a-z까지 설계 및 구현',
+    ],
+    tags: ['Next.js', 'Tanstack-query', 'Jotai', 'Tailwind CSS', 'AWS'],
+    image: '/images/projects/connectdid.webp',
+    link: 'https://connectdid.com/home',
   },
 ];
