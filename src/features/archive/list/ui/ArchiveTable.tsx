@@ -27,7 +27,7 @@ export const ArchiveTable = ({ pages, hasMore, isLoading, targetRef }: Props) =>
           // 로딩 상태
           <tr>
             <td colSpan={4}>
-              <div className="flex justify-center items-center h-[400px]">
+              <div className="flex-center h-[400px]">
                 <Loader2 className="text-primary animate-spin" size={100} />
               </div>
             </td>
@@ -36,7 +36,7 @@ export const ArchiveTable = ({ pages, hasMore, isLoading, targetRef }: Props) =>
           // 빈 결과 상태
           <tr>
             <td colSpan={4}>
-              <div className="flex justify-center items-center h-[400px] text-slate-400 text-lg">
+              <div className="flex-center h-[400px] text-slate-400 text-lg">
                 결과가 없습니다.
               </div>
             </td>
