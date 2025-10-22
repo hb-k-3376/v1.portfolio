@@ -8,7 +8,7 @@ export const useScrollObserver = (sectionIds: string[]) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY + 200; // 헤더 높이 offset
+      const scrollY = window.scrollY + 350; // 헤더 높이 offset
 
       // 아래부터 위로 체크
       for (let i = sectionIds.length - 1; i >= 0; i--) {

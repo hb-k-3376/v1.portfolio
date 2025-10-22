@@ -12,15 +12,11 @@ export const AboutSection = () => {
           자기소개
         </h2>
         <p>
-          안녕하세요, 프론트엔드 개발자 <Highlight>김현빈</Highlight>입니다.
-        </p>
-        <br />
-        <p>
-          저의 가장 큰 강점은 <Highlight>끈기 있고 열정적인 태도</Highlight>입니다.
-          프로그래머스 데브코스를 수료하며 2차, 3차, 4차 프로젝트 모두{' '}
-          <Highlight>최우수상</Highlight>을 받을 만큼 몰입하고 노력했습니다. 구현한 기능이
-          즉각적으로 화면에 나타나는 프론트엔드의 매력에 빠져들었고, 빠른 성장을
-          이어왔습니다.
+          안녕하세요, 프론트엔드 개발자 <Highlight>김현빈</Highlight>입니다. 저의 가장 큰
+          강점은 <Highlight>끈기 있고 열정적인 태도</Highlight>입니다. 프로그래머스
+          데브코스를 수료하며 2차, 3차, 4차 프로젝트 모두 <Highlight>최우수상</Highlight>
+          을 받을 만큼 몰입하고 노력했습니다. 구현한 기능이 즉각적으로 화면에 나타나는
+          프론트엔드의 매력에 빠져들었고, 빠른 성장을 이어왔습니다.
         </p>
         <br />
         <p>
@@ -42,10 +38,11 @@ export const AboutSection = () => {
           이런 접근이 결국 완성도 높은 사용자 경험으로 이어진다고 믿습니다.
         </p>
         <br />
-        <p>다음과 같은 기술 스택으로 개발하고 있습니다.</p>
+        {/* <p>다음과 같은 기술 스택으로 개발하고 있습니다.</p> */}
+        <p className="mb-4">아래 기술 스택들로 문제를 해결합니다</p>
       </div>
       {/* 기술 스택  */}
-      <ul className="group/list grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-4 gap-6">
+      <ul className="group/list grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 gap-6">
         {TECH_STACK_LIST.map((tech) => (
           <TechStackCard {...tech} key={tech.tech} />
         ))}

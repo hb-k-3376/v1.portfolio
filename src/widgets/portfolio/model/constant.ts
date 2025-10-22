@@ -34,7 +34,7 @@ export const TECH_STACK_LIST = [
   },
   {
     image: 'tailwind.svg',
-    tech: 'TailwindCSS',
+    tech: 'Tailwind CSS',
     url: 'https://tailwindcss.com',
   },
   {
