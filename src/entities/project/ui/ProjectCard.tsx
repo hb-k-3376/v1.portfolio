@@ -1,56 +1,39 @@
-import React from 'react';
-import { Badge } from '@/shared/ui';
-import { Project } from '../model';
 import Image from 'next/image';
-import { ArrowUpRight } from 'lucide-react';
-import Link from 'next/link';
+import { Badge, Title } from '@/shared/ui';
+import { Project } from '../model';
 
 export const ProjectCard = ({ description, tags, name, image, link, roles }: Project) => {
   return (
-    <li className="w-full rounded-lg border-2 border-gray-700 overflow-hidden mb-6 transition-all group-hover/list:opacity-50 hover:opacity-100 group-focus-within/list:opacity-50 focus-within:opacity-100 cursor-pointer">
-      <Link
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`${name} 프로젝트 보기`}
-        className="group/card"
-      >
-        <div className="relative h-70">
-          {/* 배경 이미지 */}
+    <li className="mb-12">
+      <div className="group relative flex gap-4 transition-opacity group-hover/list:opacity-50 hover:opacity-100">
+        <div className="absolute z-0 -inset-x-6 -inset-y-4 rounded-md transition motion-reduce:transition-none lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
+        <div className="hidden sm:block sm:min-w-36 sm:translate-y-1">
           <Image
-            className="object-cover aspect-video w-full brightness-40 group-hover/card:brightness-70 group-focus/card:brightness-70 "
+            className="object-cover rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30"
             src={image}
-            alt={`${name} 페이지`}
             fill
-            quality={90}
+            sizes="600px"
+            alt={`${name} 페이지`}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent from-30% via-black/60 via-70% to-black" />
         </div>
-        <div className="px-6 pb-6 -mt-32 relative bg-gradient-to-b from-transparent via-black/95 to-black z-0">
-          {/* 제목 */}
-          <h3 className="font-medium leading-snug mb-2">
-            <span className="inline-flex items-baseline leading-tight text-base group-hover/card:text-primary group-focus/card:text-primary">
-              {name}
-              <span className="inline-block align-bottom">
-                <ArrowUpRight className="h-4 w-4 ml-1 transition-transform group-hover/card:-translate-y-1 group-hover/card:translate-x-1 translate-y-px group-focus/card:-translate-y-1 group-focus/card:translate-x-1" />
-              </span>
-            </span>
-          </h3>
-          {/* 설명 텍스트 */}
-          <p className="leading-relaxed mb-3">{description}</p>
-          <ul className="flex flex-col text-sm leading-normal mb-3">
-            {roles.map((role, index) => (
-              <li key={index}>• {role}</li>
-            ))}
-          </ul>
-          {/* 기능 태그들 */}
-          <ul className="flex flex-wrap gap-2 w-full">
+
+        <div className="z-10 flex flex-col gap-2">
+          <Title slug={link}>{name}</Title>
+          <p className="text-sm leading-normal whitespace-pre-line">{description}</p>
+          {roles && (
+            <ul className="flex flex-col text-sm leading-normal">
+              {roles.map((role, index) => (
+                <li key={index}>• {role}</li>
+              ))}
+            </ul>
+          )}
+          <ul className="flex flex-wrap gap-3">
             {tags.map((tag) => (
               <Badge name={tag} key={tag} />
             ))}
           </ul>
         </div>
-      </Link>
+      </div>
     </li>
   );
 };

@@ -24,7 +24,7 @@ export const TechStackCard = ({ image, tech, url }: Props) => {
               alt={`${tech} logo`}
               width={60}
               height={60}
-              className="object-contain"
+              className="object-contain size-14"
               aria-hidden
             />
           </div>

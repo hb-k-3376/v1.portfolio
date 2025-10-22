@@ -13,7 +13,7 @@ export const LinkMoreContent = ({ text, link }: Props) => {
         className="group flex items-center leading-tight font-semibold text-base"
         aria-label={text}
       >
-        <span className="pb-px transition group-hover:text-primary group-focus-visible:text-primary motion-reduce:transition-none">
+        <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">
           {text}
         </span>
 
@@ -21,7 +21,7 @@ export const LinkMoreContent = ({ text, link }: Props) => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          className="ml-1 inline-flex h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:text-primary group-hover:translate-x-2 group-focus-visible:text-primary group-focus-visible:translate-x-2 motion-reduce:transition-none"
+          className="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none"
           aria-hidden="true"
         >
           <path
