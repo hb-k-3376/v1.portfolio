@@ -24,27 +24,27 @@ export const PageRow = ({ created_time, description, tags, title, slug }: Page) 
       className="group border-b border-slate-300/10 last:border-none cursor-pointer"
       onClick={handleClick}
     >
-      <td className="py-4 pr-4 align-top text-sm">
-        <p className="translate-y-px">{created_time}</p>
+      <td className="py-4 pr-4 text-sm">
+        <p className="whitespace-nowrap">{created_time}</p>
       </td>
-      <td className="py-4 pr-4 align-top font-semibold leading-snug">
+      <td className="py-4 pr-4 leading-snug text-white">
         <Link
           href={`/archive/${slug}`}
           ref={linkRef}
-          className="group-hover:text-primary group-hover:font-bold focus-visible:text-primary items-baseline leading-tight"
+          className="group-hover:text-primary focus-visible:text-primary items-baseline leading-tight whitespace-nowrap"
         >
           {title}
         </Link>
       </td>
-      <td className="hidden md:table-cell">
-        <ul className="flex -translate-y-1.5 flex-wrap gap-3">
+      <td className="hidden py-4 pr-4 md:table-cell">
+        <ul className="flex flex-wrap gap-3">
           {tags.map((tag) => (
             <Badge name={tag.name} key={tag.id} />
           ))}
         </ul>
       </td>
-      <td className="hidden lg:table-cell">
-        <p className="truncate">{description}</p>
+      <td className="hidden py-4 pr-4 lg:table-cell max-w-[500px]">
+        <p className="truncate">{slug}</p>
       </td>
     </tr>
   );
