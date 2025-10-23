@@ -19,7 +19,7 @@ export const TechStackCard = ({ image, tech }: Props) => {
           className="object-contain size-5"
           aria-hidden
         />
-        <span className="text-sm group-hover:text-primary group-focus-within:text-primary font-medium whitespace-nowrap text-center">
+        <span className="text-sm group-hover:text-primary font-medium whitespace-nowrap text-center">
           {tech}
         </span>
       </div>
