@@ -12,7 +12,7 @@ export const ProjectSection = () => {
           <ProjectCard {...project} key={project.name} />
         ))}
       </ul>
-      <LinkMoreContent text="프로젝트 더보기" link="/#" />
+      {/* <LinkMoreContent text="프로젝트 더보기" link="/#"  /> */}
     </Section>
   );
 };

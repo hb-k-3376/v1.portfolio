@@ -20,7 +20,6 @@ export const PortfolioView = () => {
         <Suspense fallback={<SectionLoading sectionId="archive" />}>
           <ArchiveSection />
         </Suspense>
-
         <Footer />
       </div>
     </>

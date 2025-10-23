@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Hyunbin',
-  description: 'v1 portfolio',
+  title: 'Portfolio',
+  description: '저의 프로젝트와 기술 스택을 소개하는 포트폴리오입니다.',
 };
 
 export default function PortfolioLayout({

@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Archive | Hyunbin',
-  description: 'v1 portfolio',
+  title: 'Archive',
+  description: '기술, 생각, 경험을 기록하고 공유하는 공간입니다.',
 };
 
 export default function ArchiveLayout({

@@ -2,5 +2,5 @@ interface Props {
   children: React.ReactNode;
 }
 export const Highlight = ({ children }: Props) => {
-  return <strong tabIndex={0}>{children}</strong>;
+  return <strong>{children}</strong>;
 };

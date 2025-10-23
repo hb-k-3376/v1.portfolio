@@ -1,11 +1,28 @@
-import { BackButton, Comments } from '@/shared/ui';
+import { Metadata } from 'next';
+
 import { getPageContentById, getPageMetadataBySlug } from '@/entities/page/api/queries';
 import { ArchiveMetaData } from '@/widgets/archive';
 import { ArchiveContent } from '@/features/archive/detail/ui';
+import { BackButton, Comments } from '@/shared/ui';
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const { description, tags, title } = await getPageMetadataBySlug(slug);
+  return {
+    title,
+    description: description,
+    keywords: tags.map((tag) => tag.name),
+    openGraph: {
+      title,
+      description: description,
+    },
+  };
+}
+
 /**
  * archive 상세 페이지
  */

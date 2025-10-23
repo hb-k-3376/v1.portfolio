@@ -8,9 +8,9 @@ export const AboutSection = () => {
       {/* 섹션 헤더 */}
       <Section.Header>About</Section.Header>
       <div aria-labelledby="about-heading" className="mb-6">
-        <h2 id="about-heading" className="sr-only">
+        <h3 id="about-heading" className="sr-only">
           자기소개
-        </h2>
+        </h3>
         <p>
           안녕하세요, 프론트엔드 개발자 <Highlight>김현빈</Highlight>입니다. 저의 가장 큰
           강점은 <Highlight>끈기 있고 열정적인 태도</Highlight>입니다. 프로그래머스
@@ -38,8 +38,7 @@ export const AboutSection = () => {
           이런 접근이 결국 완성도 높은 사용자 경험으로 이어진다고 믿습니다.
         </p>
         <br />
-        {/* <p>다음과 같은 기술 스택으로 개발하고 있습니다.</p> */}
-        <p className="mb-4">아래 기술 스택들로 문제를 해결합니다</p>
+        <p className="mb-4 text-sm">아래 도구들로 문제를 해결합니다.</p>
       </div>
       {/* 기술 스택  */}
       <ul className="group/list grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 gap-6">
