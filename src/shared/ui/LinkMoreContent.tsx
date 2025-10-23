@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { tw } from '../lib';
 
 interface Props {
   text: string;
