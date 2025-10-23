@@ -1,14 +1,11 @@
 import { unstable_cache } from 'next/cache';
-
-import { GetPagesOptions } from '../model';
+import { PageObjectResponse } from '@notionhq/client';
 
 import { fetchNotionDataQuery, fetchNotionPageContent } from '@/entities/page/api/server';
 import { buildMetaQuery, buildPagesQuery } from '@/shared/lib/build-query';
 import { ContentProperty, MultiSelectProperty } from '@/shared/types';
 import { isPageObjectResponse } from '@/shared/utils';
-import { PageObjectResponse } from '@notionhq/client';
-import { formatMetaData } from '../model/helper';
-import { PagesApiResponse } from '../model/type';
+import { formatMetaData, type GetPagesOptions, type PagesApiResponse } from '../model';
 
 // 서버 컴포넌트 호출 래핑 함수
 
@@ -35,7 +32,7 @@ export const getPages = unstable_cache(
     };
   },
   ['notion-pages'],
-  { revalidate: 3600, tags: ['pages'] }
+  { revalidate: 60, tags: ['pages'] }
 );
 
 /**
@@ -65,7 +62,7 @@ export const getPageMetadataBySlug = (slug: string) => {
     },
     [`page-metadata`, slug],
     {
-      revalidate: 3600,
+      revalidate: 60,
       tags: ['metadata'],
     }
   )();
@@ -86,7 +83,7 @@ export const getPageContentById = async (id: string): Promise<ContentProperty[]>
     },
     [`page-content`, id],
     {
-      revalidate: 3600,
+      revalidate: 60,
       tags: ['content'],
     }
   )();

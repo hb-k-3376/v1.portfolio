@@ -48,7 +48,6 @@ export const TECH_STACK_LIST = [
   {
     image: 'vite.svg',
     tech: 'Vite',
-    url: 'https://vitejs.dev',
   },
   {
     image: 'storybook.svg',

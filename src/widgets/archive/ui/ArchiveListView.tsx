@@ -5,7 +5,7 @@ import { ArchiveHeader } from './ArchiveHeader';
 
 import { ArchiveTable, useInfinityPages } from '@/features/archive';
 import { useSearchModalStore } from '@/features/archive/search';
-import { useInfinityScrollObserver } from '@/shared/hooks';
+import { useInfinityScrollObserver } from '@/entities/page';
 
 export const ArchiveListView = () => {
   // 1. 검색어 상태 관리
