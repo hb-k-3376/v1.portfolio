@@ -3,34 +3,26 @@ import Image from 'next/image';
 interface Props {
   image: string;
   tech: string;
-  url: string;
 }
 
-export const TechStackCard = ({ image, tech, url }: Props) => {
+export const TechStackCard = ({ image, tech }: Props) => {
   return (
-    <li>
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative block transition-all group-hover/list:opacity-20 hover:opacity-100 focus-visible:opacity-100 cursor-pointer"
-      >
-        <div className="absolute -inset-x-3 -inset-y-3 z-0 hidden rounded-lg transition motion-reduce:transition-none lg:-inset-x-3 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg lg:group-focus-visible:bg-slate-800/50 lg:group-focus-visible:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-focus-visible:drop-shadow-lg" />
+    <li className="group relative block transition-all group-hover/list:opacity-20 hover:opacity-100 focus-visible:opacity-100 cursor-pointer">
+      <div className="absolute -inset-x-3 -inset-y-3 z-0 hidden rounded-lg transition motion-reduce:transition-none lg:-inset-x-3 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg lg:group-focus-visible:bg-slate-800/50 lg:group-focus-visible:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-focus-visible:drop-shadow-lg" />
 
-        <div className="relative z-10 flex items-center gap-3">
-          <Image
-            src={`/images/techs/${image}`}
-            alt={`${tech} logo`}
-            width={5}
-            height={5}
-            className="object-contain size-5"
-            aria-hidden
-          />
-          <span className="text-sm group-hover:text-primary font-medium whitespace-nowrap text-center">
-            {tech}
-          </span>
-        </div>
-      </a>
+      <div className="relative z-10 flex items-center gap-3">
+        <Image
+          src={`/images/techs/${image}`}
+          alt={`${tech} logo`}
+          width={5}
+          height={5}
+          className="object-contain size-5"
+          aria-hidden
+        />
+        <span className="text-sm group-hover:text-primary group-focus-within:text-primary font-medium whitespace-nowrap text-center">
+          {tech}
+        </span>
+      </div>
     </li>
   );
 };
