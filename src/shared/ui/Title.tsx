@@ -20,6 +20,7 @@ export const Title = ({ children, slug, className }: Props) => {
         <Link
           className="group/link inline-flex items-baseline leading-tight text-base hover:text-primary"
           target="_blank"
+          rel="noopener noreferrer"
           href={targetHref}
         >
           <span className="absolute shrink-0 -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block" />
