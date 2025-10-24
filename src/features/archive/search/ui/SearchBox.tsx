@@ -28,7 +28,7 @@ export const SearchBox = () => {
     if (!inputRef.current || !inputRef.current.value.trim()) return;
     const query = inputRef.current.value.trim();
     setSearchHistory(query);
-    router.replace(`${pathname}?query=${query}`);
+    router.push(`${pathname}?query=${query}`);
     // 모달 닫기
     close();
   };

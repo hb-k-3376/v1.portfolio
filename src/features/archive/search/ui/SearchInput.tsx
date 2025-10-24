@@ -21,7 +21,7 @@ export const SearchInput = () => {
   const handleResetQuery = () => {
     const params = new URLSearchParams(searchParams);
     params.delete('query');
-    router.replace(pathname);
+    router.push(pathname);
   };
 
   return (
