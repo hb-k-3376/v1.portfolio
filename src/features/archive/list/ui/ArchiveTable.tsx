@@ -5,13 +5,8 @@ import { Loader2 } from 'lucide-react';
 import { formatPageData, PageRow, useInfinityScrollObserver } from '@/entities/page';
 import { NotionPageProperties } from '@/shared/types';
 import { useInfinityPages } from '../model';
-import { useEffect } from 'react';
 
 export const ArchiveTable = () => {
-  useEffect(() => {
-    console.log('렌더링?');
-  }, []);
-
   const { pages, fetchNextPage, hasMore, isFetchingNextPage, isFetching } =
     useInfinityPages();
 
@@ -38,16 +33,7 @@ export const ArchiveTable = () => {
         </tr>
       </thead>
       <tbody>
-        {isFetching ? (
-          // 로딩 상태
-          <tr>
-            <td colSpan={4}>
-              <div className="flex-center h-[400px]">
-                <Loader2 className="text-primary animate-spin" size={100} />
-              </div>
-            </td>
-          </tr>
-        ) : pages.length === 0 ? (
+        {pages.length === 0 && !isFetching ? (
           // 빈 결과 상태
           <tr>
             <td colSpan={4}>
@@ -67,7 +53,17 @@ export const ArchiveTable = () => {
       </tbody>
 
       {/* <tfoot>도 테이블 내부에 위치 */}
-      {hasMore && <tfoot ref={targetRef} />}
+      <tfoot ref={targetRef}>
+        {isFetchingNextPage && (
+          <tr>
+            <td colSpan={4}>
+              <div className="flex-center h-[100px]">
+                <Loader2 className="text-primary animate-spin" size={40} />
+              </div>
+            </td>
+          </tr>
+        )}
+      </tfoot>
     </table>
   );
 };

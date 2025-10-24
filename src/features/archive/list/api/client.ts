@@ -1,4 +1,4 @@
-import { NotionPagesResponse } from '@/shared/types';
+import { APIResponse, NotionPagesResponse } from '@/shared/types';
 
 /**
  * get pages
@@ -20,11 +20,12 @@ export const fetchPagesClient = async ({
   cursor && params.append('cursor', cursor);
 
   const response = await fetch(`/api/notion?${params.toString()}`);
-  const { pages, has_more, next_cursor } = (await response.json()) as NotionPagesResponse;
+  const { body } = (await response.json()) as APIResponse<NotionPagesResponse>;
 
+  console.log('body', body);
   return {
-    pages,
-    next_cursor,
-    has_more,
+    pages: body.pages,
+    next_cursor: body.next_cursor,
+    has_more: body.has_more,
   };
 };

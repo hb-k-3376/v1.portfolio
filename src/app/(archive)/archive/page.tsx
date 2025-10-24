@@ -13,7 +13,6 @@ interface Props {
 }
 
 export default async function page({ searchParams }: Props) {
-  console.log('서버 컴포넌트 재실행?');
   const { query } = await searchParams;
   const queryClient = new QueryClient();
 

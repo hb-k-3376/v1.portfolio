@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
     });
 
     // 결과 값 리턴
-    return NextResponse.json(response);
+    return NextResponse.json({ body: response });
   } catch (error) {
     console.error('Failed to fetch paginated pages:', error);
     throw new Error('페이지 데이터를 가져오는데 실패했습니다.');
