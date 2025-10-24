@@ -1,14 +1,49 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
-export const ModalPortal = ({ children }: { children: React.ReactNode }) => {
-  const [mounted, setMounted] = useState<boolean>(false);
+interface Props {
+  children: React.ReactNode;
+  onClose: () => void;
+  isOpen: boolean;
+}
 
-  useEffect(() => setMounted(true), []);
+export const ModalPortal = ({ children, onClose, isOpen }: Props) => {
+  const backdropRef = useRef<HTMLDivElement>(null);
+  const handleClickOutside = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === backdropRef.current) {
+      onClose();
+    }
+  };
+  useEffect(() => {
+    if (!isOpen) return;
 
-  if (!mounted) return null;
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
 
-  return createPortal(children, document.body);
+    document.addEventListener('keydown', handleEscape);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = '';
+    };
+  }, [isOpen, onClose]);
+
+  return createPortal(
+    <div
+      ref={backdropRef}
+      className="fixed inset-0 z-50 bg-black/70 flex justify-center items-start"
+      onClick={handleClickOutside}
+      role="dialog"
+      aria-modal="true"
+    >
+      {children}
+    </div>,
+    document.body
+  );
 };

@@ -5,9 +5,9 @@ import { getEnv } from './env';
 export const buildPagesQuery = (options: {
   pageSize: number;
   cursor: string | null;
-  searchQuery: string | null;
+  query: string | null;
 }) => {
-  const { cursor, pageSize, searchQuery } = options;
+  const { cursor, pageSize, query } = options;
 
   const baseFilter = {
     property: 'status',
@@ -16,12 +16,9 @@ export const buildPagesQuery = (options: {
     },
   };
 
-  const filter = searchQuery?.trim()
+  const filter = query?.trim()
     ? {
-        and: [
-          baseFilter,
-          { property: 'title', rich_text: { contains: searchQuery.trim() } },
-        ],
+        and: [baseFilter, { property: 'title', rich_text: { contains: query.trim() } }],
       }
     : baseFilter;
 

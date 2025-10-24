@@ -1,12 +1,10 @@
-import { APIResponse } from '@/shared/types/api';
-import { api } from '@/shared/lib';
 import { NotionPagesResponse } from '@/shared/types';
 
 /**
  * get pages
  * notion 데이터베이스 에서 pages list 가져오는 서비스 함수
  */
-export const getPages = async ({
+export const fetchPagesClient = async ({
   pageSize = '15',
   query,
   cursor,
@@ -18,18 +16,15 @@ export const getPages = async ({
   const params = new URLSearchParams({ pageSize });
 
   // query 유효한 값일 때만 파라미터에 추가
-  if (query) {
-    params.append('query', query);
-  }
-  if (cursor) {
-    params.append('cursor', cursor);
-  }
+  query && params.append('query', query);
+  cursor && params.append('cursor', cursor);
 
-  const res = await api.get<APIResponse<NotionPagesResponse>>(`/notion?${params}`);
+  const response = await fetch(`/api/notion?${params.toString()}`);
+  const { pages, has_more, next_cursor } = (await response.json()) as NotionPagesResponse;
 
   return {
-    pages: res.data.body.pages,
-    next_cursor: res.data.body.next_cursor,
-    has_more: res.data.body.has_more,
+    pages,
+    next_cursor,
+    has_more,
   };
 };

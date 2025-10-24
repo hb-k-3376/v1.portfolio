@@ -17,11 +17,11 @@ import { formatMetaData, type GetPagesOptions, type PagesApiResponse } from '../
  */
 export const getPages = unstable_cache(
   async (options: GetPagesOptions = {}): Promise<PagesApiResponse> => {
-    const { pageSize = 5, cursor = null, searchQuery = null } = options;
+    const { pageSize = 5, cursor = null, query = null } = options;
     const params = buildPagesQuery({
       pageSize,
       cursor,
-      searchQuery,
+      query,
     });
     const response = await fetchNotionDataQuery(params);
 

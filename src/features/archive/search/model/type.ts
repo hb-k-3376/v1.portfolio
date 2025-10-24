@@ -7,7 +7,4 @@ export interface SearchModelStore {
   isOpen: boolean;
   open: () => void;
   close: () => void;
-  /** 검색어 query */
-  query: string | null;
-  setQuery: (query: string | null) => void;
 }

@@ -2,19 +2,26 @@
 
 import { Search, X } from 'lucide-react';
 import { useSearchModalStore } from '../model/useSearchModalStore';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 export const SearchInput = () => {
-  const open = useSearchModalStore((state) => state.open);
-  const setQuery = useSearchModalStore((state) => state.setQuery);
-  const query = useSearchModalStore((state) => state.query);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+
+  const openModel = useSearchModalStore((state) => state.open);
+
+  const trim = searchParams.get('query') ?? null;
 
   const handleClickSearch = () => {
-    open();
+    // 모달 열기
+    openModel();
   };
 
-  const handleResetQuery = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
-    setQuery(null);
+  const handleResetQuery = () => {
+    const params = new URLSearchParams(searchParams);
+    params.delete('query');
+    router.replace(pathname);
   };
 
   return (
@@ -28,10 +35,10 @@ export const SearchInput = () => {
       >
         <Search aria-hidden="true" className="group-hover:text-primary" />
         <div className="flex justify-between items-center w-full">
-          <span>{query ? query : '키워드를 입력해주세요.'} </span>
+          <span>{trim ? trim : '키워드를 입력해주세요.'} </span>
         </div>
       </button>
-      {query && (
+      {trim && (
         <button
           type="button"
           aria-label="검색어 삭제"

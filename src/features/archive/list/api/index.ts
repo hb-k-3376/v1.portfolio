@@ -1,0 +1,1 @@
+export { fetchPagesClient } from './client';

@@ -1,19 +1,34 @@
-import { formatPageData, PageRow } from '@/entities/page';
-import { NotionPageProperties } from '@/shared/types';
-import { PageObjectResponse } from '@notionhq/client';
+'use client';
+
 import { Loader2 } from 'lucide-react';
-import { RefObject } from 'react';
 
-interface Props {
-  pages: PageObjectResponse[];
-  isLoading: boolean;
-  hasMore: boolean;
-  targetRef: RefObject<HTMLTableSectionElement | null>;
-}
+import { formatPageData, PageRow, useInfinityScrollObserver } from '@/entities/page';
+import { NotionPageProperties } from '@/shared/types';
+import { useInfinityPages } from '../model';
+import { useEffect } from 'react';
 
-export const ArchiveTable = ({ pages, hasMore, isLoading, targetRef }: Props) => {
+export const ArchiveTable = () => {
+  useEffect(() => {
+    console.log('렌더링?');
+  }, []);
+
+  const { pages, fetchNextPage, hasMore, isFetchingNextPage, isFetching } =
+    useInfinityPages();
+
+  const handleIntersect = () => {
+    if (hasMore && !isFetchingNextPage) {
+      fetchNextPage();
+    }
+  };
+  const targetRef = useInfinityScrollObserver({
+    onIntersect: handleIntersect,
+    rootMargin: '100px',
+    threshold: 0.1,
+  });
+
   return (
     <table className="w-full border-collapse text-left table-fixed">
+      {/* 테이블 헤더 */}
       <thead className="sticky top-0 z-10 border-b border-slate-300/10 bg-slate-900/75 py-5 backdrop-blur">
         <tr className="text-sm font-semibold text-gray-50">
           <th className="py-4 pr-8 w-24 md:w-1/12">Created</th>
@@ -23,7 +38,7 @@ export const ArchiveTable = ({ pages, hasMore, isLoading, targetRef }: Props) =>
         </tr>
       </thead>
       <tbody>
-        {isLoading ? (
+        {isFetching ? (
           // 로딩 상태
           <tr>
             <td colSpan={4}>

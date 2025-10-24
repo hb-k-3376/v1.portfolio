@@ -9,6 +9,7 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+// 메타 데이터
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const { description, tags, title } = await getPageMetadataBySlug(slug);
@@ -23,9 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-/**
- * archive 상세 페이지
- */
+// archive 페이지
 export default async function page({ params }: Props) {
   const { slug } = await params;
   const { id, ...restMetadata } = await getPageMetadataBySlug(slug);

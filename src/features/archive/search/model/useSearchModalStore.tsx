@@ -8,6 +8,4 @@ export const useSearchModalStore = create<SearchModelStore>((set) => ({
   isOpen: false,
   close: () => set({ isOpen: false }),
   open: () => set({ isOpen: true }),
-  query: null,
-  setQuery: (query) => set({ query }),
 }));

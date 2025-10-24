@@ -14,7 +14,7 @@ export interface Page {
 export type GetPagesOptions = {
   pageSize?: number;
   cursor?: string | null;
-  searchQuery?: string | null;
+  query?: string | null;
 };
 
 export type PagesApiResponse = {
