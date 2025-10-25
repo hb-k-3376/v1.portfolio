@@ -1,5 +1,4 @@
 import { ArrowUpRight } from 'lucide-react';
-import Link from 'next/link';
 import { tw } from '../lib';
 
 interface Props {
@@ -16,7 +15,7 @@ export const Title = ({ children, slug, className }: Props) => {
       className={tw('font-medium leading-snug hover:text-primary', className)}
       aria-label={`${children} (opens in a new tab)`}
     >
-      <Link
+      <a
         className="group/link inline-flex items-baseline leading-tight text-accent-foreground hover:text-primary"
         target="_blank"
         rel="noopener noreferrer"
@@ -34,7 +33,7 @@ export const Title = ({ children, slug, className }: Props) => {
             />
           </span>
         </span>
-      </Link>
+      </a>
     </h3>
   );
 };

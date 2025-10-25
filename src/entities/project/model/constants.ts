@@ -1,5 +1,4 @@
-import { FileText, Github, Globe, LucideIcon } from 'lucide-react';
-import { Project, UrlType } from './type';
+import { Project } from './type';
 
 export const PROJECT_LIST: Project[] = [
   {
@@ -90,14 +89,8 @@ export const PROJECT_LIST: Project[] = [
   },
 ];
 
-export const URL_TYPE_ICONS: Record<UrlType, LucideIcon> = {
-  github: Github,
-  website: Globe,
-  retro: FileText,
-};
-
 export const URL_TYPE_LABELS = {
-  github: 'GitHub 저장소',
-  website: '데모 사이트',
+  github: 'gitHub',
+  website: 'site',
   retro: '회고록',
 } as const;

@@ -33,7 +33,7 @@ export const ProjectCard = ({
             {urls && (
               <ActionButton
                 urls={urls}
-                className="opacity-0 group-hover:opacity-80 transition-opacity group-focus-within:opacity-80"
+                className="opacity-30 group-hover:opacity-80 transition-opacity group-focus-within:opacity-80"
               />
             )}
           </div>

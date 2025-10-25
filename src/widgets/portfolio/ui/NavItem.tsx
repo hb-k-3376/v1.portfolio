@@ -12,7 +12,7 @@ export const NavItem = ({ name, path, isActive }: Props) => {
         <span
           className={tw(
             'mr-4 h-px transition-all',
-            'group-hover:w-16 group-hover:bg-base group-focus-visible:w-16 group-focus-visible:bg-primary motion-reduce:transition-none',
+            'group-hover:w-16 group-hover:bg-accent-foreground group-focus-visible:w-16 group-focus-visible:bg-primary motion-reduce:transition-none',
             isActive && 'w-16 bg-primary',
             !isActive && 'w-8 bg-slate-600'
           )}
