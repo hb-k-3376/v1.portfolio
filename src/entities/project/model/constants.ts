@@ -1,4 +1,5 @@
-import { Project } from './type';
+import { FileText, Github, Globe, LucideIcon } from 'lucide-react';
+import { Project, UrlType } from './type';
 
 export const PROJECT_LIST: Project[] = [
   {
@@ -15,7 +16,17 @@ export const PROJECT_LIST: Project[] = [
     ],
     tags: ['Next.js', 'Tanstack Query', 'Zustand', 'Chrome-extension'],
     image: '/images/projects/ZOOPZOOP.webp',
-    link: 'https://v1-portfolio-nine.vercel.app/archive/last-project-ZOOPZOOP',
+    link: 'https://www.zoopzoop.kro.kr',
+    urls: [
+      {
+        type: 'github',
+        link: 'https://github.com/hb-k-3376/WEB5_6_ZOOPZOOP_FE',
+      },
+      {
+        type: 'retro',
+        link: 'https://v1-portfolio-nine.vercel.app/archive/last-project-ZOOPZOOP',
+      },
+    ],
   },
   {
     name: 'Anonimo 익명 소통 서비스',
@@ -31,7 +42,17 @@ export const PROJECT_LIST: Project[] = [
     ],
     tags: ['React', 'Tanstack Virtual', 'Zustand', 'Tailwind CSS'],
     image: '/images/projects/anonimo.webp',
-    link: 'https://v1-portfolio-nine.vercel.app/archive/3rd-project-anonimo',
+    link: 'anonimo-virid.vercel.app',
+    urls: [
+      {
+        type: 'github',
+        link: 'https://github.com/hb-k-3376/anonimo',
+      },
+      {
+        type: 'retro',
+        link: 'https://v1-portfolio-nine.vercel.app/archive/3rd-project-anonimo',
+      },
+    ],
   },
   {
     name: 'Seediary 감정일기 플랫폼',
@@ -46,7 +67,17 @@ export const PROJECT_LIST: Project[] = [
     ],
     tags: ['React', 'Vite', 'Supabase', 'Gemini API'],
     image: '/images/projects/seediary.webp',
-    link: 'https://v1-portfolio-nine.vercel.app/archive/2nd-project-seediary',
+    link: 'seediary.vercel.app',
+    urls: [
+      {
+        type: 'github',
+        link: 'https://github.com/hb-k-3376/FES-5-Project2-TEAM-5',
+      },
+      {
+        type: 'retro',
+        link: 'https://v1-portfolio-nine.vercel.app/archive/2nd-project-seediary',
+      },
+    ],
   },
   {
     name: 'connectdid 해외 패션 플랫폼',
@@ -58,3 +89,15 @@ export const PROJECT_LIST: Project[] = [
     link: 'https://connectdid.com/home',
   },
 ];
+
+export const URL_TYPE_ICONS: Record<UrlType, LucideIcon> = {
+  github: Github,
+  website: Globe,
+  retro: FileText,
+};
+
+export const URL_TYPE_LABELS = {
+  github: 'GitHub 저장소',
+  website: '데모 사이트',
+  retro: '회고록',
+} as const;

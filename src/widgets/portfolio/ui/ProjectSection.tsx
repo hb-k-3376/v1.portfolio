@@ -13,7 +13,7 @@ export const ProjectSection = () => {
         ))}
       </ul>
       {/* <LinkMoreContent text="프로젝트 더보기" link="/#" /> */}
-      <span className="cursor-not-allowed text-gray-500">프로젝트 더보기</span>
+      <span className="cursor-not-allowed text-muted-foreground">프로젝트 더보기</span>
     </Section>
   );
 };

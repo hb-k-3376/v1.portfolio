@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="pb-16 text-sm text-muted sm:pb-0">
+    <footer className="pb-16 text-sm text-muted-foreground sm:pb-0">
       <p>
         이 프로젝트는&nbsp;
         <a

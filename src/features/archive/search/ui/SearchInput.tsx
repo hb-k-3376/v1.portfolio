@@ -30,11 +30,11 @@ export const SearchInput = () => {
         type="button"
         role="searchbox"
         aria-label="아키이브 검색"
-        className="flex gap-3 border-b-1 w-full sm:min-w-xs items-center cursor-pointer p-3 hover:border-primary"
+        className="flex gap-3 border-muted-foreground border-b-1 sm:min-w-xs items-center cursor-pointer py-3 group-hover:text-primary transition-colors"
         onClick={handleClickSearch}
       >
-        <Search aria-hidden="true" className="group-hover:text-primary" />
-        <div className="flex justify-between items-center w-full">
+        <Search aria-hidden="true" />
+        <div className="flex justify-between items-center">
           <span>{trim ? trim : '키워드를 입력해주세요.'} </span>
         </div>
       </button>

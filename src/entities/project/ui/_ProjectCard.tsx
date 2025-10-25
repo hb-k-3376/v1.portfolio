@@ -29,7 +29,7 @@ export const ProjectCard = ({ description, tags, name, image, link, roles }: Pro
         <div className="px-6 pb-6 -mt-60 relative bg-gradient-to-b from-transparent via-black/95 to-black z-0">
           {/* 제목 */}
           <h3 className="font-medium leading-snug mb-2">
-            <span className="inline-flex items-baseline leading-tight text-base group-hover/card:text-primary group-focus/card:text-primary">
+            <span className="inline-flex items-baseline leading-tight group-hover/card:text-primary group-focus/card:text-primary">
               {name}
               <span className="inline-block align-bottom">
                 <ArrowUpRight className="h-4 w-4 ml-1 transition-transform group-hover/card:-translate-y-1 group-hover/card:translate-x-1 translate-y-px group-focus/card:-translate-y-1 group-focus/card:translate-x-1" />

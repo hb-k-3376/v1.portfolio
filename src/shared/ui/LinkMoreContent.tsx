@@ -9,7 +9,7 @@ export const LinkMoreContent = ({ text, link }: Props) => {
   return (
     <Link
       href={link}
-      className="mt-12 group flex items-center leading-tight font-semibold text-base"
+      className="mt-12 group flex items-center leading-tight font-semibold text-accent-foreground"
       aria-label={text}
     >
       <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 group-focus-within:border-teal-300 motion-reduce:transition-none">

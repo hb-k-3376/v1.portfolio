@@ -1,10 +1,14 @@
 @layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
   html {
     font-family: 'Pretendard Variable', sans-serif;
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-slate-900 leading-relaxed text-slate-400 antialiased;
+    @apply bg-background leading-relaxed text-foreground antialiased;
   }
   ::selection {
     @apply bg-primary text-teal-900;
@@ -37,6 +41,6 @@
   }
 
   strong {
-    @apply text-white font-medium;
+    @apply text-accent-foreground font-medium;
   }
 }

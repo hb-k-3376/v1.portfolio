@@ -26,11 +26,11 @@ export const PageRow = ({ created_time, tags, title, slug }: Page) => {
       <td className="py-4 pr-4 align-top leading-tight text-sm">
         <p>{created_time}</p>
       </td>
-      <td className="py-4 pr-4 align-top leading-tight text-gray-50">
+      <td className="py-4 pr-4 align-top leading-tight text-accent-foreground">
         <Link
           href={`/archive/${slug}`}
           ref={linkRef}
-          className="group-hover:text-primary focus-visible:text-primary leading-tight"
+          className="group-hover:text-primary focus-visible:text-primary leading-tight transition-colors"
         >
           {title}
         </Link>

@@ -1,3 +1,10 @@
+export type UrlType = 'github' | 'website' | 'retro';
+
+export type Url = {
+  type: UrlType;
+  link: string;
+};
+
 export interface Project {
   name: string;
   period: string;
@@ -6,4 +13,5 @@ export interface Project {
   tags: string[];
   image: string;
   link: string;
+  urls?: Url[];
 }
