@@ -3,7 +3,6 @@ import { Badge } from '@/shared/ui';
 import { Project } from '../model';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
-import Link from 'next/link';
 
 export const ProjectCard = ({ description, tags, name, image, link, roles }: Project) => {
   return (
