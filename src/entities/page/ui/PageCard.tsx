@@ -4,7 +4,7 @@ import { Badge } from '@/shared/ui';
 import { Title } from '@/shared/ui/Title';
 import { Page } from '../model';
 
-interface Props extends Omit<Page, 'id'> {}
+type Props = Omit<Page, 'id'>;
 
 /**
  *  Page 데이터를 card 형태로 보여주느 entity

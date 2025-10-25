@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { Menu } from '../model/type';
 import { tw } from '@/shared/lib';
 
