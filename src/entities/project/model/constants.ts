@@ -42,7 +42,7 @@ export const PROJECT_LIST: Project[] = [
     ],
     tags: ['React', 'Tanstack Virtual', 'Zustand', 'Tailwind CSS'],
     image: '/images/projects/anonimo.webp',
-    link: 'http://www.panonimo-virid.vercel.app',
+    link: 'https://anonimo-virid.vercel.app',
     urls: [
       {
         type: 'github',
@@ -67,7 +67,7 @@ export const PROJECT_LIST: Project[] = [
     ],
     tags: ['React', 'Vite', 'Supabase', 'Gemini API'],
     image: '/images/projects/seediary.webp',
-    link: 'http://www.seediary.vercel.app',
+    link: 'https://seediary.vercel.app/about',
     urls: [
       {
         type: 'github',
