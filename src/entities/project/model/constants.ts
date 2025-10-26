@@ -20,12 +20,11 @@ export const PROJECT_LIST: Project[] = [
       {
         type: 'github',
         link: 'https://github.com/hb-k-3376/WEB5_6_ZOOPZOOP_FE',
-        isActive: true,
       },
       {
         type: 'website',
         link: 'https://www.zoopzoop.kro.kr',
-        isActive: false,
+        status: 'inactive',
       },
     ],
   },
@@ -48,12 +47,11 @@ export const PROJECT_LIST: Project[] = [
       {
         type: 'github',
         link: 'https://github.com/hb-k-3376/anonimo',
-        isActive: true,
       },
       {
         type: 'website',
         link: 'https://anonimo-virid.vercel.app',
-        isActive: true,
+        status: 'active',
       },
     ],
   },
@@ -75,12 +73,11 @@ export const PROJECT_LIST: Project[] = [
       {
         type: 'github',
         link: 'https://github.com/hb-k-3376/FES-5-Project2-TEAM-5',
-        isActive: true,
       },
       {
         type: 'website',
         link: 'https://seediary.vercel.app/about',
-        isActive: true,
+        status: 'active',
       },
     ],
   },
@@ -91,7 +88,13 @@ export const PROJECT_LIST: Project[] = [
       '패션 업계의 창작자들(사진작가, 디자이너, 스타일리스트, 아티스트)을 연결하고, 그들의 진정성 있는 창작 스토리와 창의성을 공유하는 플랫폼입니다',
     tags: ['Next.js', 'Jotai', 'Styled-components', 'AWS'],
     image: '/images/projects/connectdid.webp',
-    link: 'https://connectdid.com/home',
+    urls: [
+      {
+        type: 'website',
+        link: 'https://seediary.vercel.app/about',
+        status: 'active',
+      },
+    ],
   },
 ];
 
@@ -99,4 +102,22 @@ export const URL_TYPE_LABELS = {
   github: 'gitHub',
   website: 'website',
   retro: '회고록',
+} as const;
+
+export const WEBSITE_STATUS_CONFIG = {
+  active: {
+    label: '배포 중',
+    className: 'bg-green-500 animate-caret-blink',
+    clickable: true,
+  },
+  inactive: {
+    label: '배포 중단',
+    className: 'bg-red-400',
+    clickable: false,
+  },
+  maintenance: {
+    label: '유지보수 중',
+    className: 'bg-yellow-500',
+    clickable: true,
+  },
 } as const;

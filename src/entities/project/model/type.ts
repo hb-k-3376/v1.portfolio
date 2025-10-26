@@ -1,10 +1,11 @@
 export type UrlType = 'github' | 'website' | 'retro';
+export type WebsiteStatus = 'active' | 'inactive' | 'maintenance';
 
-export type Url = {
+export interface ProjectUrl {
   type: UrlType;
   link: string;
-  isActive?: boolean;
-};
+  status?: WebsiteStatus;
+}
 
 export interface Project {
   name: string;
@@ -13,6 +14,6 @@ export interface Project {
   roles?: string[];
   tags: string[];
   image: string;
-  link: string;
-  urls?: Url[];
+  link?: string;
+  urls?: ProjectUrl[];
 }

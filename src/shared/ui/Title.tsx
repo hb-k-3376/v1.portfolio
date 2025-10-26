@@ -12,11 +12,14 @@ export const Title = ({ children, slug, className }: Props) => {
 
   return (
     <h3
-      className={tw('font-medium leading-snug hover:text-primary', className)}
+      className={tw(
+        'font-medium leading-snug hover:text-primary text-accent-foreground',
+        className
+      )}
       aria-label={`${children} (opens in a new tab)`}
     >
       <a
-        className="group/link inline-flex items-baseline leading-tight text-accent-foreground hover:text-primary"
+        className="group/link inline-flex items-baseline leading-tight"
         target="_blank"
         rel="noopener noreferrer"
         href={targetHref}
