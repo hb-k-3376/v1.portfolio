@@ -4,7 +4,7 @@ export type WebsiteStatus = 'active' | 'inactive' | 'maintenance';
 export interface ProjectUrl {
   type: UrlType;
   link: string;
-  status?: WebsiteStatus;
+  status: WebsiteStatus;
 }
 
 export interface Project {

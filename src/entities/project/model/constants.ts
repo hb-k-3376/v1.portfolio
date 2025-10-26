@@ -20,6 +20,7 @@ export const PROJECT_LIST: Project[] = [
       {
         type: 'github',
         link: 'https://github.com/hb-k-3376/WEB5_6_ZOOPZOOP_FE',
+        status: 'active',
       },
       {
         type: 'website',
@@ -47,6 +48,7 @@ export const PROJECT_LIST: Project[] = [
       {
         type: 'github',
         link: 'https://github.com/hb-k-3376/anonimo',
+        status: 'active',
       },
       {
         type: 'website',
@@ -73,6 +75,7 @@ export const PROJECT_LIST: Project[] = [
       {
         type: 'github',
         link: 'https://github.com/hb-k-3376/FES-5-Project2-TEAM-5',
+        status: 'active',
       },
       {
         type: 'website',
@@ -102,22 +105,4 @@ export const URL_TYPE_LABELS = {
   github: 'gitHub',
   website: 'website',
   retro: '회고록',
-} as const;
-
-export const WEBSITE_STATUS_CONFIG = {
-  active: {
-    label: '배포 중',
-    className: 'bg-green-500 animate-caret-blink',
-    clickable: true,
-  },
-  inactive: {
-    label: '배포 중단',
-    className: 'bg-red-400',
-    clickable: false,
-  },
-  maintenance: {
-    label: '유지보수 중',
-    className: 'bg-yellow-500',
-    clickable: true,
-  },
 } as const;
