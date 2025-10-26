@@ -15,15 +15,17 @@ export const PROJECT_LIST: Project[] = [
     ],
     tags: ['Next.js', 'Tanstack Query', 'Zustand', 'Chrome-extension'],
     image: '/images/projects/ZOOPZOOP.webp',
-    link: 'https://www.zoopzoop.kro.kr',
+    link: 'https://v1-portfolio-nine.vercel.app/archive/last-project-ZOOPZOOP',
     urls: [
       {
         type: 'github',
         link: 'https://github.com/hb-k-3376/WEB5_6_ZOOPZOOP_FE',
+        isActive: true,
       },
       {
-        type: 'retro',
-        link: 'https://v1-portfolio-nine.vercel.app/archive/last-project-ZOOPZOOP',
+        type: 'website',
+        link: 'https://www.zoopzoop.kro.kr',
+        isActive: false,
       },
     ],
   },
@@ -41,15 +43,17 @@ export const PROJECT_LIST: Project[] = [
     ],
     tags: ['React', 'Tanstack Virtual', 'Zustand', 'Tailwind CSS'],
     image: '/images/projects/anonimo.webp',
-    link: 'https://anonimo-virid.vercel.app',
+    link: 'https://v1-portfolio-nine.vercel.app/archive/3rd-project-anonimo',
     urls: [
       {
         type: 'github',
         link: 'https://github.com/hb-k-3376/anonimo',
+        isActive: true,
       },
       {
-        type: 'retro',
-        link: 'https://v1-portfolio-nine.vercel.app/archive/3rd-project-anonimo',
+        type: 'website',
+        link: 'https://anonimo-virid.vercel.app',
+        isActive: true,
       },
     ],
   },
@@ -66,15 +70,17 @@ export const PROJECT_LIST: Project[] = [
     ],
     tags: ['React', 'Vite', 'Supabase', 'Gemini API'],
     image: '/images/projects/seediary.webp',
-    link: 'https://seediary.vercel.app/about',
+    link: 'https://v1-portfolio-nine.vercel.app/archive/2nd-project-seediary',
     urls: [
       {
         type: 'github',
         link: 'https://github.com/hb-k-3376/FES-5-Project2-TEAM-5',
+        isActive: true,
       },
       {
-        type: 'retro',
-        link: 'https://v1-portfolio-nine.vercel.app/archive/2nd-project-seediary',
+        type: 'website',
+        link: 'https://seediary.vercel.app/about',
+        isActive: true,
       },
     ],
   },
@@ -91,6 +97,6 @@ export const PROJECT_LIST: Project[] = [
 
 export const URL_TYPE_LABELS = {
   github: 'gitHub',
-  website: 'site',
+  website: 'website',
   retro: '회고록',
 } as const;

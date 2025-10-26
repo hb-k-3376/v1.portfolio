@@ -24,7 +24,10 @@ export const ActionButton = ({ urls, name, className }: Props) => {
               href={url.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-color focus-visible:text-primary uppercase underline"
+              className={tw(
+                'text-muted-foreground hover:text-primary transition-color focus-visible:text-primary uppercase underline',
+                !url.isActive && 'pointer-events-none line-through'
+              )}
             >
               <span className="sr-only"> (새 탭에서 열림)</span>
               {URL_TYPE_LABELS[url.type]}

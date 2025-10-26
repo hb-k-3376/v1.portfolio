@@ -3,6 +3,7 @@ export type UrlType = 'github' | 'website' | 'retro';
 export type Url = {
   type: UrlType;
   link: string;
+  isActive?: boolean;
 };
 
 export interface Project {
