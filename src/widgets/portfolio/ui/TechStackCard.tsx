@@ -7,7 +7,7 @@ interface Props {
 
 export const TechStackCard = ({ image, tech }: Props) => {
   return (
-    <li className="group relative block transition-all group-hover/list:opacity-20 hover:opacity-100 focus-visible:opacity-100 cursor-pointer">
+    <li className="group relative block transition-all group-hover/list:opacity-20 hover:opacity-100">
       <div className="absolute -inset-x-3 -inset-y-3 z-0 hidden rounded-lg transition motion-reduce:transition-none lg:-inset-x-3 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg lg:group-focus-visible:bg-slate-800/50 lg:group-focus-visible:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-focus-visible:drop-shadow-lg" />
 
       <div className="relative z-10 flex items-center gap-3">

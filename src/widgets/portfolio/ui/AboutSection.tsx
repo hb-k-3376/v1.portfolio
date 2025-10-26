@@ -38,7 +38,11 @@ export const AboutSection = () => {
         <p className="mb-4 text-sm">아래 도구들로 문제를 해결합니다.</p>
       </div>
       {/* 기술 스택  */}
-      <ul className="group/list grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 gap-6">
+      <ul
+        className="group/list grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 gap-6"
+        aria-label="기술 스택 목록"
+        role="list"
+      >
         {TECH_STACK_LIST.map((tech) => (
           <TechStackCard {...tech} key={tech.tech} />
         ))}

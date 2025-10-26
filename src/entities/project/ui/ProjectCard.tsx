@@ -33,19 +33,24 @@ export const ProjectCard = ({
             {urls && (
               <ActionButton
                 urls={urls}
+                name={name}
                 className="opacity-30 group-hover:opacity-80 transition-opacity group-focus-within:opacity-80"
               />
             )}
           </div>
           <p className="text-sm leading-normal whitespace-pre-line">{description}</p>
           {roles && (
-            <ul className="flex flex-col text-sm leading-normal">
+            <ul
+              className="flex flex-col text-sm leading-normal"
+              aria-label="직접 구현한 기능 리스트"
+              role="list"
+            >
               {roles.map((role, index) => (
                 <li key={index}>• {role}</li>
               ))}
             </ul>
           )}
-          <ul className="flex flex-wrap gap-3">
+          <ul className="flex flex-wrap gap-3" aria-label="사용된 기술 스택" role="list">
             {tags.map((tag) => (
               <Badge name={tag} key={tag} />
             ))}

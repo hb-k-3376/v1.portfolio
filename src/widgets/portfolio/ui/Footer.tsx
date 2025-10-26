@@ -63,7 +63,7 @@ export const Footer = () => {
           className="font-medium text-slate-400 hover:text-primary focus-visible:text-primary"
           target="_blank"
           rel="noreferrer noopener"
-          aria-label="Figma (opens in a new tab)"
+          aria-label="Bchiang7 Github (opens in a new tab)"
         >
           Brittany Chiang
         </a>
