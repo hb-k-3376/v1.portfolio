@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import { Badge, Title } from '@/shared/ui';
 import { Project } from '../model';
-import { ActionButton } from './ActionButton';
+import { ActionLinks } from './ActionLinks';
 
 export const ProjectCard = ({
   description,
   tags,
   name,
   image,
-  link,
+  retroLink,
   roles,
   urls,
 }: Project) => {
@@ -28,19 +28,13 @@ export const ProjectCard = ({
 
         <div className="z-10 flex flex-col gap-2">
           <div className="flex justify-between">
-            {link ? (
-              <Title slug={link}>{name}</Title>
+            {retroLink ? (
+              <Title slug={retroLink}>{name}</Title>
             ) : (
-              <h3 className="font-medium leading-snug">{name}</h3>
+              <h3 className="font-medium leading-snug text-accent-foreground">{name}</h3>
             )}
 
-            {urls && (
-              <ActionButton
-                urls={urls}
-                name={name}
-                className="opacity-30 group-hover:opacity-80 transition-opacity group-focus-within:opacity-80"
-              />
-            )}
+            {urls && <ActionLinks urls={urls} name={name} className="" />}
           </div>
           <p className="text-sm leading-normal whitespace-pre-line">{description}</p>
           {roles && (

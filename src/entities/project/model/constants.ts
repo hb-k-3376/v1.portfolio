@@ -1,4 +1,5 @@
-import { Project } from './type';
+import { Book, Github, Globe, LucideIcon } from 'lucide-react';
+import { Project, UrlType } from './type';
 
 export const PROJECT_LIST: Project[] = [
   {
@@ -15,7 +16,7 @@ export const PROJECT_LIST: Project[] = [
     ],
     tags: ['Next.js', 'Tanstack Query', 'Zustand', 'Chrome-extension'],
     image: '/images/projects/ZOOPZOOP.webp',
-    link: 'https://v1-portfolio-nine.vercel.app/archive/last-project-ZOOPZOOP',
+    retroLink: 'https://v1-portfolio-nine.vercel.app/archive/last-project-ZOOPZOOP',
     urls: [
       {
         type: 'github',
@@ -43,7 +44,7 @@ export const PROJECT_LIST: Project[] = [
     ],
     tags: ['React', 'Tanstack Virtual', 'Zustand', 'Tailwind CSS'],
     image: '/images/projects/anonimo.webp',
-    link: 'https://v1-portfolio-nine.vercel.app/archive/3rd-project-anonimo',
+    retroLink: 'https://v1-portfolio-nine.vercel.app/archive/3rd-project-anonimo',
     urls: [
       {
         type: 'github',
@@ -70,7 +71,7 @@ export const PROJECT_LIST: Project[] = [
     ],
     tags: ['React', 'Vite', 'Supabase', 'Gemini API'],
     image: '/images/projects/seediary.webp',
-    link: 'https://v1-portfolio-nine.vercel.app/archive/2nd-project-seediary',
+    retroLink: 'https://v1-portfolio-nine.vercel.app/archive/2nd-project-seediary',
     urls: [
       {
         type: 'github',
@@ -101,8 +102,12 @@ export const PROJECT_LIST: Project[] = [
   },
 ];
 
-export const URL_TYPE_LABELS = {
+export const URL_TYPE_LABELS: Record<UrlType, string> = {
   github: 'gitHub',
   website: 'website',
-  retro: '회고록',
+} as const;
+
+export const URL_TYPE_ICONS: Record<UrlType, LucideIcon> = {
+  github: Github,
+  website: Globe,
 } as const;

@@ -9,10 +9,10 @@ interface Props {
   name: string;
   className?: string;
 }
-export const ActionButton = ({ urls, name, className }: Props) => {
+export const ActionLinks = ({ urls, name, className }: Props) => {
   return (
     <ul
-      className={tw('flex gap-2.5 relative z-20 text-sm', className)}
+      className={tw('flex gap-2.5 relative z-20', className)}
       role="list"
       aria-label={`${name} 프로젝트 링크`}
       onClick={(e) => e.stopPropagation()}
