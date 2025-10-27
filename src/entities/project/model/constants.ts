@@ -1,4 +1,4 @@
-import { Book, Github, Globe, LucideIcon } from 'lucide-react';
+import { Github, Globe, LucideIcon } from 'lucide-react';
 import { Project, UrlType } from './type';
 
 export const PROJECT_LIST: Project[] = [
