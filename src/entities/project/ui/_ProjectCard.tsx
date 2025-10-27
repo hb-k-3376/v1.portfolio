@@ -4,11 +4,18 @@ import { Project } from '../model';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 
-export const ProjectCard = ({ description, tags, name, image, link, roles }: Project) => {
+export const ProjectCard = ({
+  description,
+  tags,
+  name,
+  image,
+  retroLink,
+  roles,
+}: Project) => {
   return (
     <li className="w-full rounded-lg border-2 border-gray-700 overflow-hidden mb-6 transition-all group-hover/list:opacity-50 hover:opacity-100 group-focus-within/list:opacity-50 focus-within:opacity-100 cursor-pointer">
       <a
-        href={link}
+        href={retroLink}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`${name} 프로젝트 보기`}
