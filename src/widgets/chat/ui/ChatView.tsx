@@ -11,7 +11,7 @@ export const ChatView = () => {
       <div className="flex-1 overflow-auto">
         <ChatList messages={messages} status={status} />
       </div>
-      <ChatInput onSendMessage={sendMessage} />
+      <ChatInput onSendMessage={sendMessage} status={status} />
     </div>
   );
 };

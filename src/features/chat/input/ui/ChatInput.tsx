@@ -1,19 +1,24 @@
 import { useRef } from 'react';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Loader2 } from 'lucide-react';
+import { ChatStatus } from 'ai';
 
 interface Props {
   onSendMessage: (params: { text: string }) => void;
+  status: ChatStatus;
 }
 
-export const ChatInput = ({ onSendMessage }: Props) => {
+export const ChatInput = ({ onSendMessage, status }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const isProcessing = status === 'streaming' || status === 'submitted';
+
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!inputRef.current) return;
     const trimmed = inputRef.current.value.trim();
 
-    onSendMessage({ text: trimmed });
+    if (trimmed.length > 0) onSendMessage({ text: trimmed });
     inputRef.current.value = '';
   };
 
@@ -26,12 +31,18 @@ export const ChatInput = ({ onSendMessage }: Props) => {
           type="text"
           name=""
           placeholder="ask about me!"
+          disabled={isProcessing}
         />
         <button
           type="submit"
-          className="text-background bg-primary ring-2 ring-teal-600 rounded-md cursor-pointer"
+          disabled={isProcessing}
+          className="flex-center bg-black text-accent-foreground size-8 rounded-md cursor-pointer hover:bg-teal-600 active:scale-[0.98] transition-colors duration-200"
         >
-          <ArrowUp />
+          {isProcessing ? (
+            <Loader2 className="animate-spin" size={18} />
+          ) : (
+            <ArrowUp size={18} />
+          )}
         </button>
       </form>
     </div>
