@@ -1,33 +1,30 @@
-import { Avatar, AvatarImage } from '@/shared/shadcn/avatar';
-import { UIMessage } from 'ai';
+import { ChatStatus, UIMessage } from 'ai';
+import { MessageItem } from '@/entities/message';
 
 interface Props {
   messages: UIMessage[];
+  status: ChatStatus;
 }
 
-export const ChatList = ({ messages }: Props) => {
-  return (
-    <ul className="">
-      {messages.map((message) => {
-        const profile = message.role === 'user' ? 'you.webp' : 'hyunbin.webp';
+export const ChatList = ({ messages, status }: Props) => {
+  const isGenerating = status === 'submitted';
 
-        return (
-          <div className="flex gap-2" key={message.id}>
-            <Avatar>
-              <AvatarImage src={`/images/${profile}`} alt="profile" />
-            </Avatar>
-            {message.parts.map((part, index) => {
-              switch (part.type) {
-                case 'text':
-                  return <pre key={`${message.id}-${index}`}>{part.text}</pre>;
-                default:
-                  return null;
-              }
-            })}
-          </div>
-        );
-      })}
-      <li>테스트 합니다</li>
+  const displayMessages: UIMessage[] = isGenerating
+    ? [
+        ...messages,
+        { id: 'loading', role: 'assistant', parts: [{ type: 'text', text: '' }] },
+      ]
+    : messages;
+
+  return (
+    <ul className="py-20">
+      {displayMessages.map((message) => (
+        <MessageItem
+          key={message.id}
+          message={message}
+          isLoading={isGenerating && message.id === 'loading'}
+        />
+      ))}
     </ul>
   );
 };

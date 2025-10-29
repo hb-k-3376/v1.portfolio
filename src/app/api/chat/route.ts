@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     const result = streamText({
       model: google('gemini-2.5-flash'),
       messages: convertToModelMessages(messages),
-      temperature: 0.7,
+      temperature: 0.3,
     });
 
     return result.toUIMessageStreamResponse();
