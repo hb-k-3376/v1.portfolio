@@ -11,7 +11,7 @@ export const AboutSection = () => {
         <h3 id="about-heading" className="sr-only">
           자기소개
         </h3>
-        <p>
+        <p className="indent-4">
           안녕하세요, 프론트엔드 개발자 <Highlight>김현빈</Highlight>입니다. 저의 가장 큰
           강점은 <Highlight>끈기 있고 열정적인 태도</Highlight>입니다. 꾸준히 기술
           블로그를 작성하고 주도적으로 프로젝트를 리드하고 몰입한 결과, 프로그래머스
