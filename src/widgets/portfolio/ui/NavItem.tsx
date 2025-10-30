@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Menu } from '../model/type';
 import { tw } from '@/shared/lib';
 
@@ -5,7 +6,9 @@ interface Props extends Menu {
   isActive: boolean;
 }
 
-export const NavItem = ({ name, path, isActive }: Props) => {
+export const NavItem = memo(({ name, path, isActive }: Props) => {
+  console.log('리렌더링?');
+
   return (
     <li>
       <a href={path} className="group flex items-center py-3 cursor-pointer">
@@ -29,4 +32,6 @@ export const NavItem = ({ name, path, isActive }: Props) => {
       </a>
     </li>
   );
-};
+});
+
+NavItem.displayName = 'NavItem';

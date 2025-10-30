@@ -51,3 +51,5 @@ export const MessageItem = memo(({ message, isLoading }: Props) => {
     </li>
   );
 });
+
+MessageItem.displayName = 'MessageItem';
