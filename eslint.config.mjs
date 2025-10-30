@@ -15,7 +15,7 @@ const eslintConfig = [
     rules: {
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-unused-expressions': 'off',
-      '@next/next/no-img-element': 'off', // img 태그 경고 끄기
+      '@next/next/no-img-element': 'off',
     },
   },
 ];
