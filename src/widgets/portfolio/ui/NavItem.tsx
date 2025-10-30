@@ -7,8 +7,6 @@ interface Props extends Menu {
 }
 
 export const NavItem = memo(({ name, path, isActive }: Props) => {
-  console.log('리렌더링?');
-
   return (
     <li>
       <a href={path} className="group flex items-center py-3 cursor-pointer">

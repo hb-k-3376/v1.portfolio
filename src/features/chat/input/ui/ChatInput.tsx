@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { ArrowUp, Loader2 } from 'lucide-react';
 import { ChatStatus } from 'ai';
 
@@ -11,6 +11,12 @@ export const ChatInput = ({ onSendMessage, status }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const isProcessing = status === 'streaming' || status === 'submitted';
+
+  useEffect(() => {
+    if (!isProcessing && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isProcessing]);
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();

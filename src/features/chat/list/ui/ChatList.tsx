@@ -1,5 +1,6 @@
 import { ChatStatus, UIMessage } from 'ai';
 import { MessageItem } from '@/entities/message';
+import { useEffect, useRef } from 'react';
 
 interface Props {
   messages: UIMessage[];
@@ -7,6 +8,7 @@ interface Props {
 }
 
 export const ChatList = ({ messages, status }: Props) => {
+  const scrollRef = useRef<HTMLUListElement>(null);
   const isGenerating = status === 'submitted';
 
   const displayMessages: UIMessage[] = isGenerating
@@ -16,8 +18,18 @@ export const ChatList = ({ messages, status }: Props) => {
       ]
     : messages;
 
+  // 스크롤 제어
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({
+        top: scrollRef.current.scrollHeight,
+        behavior: 'smooth',
+      });
+    }
+  }, [isGenerating, messages]);
+
   return (
-    <ul className="py-20">
+    <ul className="py-20" ref={scrollRef}>
       {displayMessages.map((message) => (
         <MessageItem
           key={message.id}
