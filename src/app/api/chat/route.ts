@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     });
 
     return result.toUIMessageStreamResponse();
-  } catch (error) {
+  } catch {
     return new Response('Internal Server Error', { status: 500 });
   }
 }

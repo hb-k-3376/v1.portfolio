@@ -31,7 +31,7 @@ export const MessageItem = memo(({ message, isLoading }: Props) => {
       ) : (
         message.parts
           .filter((part) => part.type === 'text')
-          .map((part, i) => (
+          .map((p, i) => (
             <span
               key={i}
               className={tw(
@@ -39,7 +39,7 @@ export const MessageItem = memo(({ message, isLoading }: Props) => {
                 padding
               )}
             >
-              {part.text}
+              {p.text}
             </span>
           ))
       )}
