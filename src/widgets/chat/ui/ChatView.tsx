@@ -7,10 +7,8 @@ export const ChatView = () => {
   const { messages, sendMessage, status } = useChat();
 
   return (
-    <div className="relative flex mx-auto flex-col h-screen max-w-2xl px-5 lg:px-0">
-      <div className="flex-1 overflow-auto">
-        <ChatList messages={messages} status={status} />
-      </div>
+    <div className="flex flex-col pt-24 lg:w-[52%] lg:pb-24">
+      <ChatList messages={messages} status={status} />
       <ChatInput onSendMessage={sendMessage} status={status} />
     </div>
   );

@@ -1,1 +1,1 @@
-export { PortfolioView } from './ui';
+export { PortfolioView, Header } from './ui';

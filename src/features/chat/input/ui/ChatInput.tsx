@@ -29,7 +29,7 @@ export const ChatInput = ({ onSendMessage, status }: Props) => {
   };
 
   return (
-    <div className="sticky mb-10 bg-accent-foreground rounded-lg">
+    <div className="sticky bottom-0 lg:bottom-24 right-0 left-0 bg-accent-foreground rounded-lg">
       <form onSubmit={handleSendMessage} className="flex not-last-of-type:gap-3.5 m-3.5">
         <input
           ref={inputRef}

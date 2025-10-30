@@ -29,7 +29,7 @@ export const ChatList = ({ messages, status }: Props) => {
   }, [isGenerating, messages]);
 
   return (
-    <ul className="py-20" ref={scrollRef}>
+    <ul className="pb-20" ref={scrollRef}>
       {displayMessages.map((message) => (
         <MessageItem
           key={message.id}

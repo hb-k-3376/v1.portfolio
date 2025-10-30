@@ -1,3 +1,4 @@
+import { Header } from '@/widgets/portfolio';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -10,7 +11,10 @@ export default function PortfolioLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <main className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:py-0">
-      {children}
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-4 h-full">
+        <Header />
+        {children}
+      </div>
     </main>
   );
 }
