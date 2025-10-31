@@ -8,7 +8,7 @@ import { Footer } from './Footer';
 
 export const PortfolioView = () => {
   return (
-    <div className="pt-24 lg:w-[52%] lg:py-24 h-[2000px]">
+    <div className="pt-24 lg:w-[52%] lg:py-24">
       {/** about section */}
       <AboutSection />
       {/**  project section */}
