@@ -17,9 +17,9 @@ export const ProjectLink = ({ url }: Props) => {
         target="_blank"
         rel="noopener noreferrer"
         className={tw(
-          'text-xs transition-colors uppercase flex-center gap-1 group-hover:text-accent-foreground',
+          'text-xs transition-colors uppercase flex-center gap-1',
           isActive &&
-            'text-muted-foreground hover:text-primary focus-visible:text-primary',
+            'text-muted-foreground hover:text-primary focus-visible:text-primary group-hover:text-accent-foreground',
           !isActive && 'text-muted-foreground/50 pointer-events-none line-through'
         )}
       >

@@ -9,7 +9,7 @@ export const ProjectSection = () => {
       <Section.Header>Projects</Section.Header>
       <ul className="group/list">
         {PROJECT_LIST.map((project) => (
-          <ProjectCard {...project} key={project.name} />
+          <ProjectCard {...project} key={project.title} />
         ))}
       </ul>
       {/* <LinkMoreContent text="프로젝트 더보기" link="/#" /> */}

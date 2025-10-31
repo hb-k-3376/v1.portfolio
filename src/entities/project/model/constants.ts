@@ -3,8 +3,9 @@ import { Project, UrlType } from './type';
 
 export const PROJECT_LIST: Project[] = [
   {
-    name: 'ZOOPZOOP 자료 공유 협업 플랫폼',
-    period: '09.11 - 10.20',
+    title: 'ZOOPZOOP',
+    subTitle: '자료 공유 협업 플랫폼',
+    period: '2025.09 - 2025.10',
     description:
       '웹에서 찾은 콘텐츠를 손쉽게 저장하고 팀과 함께 시각적으로 아이디어를 확장할 수 있는 지식 협업 플랫폼입니다. \n프로그래머스 데브코스 4차 프로젝트 🥇최우수작으로 선정',
     roles: [
@@ -31,8 +32,9 @@ export const PROJECT_LIST: Project[] = [
     ],
   },
   {
-    name: 'Anonimo 익명 소통 서비스',
-    period: '08.18 - 09.08',
+    title: 'Anonimo',
+    subTitle: '익명 소통 서비스',
+    period: '2025.08 - 2025.09',
     description:
       '단순한 텍스트를 넘어 그림, 이모지, 이미지로 진짜 마음을 전하는 새로운 확장형 익명 소통 플랫폼입니다. \n프로그래머스 데브코스 3차 프로젝트 🥇최우수작으로 선정',
     roles: [
@@ -59,8 +61,9 @@ export const PROJECT_LIST: Project[] = [
     ],
   },
   {
-    name: 'Seediary 감정일기 플랫폼',
-    period: '07.22 - 08.06',
+    title: 'Seediary',
+    subTitle: '감정일기 플랫폼',
+    period: '2025.07 - 2025.08',
     description:
       '사용자 일기 데이터를 기반으로 AI 감정 분석과 멘탈 케어 챗봇등이 추가된 확장형 감정일기 플랫폼입니다. \n프로그래머스 데브코스 2차 프로젝트 🥇최우수작으로 선정',
     roles: [
@@ -86,7 +89,8 @@ export const PROJECT_LIST: Project[] = [
     ],
   },
   {
-    name: 'connectdid 해외 패션 플랫폼',
+    title: 'connectdid',
+    subTitle: '해외 패션 플랫폼',
     period: '2024.07 - 2025.01',
     description:
       '패션 업계의 창작자들(사진작가, 디자이너, 스타일리스트, 아티스트)을 연결하고, 그들의 진정성 있는 창작 스토리와 창의성을 공유하는 플랫폼입니다',

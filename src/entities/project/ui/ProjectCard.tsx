@@ -4,37 +4,47 @@ import { Project } from '../model';
 import { ActionLinks } from './ActionLinks';
 
 export const ProjectCard = ({
+  title,
+  subTitle,
   description,
   tags,
-  name,
   image,
   retroLink,
   roles,
+  period,
   urls,
 }: Project) => {
   return (
     <li className="mb-12">
       <div className="group relative flex gap-4 transition-opacity group-hover/list:opacity-60 hover:opacity-100">
         <div className="absolute z-0 -inset-x-6 -inset-y-4 rounded-md transition motion-reduce:transition-none lg:group-hover:bg-slate-800/50  lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
-        <div className="hidden sm:block sm:min-w-36 sm:translate-y-1">
-          <Image
-            className="object-cover rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30"
-            src={image}
-            fill
-            sizes="600px"
-            alt={`${name} 페이지`}
-          />
+        <div className="hidden sm:flex  flex-col gap-1">
+          <div className="flex-1 sm:min-w-36 sm:translate-y-1">
+            <Image
+              className="object-cover rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30"
+              src={image}
+              fill
+              sizes="600px"
+              alt={`${title} 페이지`}
+            />
+          </div>
+          <span className="p-2 pb-0 text-sm leading-tight text-center">{period}</span>
         </div>
 
         <div className="z-10 flex flex-col gap-2">
-          <div className="flex justify-between">
+          <div className="flex gap-3 justify-between">
             {retroLink ? (
-              <Title slug={retroLink}>{name}</Title>
+              <Title slug={retroLink}>
+                {title}
+                <span className="hidden sm:inline pl-1">{subTitle}</span>
+              </Title>
             ) : (
-              <h3 className="font-medium leading-snug text-accent-foreground">{name}</h3>
+              <h3 className="font-medium leading-snug text-accent-foreground">
+                {title} <span className="hidden sm:inline pl-1">{subTitle}</span>
+              </h3>
             )}
 
-            {urls && <ActionLinks urls={urls} name={name} className="" />}
+            {urls && <ActionLinks urls={urls} title={title} />}
           </div>
           <p className="text-sm leading-normal whitespace-pre-line">{description}</p>
           {roles && (

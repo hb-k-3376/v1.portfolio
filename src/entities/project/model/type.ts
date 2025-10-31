@@ -8,7 +8,8 @@ export interface ProjectUrl {
 }
 
 export interface Project {
-  name: string;
+  title: string;
+  subTitle: string;
   period: string;
   description: string;
   roles?: string[];
