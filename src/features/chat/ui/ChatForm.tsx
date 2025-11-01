@@ -7,7 +7,7 @@ interface Props {
   status: ChatStatus;
 }
 
-export const ChatInput = ({ onSendMessage, status }: Props) => {
+export const ChatForm = ({ onSendMessage, status }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const isProcessing = status === 'streaming' || status === 'submitted';

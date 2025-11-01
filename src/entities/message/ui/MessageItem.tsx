@@ -13,7 +13,7 @@ interface Props {
 export const MessageItem = memo(({ message, isLoading }: Props) => {
   const isUser = message.role === 'user';
   const profile = isUser ? 'you.webp' : 'hyunbin.webp';
-  const alignment = isUser ? 'justify-end text-right' : 'justify-start text-left';
+  const alignment = isUser ? 'justify-end' : 'justify-start';
   const padding = isUser ? 'ml-10' : 'mr-10';
 
   const showTyping = !isUser && isLoading;

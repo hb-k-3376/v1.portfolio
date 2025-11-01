@@ -1,1 +1,1 @@
-export { MessageItem } from './ui';
+export { MessageItem, MessageList } from './ui';
