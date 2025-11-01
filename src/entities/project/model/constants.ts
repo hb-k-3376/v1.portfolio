@@ -1,7 +1,7 @@
 import { Github, Globe, LucideIcon } from 'lucide-react';
 import { Project, UrlType } from './type';
 
-export const PROJECT_LIST: Project[] = [
+export const projectList: readonly Project[] = [
   {
     title: 'ZOOPZOOP',
     subTitle: '자료 공유 협업 플랫폼',
@@ -104,14 +104,14 @@ export const PROJECT_LIST: Project[] = [
       },
     ],
   },
-];
+] as const;
 
-export const URL_TYPE_LABELS: Record<UrlType, string> = {
+export const urlTypeLabels: Record<UrlType, string> = {
   github: 'gitHub',
   website: 'website',
 } as const;
 
-export const URL_TYPE_ICONS: Record<UrlType, LucideIcon> = {
+export const urlTypeIcons: Record<UrlType, LucideIcon> = {
   github: Github,
   website: Globe,
 } as const;

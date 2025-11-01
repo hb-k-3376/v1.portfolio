@@ -12,7 +12,11 @@ export const ChatSection = () => {
 
   return (
     <>
-      {isEmpty ? <HeroSection /> : <MessageList messages={messages} status={status} />}
+      {isEmpty ? (
+        <HeroSection onSendMessage={sendMessage} />
+      ) : (
+        <MessageList messages={messages} status={status} />
+      )}
       <ChatForm onSendMessage={sendMessage} status={status} />
     </>
   );

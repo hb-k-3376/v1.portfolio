@@ -1,4 +1,4 @@
-import { PROJECT_LIST, ProjectCard } from '@/entities/project';
+import { projectList, ProjectCard } from '@/entities/project';
 import { Section } from '@/shared/ui';
 /**
  * 메인 페이지의 Notion Project 리스트 섹션
@@ -8,7 +8,7 @@ export const ProjectSection = () => {
     <Section id="project">
       <Section.Header>Projects</Section.Header>
       <ul className="group/list">
-        {PROJECT_LIST.map((project) => (
+        {projectList.map((project) => (
           <ProjectCard {...project} key={project.title} />
         ))}
       </ul>

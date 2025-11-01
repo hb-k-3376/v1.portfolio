@@ -1,10 +1,10 @@
-import { SOCIAL_LIST } from '../model/constant';
+import { socialList } from '../model/constant';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/shared/shadcn/tooltip';
 
 export const SocialList = () => {
   return (
     <ul className="ml-1 mt-8 flex items-center" aria-label="Social media">
-      {SOCIAL_LIST.map((social) => (
+      {socialList.map((social) => (
         <li className="mr-5 shrink-0 text-xs" key={social.type}>
           <Tooltip>
             <TooltipTrigger asChild>

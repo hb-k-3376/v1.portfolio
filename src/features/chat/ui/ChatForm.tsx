@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { ArrowUp, Loader2 } from 'lucide-react';
 import { ChatStatus } from 'ai';
+import { QuestionSection } from './QuestionSection';
 
 interface Props {
   onSendMessage: (params: { text: string }) => void;
@@ -39,10 +40,11 @@ export const ChatForm = ({ onSendMessage, status }: Props) => {
           placeholder="ask about me!"
           disabled={isProcessing}
         />
+        <QuestionSection onSendMessage={onSendMessage} />
         <button
           type="submit"
           disabled={isProcessing}
-          className="flex-center bg-black text-accent-foreground size-8 rounded-md cursor-pointer hover:bg-teal-600 active:scale-[0.98] transition-colors duration-200"
+          className="flex-center bg-black text-accent-foreground size-8 rounded-md cursor-pointer hover:bg-teal-600 active:scale-[0.98] transition-colors duration-200 focus:bg-black/80"
         >
           {isProcessing ? (
             <Loader2 className="animate-spin" size={18} />

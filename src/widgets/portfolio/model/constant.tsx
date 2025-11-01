@@ -1,6 +1,6 @@
 import type { Menu, Social, Tech } from './type';
 
-export const MENU_LIST: Menu[] = [
+export const menuList: readonly Menu[] = [
   {
     name: 'about',
     path: '/#about',
@@ -13,10 +13,10 @@ export const MENU_LIST: Menu[] = [
     name: 'archive',
     path: '/#archive',
   },
-];
+] as const;
 
 // 기술 스택
-export const TECH_STACK_LIST: Tech[] = [
+export const techStackList: readonly Tech[] = [
   {
     image: 'react.svg',
     tech: 'React',
@@ -65,9 +65,9 @@ export const TECH_STACK_LIST: Tech[] = [
     image: 'git.svg',
     tech: 'Git',
   },
-];
+] as const;
 
-export const SOCIAL_LIST: Social[] = [
+export const socialList: readonly Social[] = [
   {
     type: 'Github',
     url: 'https://github.com/hb-k-3376/',
@@ -128,4 +128,4 @@ export const SOCIAL_LIST: Social[] = [
       </svg>
     ),
   },
-];
+] as const;

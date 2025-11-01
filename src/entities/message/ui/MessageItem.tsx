@@ -25,7 +25,6 @@ export const MessageItem = memo(({ message, isLoading }: Props) => {
           <AvatarImage src={`/images/${profile}`} alt="AI profile" />
         </Avatar>
       )}
-
       {showTyping ? (
         <TypingIndicator className="px-3 py-2 h-10.5 rounded-xl my-auto bg-black/70" />
       ) : (

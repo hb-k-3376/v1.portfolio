@@ -1,5 +1,5 @@
 import { tw } from '@/shared/lib';
-import { URL_TYPE_ICONS, URL_TYPE_LABELS } from '../model/constants';
+import { urlTypeLabels, urlTypeIcons } from '../model/constants';
 import { ProjectUrl } from '../model/type';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 
 export const ProjectLink = ({ url }: Props) => {
   const isActive = url.status === 'active';
-  const Icon = URL_TYPE_ICONS[url.type];
+  const Icon = urlTypeIcons[url.type];
 
   return (
     <li key={url.type}>
@@ -25,7 +25,7 @@ export const ProjectLink = ({ url }: Props) => {
       >
         <span className="sr-only"> (새 탭에서 열림)</span>
         <Icon size={16} />
-        {URL_TYPE_LABELS[url.type]}
+        {urlTypeLabels[url.type]}
       </a>
     </li>
   );

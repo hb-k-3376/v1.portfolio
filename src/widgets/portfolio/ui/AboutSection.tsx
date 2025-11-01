@@ -1,5 +1,5 @@
 import { Highlight, Section } from '@/shared/ui';
-import { TECH_STACK_LIST } from '../model/constant';
+import { techStackList } from '../model/constant';
 import { TechStackCard } from './TechStackCard';
 
 export const AboutSection = () => {
@@ -43,7 +43,7 @@ export const AboutSection = () => {
         aria-label="기술 스택 목록"
         role="list"
       >
-        {TECH_STACK_LIST.map((tech) => (
+        {techStackList.map((tech) => (
           <TechStackCard {...tech} key={tech.tech} />
         ))}
       </ul>

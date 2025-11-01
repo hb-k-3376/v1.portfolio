@@ -9,4 +9,31 @@
   .flex-col-center {
     @apply flex flex-col items-center justify-center;
   }
+
+  /* 스크롤바 커스터마이징 */
+  .custom-scroll {
+    --scrollbar-width: 6px;
+    --scrollbar-thumb-radius: 3px;
+
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) transparent;
+  }
+
+  .custom-scroll::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .custom-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    border-radius: var(--scrollbar-thumb-radius);
+    background: transparent;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+  }
 }

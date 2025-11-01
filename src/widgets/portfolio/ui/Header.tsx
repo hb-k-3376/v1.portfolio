@@ -1,12 +1,12 @@
 'use client';
 
 import { useScrollObserver } from '@/shared/hooks';
-import { MENU_LIST } from '../model/constant';
+import { menuList } from '../model/constant';
 import { NavItem } from './NavItem';
 import { SocialList } from './SocialList';
 
 export const Header = () => {
-  const sectionIds = MENU_LIST.map((item) => item.name);
+  const sectionIds = menuList.map((item) => item.name);
   const activeId = useScrollObserver(sectionIds);
 
   return (
@@ -23,7 +23,7 @@ export const Header = () => {
         </p>
         <nav className="mt-16 w-max hidden lg:block">
           <ul>
-            {MENU_LIST.map((menu) => (
+            {menuList.map((menu) => (
               <NavItem {...menu} isActive={activeId === menu.name} key={menu.name} />
             ))}
           </ul>

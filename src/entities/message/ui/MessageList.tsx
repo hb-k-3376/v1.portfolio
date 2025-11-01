@@ -26,10 +26,10 @@ export const MessageList = ({ messages, status }: Props) => {
         behavior: 'smooth',
       });
     }
-  }, [isGenerating, messages]);
+  }, [displayMessages]);
 
   return (
-    <ul className="h-full pb-10 overflow-y-scroll" ref={scrollRef}>
+    <ul className="h-full pb-10 overflow-y-auto custom-scroll" ref={scrollRef}>
       {displayMessages.map((message) => (
         <MessageItem
           key={message.id}
