@@ -31,16 +31,19 @@ export const ChatForm = ({ onSendMessage, status }: Props) => {
 
   return (
     <div className="sticky bottom-0 lg:bottom-24 right-0 left-0 bg-accent-foreground rounded-lg">
-      <form onSubmit={handleSendMessage} className="flex gap-3.5 mx-3.5 my-2.5">
+      <form
+        onSubmit={handleSendMessage}
+        className="flex gap-3.5 mx-3.5 my-2.5 overflow-hidden"
+      >
         <input
           ref={inputRef}
-          className="flex-1 text-background"
+          className="flex-1 min-w-0 w-full text-background"
           type="text"
           name=""
           placeholder="ask about me!"
           disabled={isProcessing}
         />
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-shrink-0">
           <QuestionSection onSendMessage={onSendMessage} />
           <button
             type="submit"
