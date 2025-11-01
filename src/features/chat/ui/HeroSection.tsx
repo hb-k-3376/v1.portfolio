@@ -26,7 +26,7 @@ export const HeroSection = ({ onSendMessage }: Props) => {
             어떤 것이 궁금하신가요?
           </h1>
           <p className="flex-center text-pretty text-center text-base text-muted-foreground">
-            <Sparkles className="sm:inline-block text-primary mr-2 hidden" size={15} />
+            <Sparkles className="inline-block text-primary mr-1.5" size={15} />
             아래 예시 질문을 선택하거나 직접 질문해보세요.
           </p>
         </div>

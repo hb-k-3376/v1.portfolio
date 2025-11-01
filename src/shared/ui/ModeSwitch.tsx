@@ -13,7 +13,7 @@ export const ModeSwitch = () => {
     router.push(checked ? '/chat' : '/');
   };
   return (
-    <div className="fixed top-2 lg:top-auto lg:bottom-8 right-6 z-50">
+    <div className="fixed top-5 lg:top-auto lg:bottom-8 right-6 z-50">
       <div className="flex items-center gap-3 transition-colors duration-200">
         <span
           className={`text-sm font-medium transition-colors ${

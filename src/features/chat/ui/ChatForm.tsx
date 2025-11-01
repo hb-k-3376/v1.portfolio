@@ -31,7 +31,10 @@ export const ChatForm = ({ onSendMessage, status }: Props) => {
 
   return (
     <div className="sticky bottom-0 lg:bottom-24 right-0 left-0 bg-accent-foreground rounded-lg">
-      <form onSubmit={handleSendMessage} className="flex not-last-of-type:gap-3.5 m-3.5">
+      <form
+        onSubmit={handleSendMessage}
+        className="flex not-last-of-type:gap-3.5 mx-3.5 my-2.5"
+      >
         <input
           ref={inputRef}
           className="flex-1 text-background"
