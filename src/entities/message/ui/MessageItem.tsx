@@ -31,15 +31,15 @@ export const MessageItem = memo(({ message, isLoading }: Props) => {
         message.parts
           .filter((part) => part.type === 'text')
           .map((p, i) => (
-            <span
+            <p
               key={i}
               className={tw(
-                'my-auto bg-black/70 px-3 py-2 rounded-xl text-accent-foreground',
+                'my-auto bg-black/70 px-3 py-2 rounded-xl text-accent-foreground whitespace-pre-line break-words',
                 padding
               )}
             >
               {p.text}
-            </span>
+            </p>
           ))
       )}
       {isUser && (

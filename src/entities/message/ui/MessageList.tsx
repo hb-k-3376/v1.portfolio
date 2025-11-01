@@ -26,7 +26,7 @@ export const MessageList = ({ messages, status }: Props) => {
         behavior: 'smooth',
       });
     }
-  }, [displayMessages]);
+  }, [messages, isGenerating]);
 
   return (
     <ul className="h-full pb-10 overflow-y-auto custom-scroll" ref={scrollRef}>

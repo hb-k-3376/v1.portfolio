@@ -1,18 +1,23 @@
+'use client';
+
 import { Sparkles } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/shared/shadcn/popover';
 import { exampleQuestions } from '../model/constants';
+import { useState } from 'react';
 
 interface Props {
   onSendMessage: (params: { text: string }) => void;
 }
 
 export const QuestionSection = ({ onSendMessage }: Props) => {
+  const [open, setOpen] = useState(false);
   const handleExampleClick = (question: string) => {
     onSendMessage({ text: question });
+    setOpen(false);
   };
 
   return (
-    <Popover>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <button
           className="flex-center mr-2 cursor-pointer transition-colors duration-200 text-background/80 hover:text-primary focus:text-primary"
@@ -27,7 +32,7 @@ export const QuestionSection = ({ onSendMessage }: Props) => {
             <li key={idx}>
               <button
                 type="button"
-                className="w-full rounded-sm p-3 text-sm cursor-pointer hover:bg-black/60"
+                className="w-full rounded-sm p-3 text-sm cursor-pointer hover:bg-black/60 hover:text-accent-foreground"
                 onClick={() => handleExampleClick(question)}
               >
                 {question}
