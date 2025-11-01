@@ -43,4 +43,20 @@
   strong {
     @apply text-accent-foreground font-medium;
   }
+
+  /* 기본 스크롤바 (Webkit) */
+  html::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+  }
+
+  html::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    background: var(--foreground);
+    border-radius: 4px;
+    transition: opacity 0.2s ease, background 0.2s ease;
+  }
 }

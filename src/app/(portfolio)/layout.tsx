@@ -1,3 +1,4 @@
+import { ModeSwitch } from '@/shared/ui/ModeSwitch';
 import { Header } from '@/widgets/portfolio';
 import { Metadata } from 'next';
 
@@ -15,6 +16,7 @@ export default function PortfolioLayout({
         <Header />
         {children}
       </div>
+      <ModeSwitch />
     </main>
   );
 }
