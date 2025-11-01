@@ -4,13 +4,23 @@ import { useScrollObserver } from '@/shared/hooks';
 import { menuList } from '../model/constant';
 import { NavItem } from './NavItem';
 import { SocialList } from './SocialList';
+import { usePathname } from 'next/navigation';
+import { tw } from '@/shared/lib';
 
 export const Header = () => {
+  const pathname = usePathname();
   const sectionIds = menuList.map((item) => item.name);
   const activeId = useScrollObserver(sectionIds);
 
+  const isAi = pathname === '/chat';
+
   return (
-    <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24">
+    <header
+      className={tw(
+        'lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24',
+        isAi && 'hidden'
+      )}
+    >
       <div>
         <h1 className="text-4xl font-bold tracking-tight text-accent-foreground sm:text-5xl">
           Kim Hyunbin

@@ -13,8 +13,8 @@ export const ModeSwitch = () => {
     router.push(checked ? '/chat' : '/');
   };
   return (
-    <div className="fixed bottom-8 right-8 z-50">
-      <div className="flex items-center gap-3 px-4 py-2.5 bg-card/80 backdrop-blur-xl rounded-full shadow-lg transition-colors duration-200">
+    <div className="fixed top-2 lg:top-auto lg:bottom-8 right-6 z-50">
+      <div className="flex items-center gap-3 transition-colors duration-200">
         <span
           className={`text-sm font-medium transition-colors ${
             !isAi ? 'text-accent-foreground' : 'text-muted-foreground'

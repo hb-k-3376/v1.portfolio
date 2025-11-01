@@ -12,7 +12,7 @@ export const HeroSection = ({ onSendMessage }: Props) => {
   };
 
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-12 px-4">
+    <div className="flex h-full flex-col items-center justify-center gap-12">
       <div className="flex flex-col items-center gap-6">
         <Image
           className="object-contain rounded-md"
@@ -22,11 +22,11 @@ export const HeroSection = ({ onSendMessage }: Props) => {
           height={100}
         />
         <div className="space-y-3">
-          <h1 className="text-balance text-center text-4xl font-semibold tracking-tight text-foreground">
-            무엇이든 질문해주세요!
+          <h1 className="text-balance text-center text-2xl sm:text-4xl font-semibold tracking-tight text-foreground">
+            어떤 것이 궁금하신가요?
           </h1>
           <p className="flex-center text-pretty text-center text-base text-muted-foreground">
-            <Sparkles className="inline-block text-primary mr-2" size={15} />
+            <Sparkles className="sm:inline-block text-primary mr-2 hidden" size={15} />
             아래 예시 질문을 선택하거나 직접 질문해보세요.
           </p>
         </div>
