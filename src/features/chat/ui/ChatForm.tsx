@@ -40,18 +40,20 @@ export const ChatForm = ({ onSendMessage, status }: Props) => {
           placeholder="ask about me!"
           disabled={isProcessing}
         />
-        <QuestionSection onSendMessage={onSendMessage} />
-        <button
-          type="submit"
-          disabled={isProcessing}
-          className="flex-center bg-black text-accent-foreground p-2 rounded-md cursor-pointer hover:bg-teal-600 active:scale-[0.98] transition-colors duration-200 focus:bg-black/80"
-        >
-          {isProcessing ? (
-            <Loader2 className="animate-spin" size={18} />
-          ) : (
-            <ArrowUp size={18} />
-          )}
-        </button>
+        <div className="flex gap-2">
+          <QuestionSection onSendMessage={onSendMessage} />
+          <button
+            type="submit"
+            disabled={isProcessing}
+            className="flex-center bg-black text-accent-foreground p-2 rounded-md cursor-pointer hover:bg-teal-600 active:scale-[0.98] transition-colors duration-200 focus:bg-black/80"
+          >
+            {isProcessing ? (
+              <Loader2 className="animate-spin" size={18} />
+            ) : (
+              <ArrowUp size={18} />
+            )}
+          </button>
+        </div>
       </form>
     </div>
   );

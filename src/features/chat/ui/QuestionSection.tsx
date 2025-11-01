@@ -20,7 +20,7 @@ export const QuestionSection = ({ onSendMessage }: Props) => {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <button
-          className="flex-center mr-2 cursor-pointer transition-colors duration-200 text-background/80 hover:text-primary focus:text-primary"
+          className="flex-center cursor-pointer transition-colors duration-200 text-background/80 hover:text-primary focus:text-primary"
           aria-label="예시 질문 보기"
         >
           <Sparkles size={18} />
