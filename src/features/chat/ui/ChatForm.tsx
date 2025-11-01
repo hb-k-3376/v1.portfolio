@@ -47,7 +47,7 @@ export const ChatForm = ({ onSendMessage, status }: Props) => {
         <button
           type="submit"
           disabled={isProcessing}
-          className="flex-center bg-black text-accent-foreground size-8 rounded-md cursor-pointer hover:bg-teal-600 active:scale-[0.98] transition-colors duration-200 focus:bg-black/80"
+          className="flex-center bg-black text-accent-foreground p-2 rounded-md cursor-pointer hover:bg-teal-600 active:scale-[0.98] transition-colors duration-200 focus:bg-black/80"
         >
           {isProcessing ? (
             <Loader2 className="animate-spin" size={18} />
