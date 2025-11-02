@@ -1,9 +1,9 @@
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
+import { convertToModelMessages, smoothStream, streamText, UIMessage } from 'ai';
 import { google } from '@ai-sdk/google';
 import { CHATBOT_SYSTEM_PROMPT } from '@/shared/lib';
 
-// Allow streaming responses up to 30 seconds
-export const maxDuration = 30;
+export const runtime = 'edge';
+export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
   try {
@@ -16,6 +16,9 @@ export async function POST(request: Request) {
       temperature: 0.4,
       maxOutputTokens: 800,
       maxRetries: 3,
+      experimental_transform: smoothStream({
+        chunking: 'word',
+      }),
     });
 
     return result.toUIMessageStreamResponse();
