@@ -19,7 +19,16 @@ export async function POST(request: Request) {
     });
 
     return result.toUIMessageStreamResponse();
-  } catch {
-    return new Response('Internal Server Error', { status: 500 });
+  } catch (error) {
+    return new Response(
+      JSON.stringify({
+        error: 'Internal Server Error',
+        message: error instanceof Error ? error.message : 'Unknown error',
+      }),
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
   }
 }
