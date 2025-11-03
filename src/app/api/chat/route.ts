@@ -5,14 +5,18 @@ import { CHATBOT_SYSTEM_PROMPT } from '@/shared/lib';
 export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
 
+const MAX_HISTORY = 10;
+
 export async function POST(request: Request) {
   try {
     const { messages }: { messages: UIMessage[] } = await request.json();
 
+    const recentMessages = messages.slice(-MAX_HISTORY);
+
     const result = streamText({
       model: google('gemini-2.5-flash'),
       system: CHATBOT_SYSTEM_PROMPT,
-      messages: convertToModelMessages(messages),
+      messages: convertToModelMessages(recentMessages),
       temperature: 0.4,
       maxOutputTokens: 800,
       maxRetries: 3,
