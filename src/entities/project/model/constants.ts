@@ -99,7 +99,7 @@ export const projectList: readonly Project[] = [
     urls: [
       {
         type: 'website',
-        link: 'https://seediary.vercel.app/about',
+        link: 'https://connectdid.com',
         status: 'active',
       },
     ],
