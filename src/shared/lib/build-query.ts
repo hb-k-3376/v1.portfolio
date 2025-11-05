@@ -1,5 +1,6 @@
 import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints';
 import { getEnv } from './env';
+import { IS_DEV } from '../utils';
 
 // 페이지 네이션 파라미터
 export const buildPagesQuery = (options: {
@@ -8,13 +9,29 @@ export const buildPagesQuery = (options: {
   query: string | null;
 }) => {
   const { cursor, pageSize, query } = options;
-
-  const baseFilter = {
-    property: 'status',
-    status: {
-      equals: 'published',
-    },
-  };
+  const baseFilter = IS_DEV
+    ? {
+        or: [
+          {
+            property: 'status',
+            status: {
+              equals: 'published',
+            },
+          },
+          {
+            property: 'status',
+            status: {
+              equals: 'draft',
+            },
+          },
+        ],
+      }
+    : {
+        property: 'status',
+        status: {
+          equals: 'published',
+        },
+      };
 
   const filter = query?.trim()
     ? {

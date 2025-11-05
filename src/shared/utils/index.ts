@@ -5,3 +5,5 @@ export { isPageObjectResponse } from './guard/list';
  */
 export * from './helper/formatter';
 export * from './helper/notion';
+
+export { IS_DEV, IS_PROD } from './env';
