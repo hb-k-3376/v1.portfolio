@@ -17,7 +17,7 @@ export const projectList: readonly Project[] = [
     ],
     tags: ['Next.js', 'Tanstack Query', 'Zustand', 'Chrome-extension'],
     image: '/images/projects/ZOOPZOOP.webp',
-    retroLink: 'https://v1-portfolio-nine.vercel.app/archive/last-project-ZOOPZOOP',
+    retroLink: 'https://hyunbin.dev/archive/last-project-ZOOPZOOP',
     urls: [
       {
         type: 'github',
@@ -46,7 +46,7 @@ export const projectList: readonly Project[] = [
     ],
     tags: ['React', 'Tanstack Virtual', 'Zustand', 'Tailwind CSS'],
     image: '/images/projects/anonimo.webp',
-    retroLink: 'https://v1-portfolio-nine.vercel.app/archive/3rd-project-anonimo',
+    retroLink: 'https://hyunbin.dev/archive/3rd-project-anonimo',
     urls: [
       {
         type: 'github',
@@ -74,7 +74,7 @@ export const projectList: readonly Project[] = [
     ],
     tags: ['React', 'Vite', 'Supabase', 'Gemini API'],
     image: '/images/projects/seediary.webp',
-    retroLink: 'https://v1-portfolio-nine.vercel.app/archive/2nd-project-seediary',
+    retroLink: 'https://hyunbin.dev/archive/2nd-project-seediary',
     urls: [
       {
         type: 'github',
