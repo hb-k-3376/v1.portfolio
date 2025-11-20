@@ -16,7 +16,8 @@ export default function PortfolioLayout({
         <Header />
         {children}
       </div>
-      <ModeSwitch />
+      {/* AI Mode 임시 중딘.. */}
+      {/* <ModeSwitch /> */}
     </main>
   );
 }
