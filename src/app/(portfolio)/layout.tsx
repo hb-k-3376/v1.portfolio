@@ -1,3 +1,4 @@
+import { ModeSwitch } from '@/shared/ui/ModeSwitch';
 import { Header } from '@/widgets/portfolio';
 import { Metadata } from 'next';
 
@@ -16,7 +17,7 @@ export default function PortfolioLayout({
         {children}
       </div>
       {/* AI Mode 임시 중딘.. */}
-      {/* <ModeSwitch /> */}
+      <ModeSwitch />
     </main>
   );
 }
